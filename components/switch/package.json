@@ -9,6 +9,10 @@
   "homepage": "https://github.com/fjson/react-native-chameleon#readme",
   "license": "MIT",
   "main": "lib/switch.js",
+  "dependencies": {
+    "prop-types": "^15.6.2",
+    "react-native-switch": "^1.5.0"
+  },
   "directories": {
     "lib": "lib",
     "test": "__tests__"

@@ -24,10 +24,14 @@
   "devDependencies": {
     "babel-preset-expo": "^5.0.0",
     "cherry-doc": "^1.0.23",
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.7.1",
     "handlebars": "^4.0.12",
     "jest-expo": "^31.0.0",
+    "jsdom-global": "^3.0.2",
     "lerna": "^3.8.0",
-    "react-dom": "^16.7.0"
+    "react-dom": "^16.7.0",
+    "react-native-mock-render": "^0.1.2"
   },
   "private": true,
   "name": "react-native-chameleon"
