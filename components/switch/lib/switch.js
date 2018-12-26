@@ -11,7 +11,6 @@ const IS_IOS = Platform.OS === 'ios';
  * ---
  *
  *
- *
  * 开关按钮，支持ios和android原生switch，支持ios和android使用相同样式的switch
  */
 export class Switch extends Component {
