@@ -1,5 +1,5 @@
 {
-  "name": "@chameleon/switch",
+  "name": "@xzchameleon/switch",
   "version": "0.0.4",
   "description": "> TODO: description",
   "keywords": [
@@ -28,5 +28,6 @@
   },
   "bugs": {
     "url": "https://github.com/fjson/react-native-chameleon/issues"
-  }
+  },
+  "gitHead": "3b713f26a3b20a822529874632f366314bc21f23"
 }
