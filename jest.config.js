@@ -8,7 +8,7 @@ module.exports = {
         "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js"
     },
     "transformIgnorePatterns": [
-        "node_modules/(?!react-native|react-native-elements|react-native-device-info|react-navigation|react-redux|@babel|redux-form|lodash-es)",
+        "node_modules/(?!react-native)",
     ],
     setupTestFrameworkScriptFile: '<rootDir>setupTests.js',
     "globals": {

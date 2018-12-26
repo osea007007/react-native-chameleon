@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@xzchameleon/switch should render without issue 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "flex-start",
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "paddingLeft": 8,
+        "paddingRight": 10,
+        "paddingVertical": 6,
+      }
+    }
+  >
+    <Switch
+      activeText="On"
+      backgroundActive="#F1AD88"
+      backgroundInactive="#d7d7d7"
+      barHeight={14}
+      changeValueImmediately={true}
+      circleActiveColor="#ee9922"
+      circleBorderActiveColor="rgb(100, 100, 100)"
+      circleBorderInactiveColor="rgb(80, 80, 80)"
+      circleBorderWidth={1}
+      circleInActiveColor="#f1f1f1"
+      circleSize={22}
+      disabled={false}
+      inActiveText="Off"
+      innerCircleStyle={
+        Object {
+          "borderColor": "transparent",
+        }
+      }
+      onValueChange={[Function]}
+      outerCircleStyle={Object {}}
+      renderActiveText={false}
+      renderInActiveText={false}
+      renderInsideCircle={[Function]}
+      switchLeftPx={2}
+      switchRightPx={2}
+      switchWidthMultiplier={1.5}
+      value={false}
+    />
+  </View>
+</View>
+`;
