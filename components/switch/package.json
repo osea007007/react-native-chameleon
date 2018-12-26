@@ -1,0 +1,32 @@
+{
+  "name": "@chameleon/switch",
+  "version": "0.0.1",
+  "description": "> TODO: description",
+  "keywords": [
+    "switch"
+  ],
+  "author": "jason.xing@thizgroup.com <jason.xing@thizgroup.com>",
+  "homepage": "https://github.com/fjson/react-native-chameleon#readme",
+  "license": "MIT",
+  "main": "lib/switch.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fjson/react-native-chameleon.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/fjson/react-native-chameleon/issues"
+  }
+}

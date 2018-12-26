@@ -6,8 +6,8 @@
     "ios": "expo start --ios",
     "eject": "expo eject",
     "test": "node ./node_modules/jest/bin/jest.js --watchAll",
-    "doc-dev": "cherry dev",
-    "doc": "cherry build"
+    "doc-dev": "react-docgen ./components/*/lib | ./doc.sh && cherry dev",
+    "doc": "react-docgen ./components/*/lib | ./doc.sh && cherry build"
   },
   "jest": {
     "preset": "jest-expo"
@@ -18,6 +18,7 @@
     "prop-types": "^15.6.2",
     "react": "16.5.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-31.0.0.tar.gz",
+    "react-native-switch": "^1.5.0",
     "react-navigation": "^2.18.2"
   },
   "devDependencies": {

@@ -1,74 +1,19 @@
-0 silly argv { _: [ 'publish' ],
-0 silly argv   composed: 'publish',
+0 silly argv { _: [ 'create' ],
 0 silly argv   lernaVersion: '3.8.0',
-0 silly argv   '$0': 'lerna' }
+0 silly argv   '$0': 'lerna',
+0 silly argv   name: '@chameleon/switch' }
 1 notice cli v3.8.0
 2 verbose rootPath /Users/jason/Desktop/storybook/react-native-chameleon
-3 verbose session 9685b49d5fbcd974
-4 verbose user-agent lerna/3.8.0/node@v10.14.2+x64 (darwin)
-5 info Verifying npm credentials
-6 verbose Retrieving npm user profile
-7 http fetch GET 200 https://registry.npmjs.org/-/npm/v1/user 1209ms
-8 silly npm profile get received {"tfa":false,"name":"xzchameleon","email":"xzjhsy@gmail.com","email_verified":true,"created":"2018-12-25T09:47:56.691Z","updated":"2018-12-25T09:47:56.689Z","cidr_whitelist":null,"fullname":"邢金生"}
-9 silly npm whoami received {"username":"xzchameleon"}
-10 silly argv { _: [ 'publish' ], composed: 'publish', lernaVersion: '3.8.0' }
-11 verbose rootPath /Users/jason/Desktop/storybook/react-native-chameleon
-12 info current version 0.0.0
-13 silly isAnythingCommitted
-14 verbose isAnythingCommitted 1
-15 silly currentBranch
-16 verbose currentBranch master
-17 silly remoteBranchExists
-18 silly isBehindUpstream
-19 silly isBehindUpstream master is behind origin/master by 0 commit(s) and ahead by 0
-20 silly hasTags
-21 verbose hasTags false
-22 info Looking for changed packages since initial commit.
-23 verbose updated checkbox
-24 verbose git-describe undefined => "feea052"
-25 silly git-describe parsed => {"refCount":"1","sha":"feea052","isDirty":false}
-26 silly batched [ PackageGraphNode {
-26 silly batched     name: 'checkbox',
-26 silly batched     externalDependencies: Map {},
-26 silly batched     localDependencies: Map {},
-26 silly batched     localDependents: Map {} } ]
-27 silly run-lifecycle No script for "preversion" in "react-native-chameleon", continuing
-28 silly run-lifecycle No script for "preversion" in "checkbox", continuing
-29 silly run-lifecycle No script for "version" in "checkbox", continuing
-30 silly run-lifecycle No script for "version" in "react-native-chameleon", continuing
-31 silly gitAdd [ '/Users/jason/Desktop/storybook/react-native-chameleon/components/checkbox/package.json',
-31 silly gitAdd   '/Users/jason/Desktop/storybook/react-native-chameleon/lerna.json' ]
-32 silly gitCommit v0.0.1
-33 verbose git [ 'commit', '-m', 'v0.0.1' ]
-34 silly gitTag v0.0.1
-35 verbose git [ 'tag', 'v0.0.1', '-m', 'v0.0.1' ]
-36 silly run-lifecycle No script for "postversion" in "checkbox", continuing
-37 silly run-lifecycle No script for "postversion" in "react-native-chameleon", continuing
-38 info git Pushing tags...
-39 silly gitPush origin master
-40 silly batched [ PackageGraphNode {
-40 silly batched     name: 'checkbox',
-40 silly batched     externalDependencies: Map {},
-40 silly batched     localDependencies: Map {},
-40 silly batched     localDependents: Map {} } ]
-41 info publish Publishing packages to npm...
-42 silly verifyNpmPackageAccess
-43 http fetch GET 200 https://registry.npmjs.org/-/org/xzchameleon/package?format=cli 725ms
-44 warn The logged-in user does not have any previously-published packages, skipping permission checks...
-45 warn ENOLICENSE Packages checkbox are missing a license
-46 silly getCurrentSHA
-47 verbose getCurrentSHA 9e8a0e34722cc6c6dd1c65d12623901ff698e56b
-48 silly run-lifecycle No script for "prepare" in "react-native-chameleon", continuing
-49 silly run-lifecycle No script for "prepublishOnly" in "react-native-chameleon", continuing
-50 silly run-lifecycle No script for "prepack" in "react-native-chameleon", continuing
-51 verbose pack-directory components/checkbox
-52 silly run-lifecycle No script for "prepublish" in "checkbox", continuing
-53 silly run-lifecycle No script for "prepare" in "checkbox", continuing
-54 silly run-lifecycle No script for "prepublishOnly" in "checkbox", continuing
-55 silly run-lifecycle No script for "prepack" in "checkbox", continuing
-56 silly run-lifecycle No script for "postpack" in "checkbox", continuing
-57 silly run-lifecycle No script for "postpack" in "react-native-chameleon", continuing
-58 verbose publish checkbox
-59 http fetch PUT 403 https://registry.npmjs.org/checkbox 505ms
-60 error Error: 403 Forbidden - PUT https://registry.npmjs.org/checkbox - You do not have permission to publish "checkbox". Are you logged in as the correct user?
-60 error     at res.buffer.catch.then.body (/Users/jason/Desktop/storybook/react-native-chameleon/node_modules/npm-registry-fetch/check-response.js:104:15)
+3 error Error: canceled
+3 error     at Interface.<anonymous> (/Users/jason/Desktop/storybook/react-native-chameleon/node_modules/read/lib/read.js:66:13)
+3 error     at Interface.emit (events.js:182:13)
+3 error     at Interface._ttyWrite (readline.js:783:16)
+3 error     at ReadStream.onkeypress (readline.js:168:10)
+3 error     at ReadStream.emit (events.js:182:13)
+3 error     at emitKeys (internal/readline.js:424:14)
+3 error     at emitKeys.next (<anonymous>)
+3 error     at ReadStream.onData (readline.js:1022:36)
+3 error     at ReadStream.emit (events.js:182:13)
+3 error     at addChunk (_stream_readable.js:283:12)
+3 error     at readableAddChunk (_stream_readable.js:264:11)
+3 error     at ReadStream.Readable.push (_stream_readable.js:219:10)
