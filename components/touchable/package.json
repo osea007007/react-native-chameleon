@@ -1,5 +1,5 @@
 {
-  "name": "@xzchameleon/touchable",
+  "name": "@react-native-chameleon/touchable",
   "version": "0.0.7",
   "description": "> TODO: description",
   "author": "jason.xing@thizgroup.com <jason.xing@thizgroup.com>",
@@ -25,5 +25,6 @@
   },
   "bugs": {
     "url": "https://github.com/fjson/react-native-chameleon/issues"
-  }
+  },
+  "gitHead": "cd6379ca21637124dee6631e88428bd7b6425a2b"
 }
