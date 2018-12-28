@@ -6,9 +6,15 @@ import TabBarIcon from './component/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+import SwitchDemo from "../screens/switchDemo/switchDemo";
+import TouchableDemo from "../screens/touchableDemo/touchableDemo";
+import LineDemo from "../screens/lineDemo/lineDemo";
 
 const HomeStack = createStackNavigator({
-  Home: HomeScreen,
+    Home: HomeScreen,
+    SwitchDemo:SwitchDemo,
+    TouchableDemo:TouchableDemo,
+    LineDemo:LineDemo
 });
 
 HomeStack.navigationOptions = {

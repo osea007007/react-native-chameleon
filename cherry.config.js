@@ -4,7 +4,7 @@ module.exports = {
     ext: '.md', // md 后缀名
     hotreload:true,
     category: [
-
+        'line'
     ],
     server: {
         port: 8000,  // server port

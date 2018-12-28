@@ -1,19 +1,24 @@
 import React from 'react';
 import {
-    Text, View
+    ScrollView,
+    View
 } from 'react-native';
-import {Switch} from "../components/switch";
+
+import {ListItem} from "./component/ListItem";
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
-    title:'组件'
+    title:'组件列表'
   };
 
   render() {
+      let { navigation} = this.props;
       return (
-          <View>
-              <Switch/>
-          </View>
+          <ScrollView>
+              <ListItem title={'touchable'} onPress={() => {navigation.navigate('TouchableDemo')}}/>
+              <ListItem title={'switch'} onPress={() => {navigation.navigate('SwitchDemo')}}/>
+              <ListItem title={'line'} onPress={() => {navigation.navigate('LineDemo')}}/>
+          </ScrollView>
       );
   }
 }

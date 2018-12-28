@@ -30,7 +30,7 @@ export class Switch extends Component {
 
     handleClick=(val)=>{
         this.setState({value:val}, () => {
-            if(this.props.value !== undefined &&  IS_IOS) {
+            if(this.props.value !== undefined &&  IS_IOS && this.props.useNative !== true) {
                 this.switch.animateSwitch(this.state.value);
             }
             this.props.onChange && this.props.onChange(val)
@@ -64,8 +64,8 @@ export class Switch extends Component {
                         <View>
                             <AndroidSwitch
                                 disabled={disabled}
-                                trackColor={{false: '#d7d7d7', true: '#F1AD88'}}
-                                thumbColor={useNative && IS_IOS ? '' : this.state.value ?  '#ee9922' : '#f1f1f1'}
+                                trackColor={trackColor}
+                                thumbColor={useNative && IS_IOS ? '' : (this.state.value ?  thumbColor['true'] : thumbColor['false'])}
                                 style={{ alignSelf:'flex-start' }}
                                 value={this.state.value}
                                 onValueChange={(val) => this.handleClick(val)}
