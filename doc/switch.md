@@ -1,5 +1,5 @@
 ---
-page: Switch
+page: switch
 ---
 
 
