@@ -7,7 +7,7 @@ const IS_IOS = Platform.OS === 'ios';
 
 /**
  * ---
- * page: Switch
+ * page: switch
  * ---
  *
  *

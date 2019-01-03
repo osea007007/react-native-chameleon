@@ -8,8 +8,8 @@ export function ListItem({ title, onPress }) {
     return (
         <Fragment>
             <Touchable onPress={onPress}>
-                <View style={{ height:44, backgroundColor:'white', justifyContent:'center', paddingHorizontal:15 }}>
-                    <Text style={{ fontSize:16 }}>{ title }</Text>
+                <View style={{ minHeight:44, backgroundColor:'white', justifyContent:'center', paddingHorizontal:15 }}>
+                    <Text style={{ fontSize:16,lineHeight:24 }}>{ title }</Text>
                 </View>
             </Touchable>
             <RowLine/>

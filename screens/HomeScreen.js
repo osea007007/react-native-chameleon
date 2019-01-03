@@ -1,7 +1,6 @@
 import React from 'react';
 import {
-    ScrollView,
-    View
+    ScrollView
 } from 'react-native';
 
 import {ListItem} from "./component/ListItem";
@@ -18,6 +17,7 @@ export default class HomeScreen extends React.Component {
               <ListItem title={'touchable'} onPress={() => {navigation.navigate('TouchableDemo')}}/>
               <ListItem title={'switch'} onPress={() => {navigation.navigate('SwitchDemo')}}/>
               <ListItem title={'line'} onPress={() => {navigation.navigate('LineDemo')}}/>
+              <ListItem title={'modal'} onPress={() => {navigation.navigate('ModalDemo')}}/>
           </ScrollView>
       );
   }
