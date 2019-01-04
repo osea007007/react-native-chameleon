@@ -7,35 +7,36 @@ import {Touchable, TOUCHABLE_TYPES} from "../../touchable";
 export class CheckBox extends Component {
     constructor(props){
         super(props);
-        let {checked} = this.props;
         this.state={
-            value:checked,
-        }
+            checked:this.props.checked,
+            preChecked:this.props.checked,
+        };
     }
 
-    static getDerivedStateFromProps({ checked }) {
-        if(checked !== undefined) {
-            return { checked };
+    static getDerivedStateFromProps({ checked }, preState) {
+        if(checked !== preState.preChecked ) {
+            return {
+                checked,
+                preChecked:checked,
+            }
         }
         return null;
     }
 
-    handleClick = () => {
-        this.setState({checked:!this.state.checked}, () => {
+    handleClick = (state) => {
+        this.setState({checked:!state}, () => {
             let { onValueChanged, text } = this.props;
-            if(onValueChanged) {
-                onValueChanged(this.state.checked, text);
-            }
+            onValueChanged && onValueChanged(this.state.checked, text);
         });
     };
 
     render() {
-        let {checkedImg, unCheckedImg, containerMargin, text, textStyle} = this.props;
+        let {checkedImg, unCheckedImg, imageStyle, containerStyle, text, textStyle} = this.props;
         return (
-            <Touchable touchComponent={TOUCHABLE_TYPES.FEEDBACK} onPress={this.handleClick}>
-                <View style={[CheckBoxStyle.container, ...containerMargin]}>
-                    <Image source={this.state.checked ? checkedImg : unCheckedImg}/>
-                    <Text style={[CheckBoxStyle.text, ...textStyle]}>{text}</Text>
+            <Touchable touchComponent={TOUCHABLE_TYPES.WITHOUT_FEEDBACK} onPress={() => this.handleClick(this.state.checked)}>
+                <View style={[CheckBoxStyle.container, containerStyle]}>
+                    <Image source={this.state.checked ? checkedImg : unCheckedImg} style={imageStyle}/>
+                    <Text style={[CheckBoxStyle.text, textStyle]}>{text}</Text>
                 </View>
             </Touchable>
         );
@@ -45,6 +46,7 @@ export class CheckBox extends Component {
 const CheckBoxStyle = StyleSheet.create({
     container: {
         alignItems: 'center',
+        flexDirection:'row',
     },
     text:{
         marginLeft:12,
@@ -67,9 +69,9 @@ CheckBox.propTypes = {
      */
     unCheckedImg:Proptypes.any,
     /**
-     * 指定组件距离外部容器的 margin
+     * 指定组件容器的style
      */
-    containerMargin:Proptypes.any,
+    containerStyle:Proptypes.any,
     /**
      * 指定文本
      */
