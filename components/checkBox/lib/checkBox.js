@@ -55,6 +55,8 @@ const CheckBoxStyle = StyleSheet.create({
     },
 });
 
+
+
 CheckBox.propTypes = {
     /**
      * 指定选中状态
@@ -68,6 +70,10 @@ CheckBox.propTypes = {
      * 指定未选中状态的图片
      */
     unCheckedImg:Proptypes.any,
+    /**
+     * 指定左侧图片的style
+     */
+    imageStyle:Proptypes.any,
     /**
      * 指定组件容器的style
      */
