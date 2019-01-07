@@ -11,7 +11,7 @@ import TouchableDemo from "../screens/touchableDemo/touchableDemo";
 import LineDemo from "../screens/lineDemo/lineDemo";
 import ModalDemo from "../screens/modalDemo/modalDemo";
 import CheckBoxDemo from "../screens/checkBoxDemo/checkBoxDemo";
-import LeftCoverItemDemo from "../screens/leftCoverItemDemo/leftCoverItemDemo";
+import SearchBarDemo from "../screens/searchBarDemo/searchBarDemo";
 
 const HomeStack = createStackNavigator({
     Home: HomeScreen,
@@ -20,7 +20,7 @@ const HomeStack = createStackNavigator({
     LineDemo:LineDemo,
     ModalDemo:ModalDemo,
     CheckBoxDemo:CheckBoxDemo,
-    LeftCoverItemDemo:LeftCoverItemDemo,
+    SearchBarDemo:SearchBarDemo,
 });
 
 HomeStack.navigationOptions = {

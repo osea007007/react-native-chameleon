@@ -1,11 +1,11 @@
-# `leftCoverItem`
+# `searchBar`
 
 > TODO: description
 
 ## Usage
 
 ```
-const leftCoverItem = require('leftCoverItem');
+const searchBar = require('searchBar');
 
 // TODO: DEMONSTRATE API
 ```

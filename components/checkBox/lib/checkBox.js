@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {View, Text, StyleSheet, Image} from 'react-native';
 import Proptypes from 'prop-types';
-import {Touchable, TOUCHABLE_TYPES} from "../../touchable";
+import {Touchable, TOUCHABLE_TYPES} from "@xzchameleon/touchable";
 
 /**
  * ---
