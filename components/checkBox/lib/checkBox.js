@@ -3,7 +3,14 @@ import {View, Text, StyleSheet, Image} from 'react-native';
 import Proptypes from 'prop-types';
 import {Touchable, TOUCHABLE_TYPES} from "../../touchable";
 
-
+/**
+ * ---
+ * page: CheckBox
+ * ---
+ *
+ *
+ * 单选组件
+ */
 export class CheckBox extends Component {
     constructor(props){
         super(props);
