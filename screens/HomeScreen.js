@@ -7,6 +7,7 @@ import {
 import {ListItem} from "./component/ListItem";
 import Button from "../components/button";
 import {Touchable} from "../components/touchable";
+import Icon from "../components/icon";
 
 export default class HomeScreen extends React.Component {
     state = {};
@@ -25,6 +26,7 @@ export default class HomeScreen extends React.Component {
               <Button onPress={() => {Alert.alert('1')}}/>
               <Button textStyle={{ color:'red', fontSize:12 }} containerStyle={{ marginTop:20 }} onPress={() => {console.log(!!global.Expo)}}/>
               <Button textStyle={{ color:'red', fontSize:12 }} type={'circle'} onPress={() => {Alert.alert('1')}}/>
+              <Icon/>
           </ScrollView>
       );
   }
