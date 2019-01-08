@@ -13,7 +13,7 @@ import { getIconType } from '../getIconType';
  * * [API文档](https://github.com/oblador/react-native-vector-icons)
  * * [查找icon](https://oblador.github.io/react-native-vector-icons/)
  */
-class Icon extends Component {
+export class Icon extends Component {
     render() {
         let { type, size, name, color, ...props } = this.props;
         let IconComponent = getIconType(type);
@@ -49,6 +49,4 @@ Icon.propTypes = {
     type:PropTypes.string.isRequired,
     size:PropTypes.number
 };
-
-export default Icon;
 
