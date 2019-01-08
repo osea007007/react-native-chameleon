@@ -1,5 +1,5 @@
 {
-  "name": "searchbar",
+  "name": "@xzchameleon/searchbar",
   "version": "0.0.10",
   "description": "> TODO: description",
   "keywords": [
@@ -25,5 +25,8 @@
   },
   "bugs": {
     "url": "https://github.com/mike1023/react-native-chameleon/issues"
+  },
+  "dependencies": {
+    "@xzchameleon/touchable": "^0.0.10"
   }
 }

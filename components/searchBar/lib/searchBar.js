@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {View, Image, StyleSheet, TextInput} from 'react-native';
 import Proptypes from 'prop-types';
-import {Touchable, TOUCHABLE_TYPES} from "../../touchable";
+import {Touchable, TOUCHABLE_TYPES} from "@xzchameleon/touchable";
 
 
 /**
@@ -52,14 +52,14 @@ class SearchBar extends Component {
 
 
     render(){
-        let {containerStyle, searchIcon, searchIconStyle, clearIcon, clearIconStyle, placeholder, placeholderTextColor, autoFocus} = this.props;
+        let {containerStyle, searchIcon, searchIconStyle, textInputStyle, clearIcon, clearIconStyle, placeholder, placeholderTextColor, autoFocus} = this.props;
         return(
             <View style={[SearchBarStyle.container, containerStyle]}>
                 {
                     searchIcon && <Image source={searchIcon} style={[SearchBarStyle.searchIconStyle, searchIconStyle]}/>
                 }
                 <TextInput
-                    style={SearchBarStyle.searchInputStyle}
+                    style={textInputStyle}
                     androidunderlineColorAndroid={'transparent'}
                     placeholder={placeholder}
                     placeholderTextColor = {placeholderTextColor}
@@ -97,9 +97,21 @@ SearchBar.propTypes = {
      */
     searchIcon:Proptypes.any,
     /**
-     * 清除搜索内容的图标
+     * 设置搜索图标的样式
+     */
+    searchIconStyle:Proptypes.any,
+    /**
+     * 清除图标
      */
     clearIcon:Proptypes.any,
+    /**
+     * 设置清除图标的样式
+     */
+    clearIconStyle:Proptypes.any,
+    /**
+     * 设置搜索输入框的样式
+     */
+    textInputStyle:Proptypes.any,
     /**
      * 搜索框内默认内容
      */
@@ -129,9 +141,6 @@ const SearchBarStyle = StyleSheet.create({
         height:42,
         padding:4,
         backgroundColor:'#ffffff',
-    },
-    searchIconStyle:{
-
     },
     searchInputStyle:{
         marginLeft:4,

@@ -62,7 +62,10 @@ const CheckBoxStyle = StyleSheet.create({
     },
 });
 
-
+CheckBox.defaultProps = {
+    checkedImg:require('../assets/image/checked_circle.png'),
+    unCheckedImg:require('../assets/image/choose.png'),
+};
 
 CheckBox.propTypes = {
     /**

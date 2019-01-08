@@ -22,19 +22,19 @@ class SelectDemo extends Component {
                 </DemoList>
 
                 <DemoList title={`指定应用在每项标签上的样式, 仅 iOS`}>
-                    <Select style={{height:44}} enable={true} dataSource={['dog', 'cat', 'lion', 'tiger']} headerCenterText={'请选择'} headerLeftText={'取消'} headerRightText={'确定'}
+                    <Select style={{height:44}} dataSource={['dog', 'cat', 'lion', 'tiger']} headerCenterText={'请选择'} headerLeftText={'取消'} headerRightText={'确定'}
                             leftTextStyle={{color:'red'}} centerTextStyle={{fontWeight:'bold'}} rightTextStyle={{color:'#3357FF'}}
                             itemStyle={{color:'red', fontSize:15}}/>
                 </DemoList>
 
                 <DemoList title={`android: 指定标题`}>
-                    <Select style={{height:44}} enable={true} dataSource={['dog', 'cat', 'lion', 'tiger']} headerCenterText={'请选择'} headerLeftText={'取消'} headerRightText={'确定'}
+                    <Select style={{height:44}} dataSource={['dog', 'cat', 'lion', 'tiger']} headerCenterText={'请选择'} headerLeftText={'取消'} headerRightText={'确定'}
                             leftTextStyle={{color:'red'}} centerTextStyle={{fontWeight:'bold'}} rightTextStyle={{color:'#3357FF'}}
                             prompt={'选择动物类别'}/>
                 </DemoList>
 
                 <DemoList title={`android: 以下拉形式呈现`}>
-                    <Select style={{height:44}} enable={true} dataSource={['dog', 'cat', 'lion', 'tiger']} headerCenterText={'请选择'} headerLeftText={'取消'} headerRightText={'确定'}
+                    <Select style={{height:44}} dataSource={['dog', 'cat', 'lion', 'tiger']} headerCenterText={'请选择'} headerLeftText={'取消'} headerRightText={'确定'}
                             leftTextStyle={{color:'red'}} centerTextStyle={{fontWeight:'bold'}} rightTextStyle={{color:'#3357FF'}}
                             prompt={'选择动物类别'} mode={'dropdown'}/>
                 </DemoList>
