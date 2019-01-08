@@ -2,10 +2,36 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {Touchable, TOUCHABLE_TYPES} from "../../touchable";
 import {Text, View, StyleSheet, Platform} from "react-native";
+import {Icon} from '@xzchameleon/icon';
 
+/**
+ * ---
+ * page: button
+ *
+ *
+ * * 支持通常使用的button
+ * * 支持原型的button 使用场景 header右侧的分享按钮 或 文字
+ *
+ * ---
+ */
 class Button extends Component {
     render() {
-        let {containerStyle, textStyle, onPress, touchableProps, type, size, title, buttonStyle} = this.props;
+        let {
+            containerStyle,
+            textStyle,
+            onPress,
+            touchableProps,
+            type,
+            size,
+            title,
+            buttonStyle,
+            cBackgroundColor,
+            cContainerSize,
+            cIconProps,
+            cText,
+            cTextStyle,
+            cComponent
+        } = this.props;
         return (
             type !== 'circle' ?
                 <View style={[containerStyle]}>
@@ -19,7 +45,13 @@ class Button extends Component {
                     </Touchable>
                 </View>
                 :
-                <View><Text>11</Text></View>
+                <View style={[ containerStyle,{ backgroundColor:cBackgroundColor, width:cContainerSize, height:cContainerSize, borderRadius:cContainerSize/2 }]}>
+                    <Touchable touchComponent={TOUCHABLE_TYPES.FEEDBACK} borderless={true}>
+                        <View style={{ height:cContainerSize, width:cContainerSize, justifyContent:'center', alignItems:'center' }}>
+                            {cComponent || (cText ? <Text style={[{ fontSize:16, color:'#666' },cTextStyle]}>{ cText }</Text> : <Icon size={20} color={'white'} {...cIconProps}/>)}
+                        </View>
+                    </Touchable>
+                </View>
         );
     }
 }
@@ -49,7 +81,9 @@ const ButtonStyle = StyleSheet.create({
 Button.defaultProps = {
     type: 'default',
     size: 'middle',
-    title: '按钮'
+    title: '按钮',
+    cContainerSize:50,
+    cBackgroundColor:'gray'
 };
 
 Button.propTypes = {
@@ -84,7 +118,31 @@ Button.propTypes = {
     /**
      * 按钮上显示的文字
      */
-    title:PropTypes.string.isRequired
+    title:PropTypes.string.isRequired,
+    /**
+     * 【type=circle】，设置backgroundColor
+     */
+    cBackgroundColor:PropTypes.string,
+    /**
+     * 【type=circle】，设置容器的大小
+     */
+    cContainerSize:PropTypes.number,
+    /**
+     * 【type=circle】，设置icon的props参考 @xzchameleon/icon API
+     */
+    cIconProps:PropTypes.any,
+    /**
+     * 【type=circle】，设置文字
+     */
+    cText:PropTypes.string,
+    /**
+     * 【type=circle】，设置文字的样式。
+     */
+    cTextStyle:PropTypes.any,
+    /**
+     * 【type=circle】，内容区域可以使用组件填充
+     */
+    cComponent:PropTypes.any
 };
 
 export default Button;
