@@ -18,13 +18,25 @@ class SearchBar extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            textValue:'',
+            searchContent:this.props.searchContent,
+            preSearchContent:this.props.searchContent,
         }
     }
+
+    static getDerivedStateFromProps({searchContent}, preState) {
+        if (searchContent !== preState.preSearchContent) {
+            return {
+                searchContent,
+                preChecked: searchContent,
+            }
+        }
+        return null;
+    }
+
     onTextChanged = (text) => {
         let {onValueChanged} = this.props;
         this.setState({
-           textValue:text,
+            searchContent:text,
         }, () => {
             onValueChanged && onValueChanged(text);
         });
@@ -32,7 +44,7 @@ class SearchBar extends Component {
     clearIconClick = () => {
         let { clearHandler } = this.props;
         this.setState({
-            textValue:''
+            searchContent:''
         }, () => {
             clearHandler && clearHandler();
         });
@@ -52,7 +64,7 @@ class SearchBar extends Component {
                     placeholder={placeholder}
                     placeholderTextColor = {placeholderTextColor}
                     autoFocus = {autoFocus}
-                    value={this.state.textValue}
+                    value={this.state.searchContent}
                     onChangeText={(text) => this.onTextChanged(text)}
                 />
                 {
@@ -72,6 +84,10 @@ SearchBar.defaultProps = {
 };
 
 SearchBar.propTypes = {
+    /**
+     * 搜索框的文本内容
+     */
+    searchContent:Proptypes.string,
     /**
      * searchBar 容器的样式
      */
@@ -100,7 +116,10 @@ SearchBar.propTypes = {
      * 搜索内容
      */
     onValueChanged:Proptypes.any,
-
+    /**
+     * 点击清除回调
+     */
+    clearHandler:Proptypes.any,
 };
 
 const SearchBarStyle = StyleSheet.create({
@@ -109,7 +128,7 @@ const SearchBarStyle = StyleSheet.create({
         alignItems:'center',
         height:42,
         padding:4,
-        backgroundColor:'red',
+        backgroundColor:'#ffffff',
     },
     searchIconStyle:{
 
