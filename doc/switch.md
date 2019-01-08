@@ -11,7 +11,7 @@ prop | type | default | required | description
 ---- | :----: | :-------: | :--------: | -----------
 **disabled** | `Boolean` | `false` | false | 是否禁用switch按钮
 **onChange** | `Function` |  | false | 在switch 按钮状态值发生改变时调用
-**thumbColor** | `Shape` | `{     false:'#f1f1f1',     true:'#ee9922' }` | false | switch 按钮在打开和关闭时圆圈的颜色
+**thumbColor** | `Shape` | `{     false:'#f1f1f1',     true:'#ee9922' }` | false | 【android】switch 按钮在打开和关闭时圆圈的颜色
 **thumbColor.false** | `String` |  | false | 关闭时圆圈的颜色
 **thumbColor.true** | `String` |  | false | 打开时圆圈的颜色
 **trackColor** | `Shape` | `{     false:'#d7d7d7',     true:'#F1AD88', }` | false | switch 按钮在打开和关闭时的背景色

@@ -1,6 +1,7 @@
 import React from 'react';
 import {
-    ScrollView
+    ScrollView,
+    Alert, Picker
 } from 'react-native';
 
 import {ListItem} from "./component/ListItem";
