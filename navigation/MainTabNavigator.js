@@ -10,7 +10,7 @@ import SwitchDemo from "../screens/switchDemo/switchDemo";
 import TouchableDemo from "../screens/touchableDemo/touchableDemo";
 import LineDemo from "../screens/lineDemo/lineDemo";
 import ModalDemo from "../screens/modalDemo/modalDemo";
-import SectionTitleDemo from "../screens/sectionTitleDemo/sectionTitleDemo";
+import ListDemo from "../screens/listDemo/listDemo";
 
 const HomeStack = createStackNavigator({
     Home: HomeScreen,
@@ -18,7 +18,7 @@ const HomeStack = createStackNavigator({
     TouchableDemo:TouchableDemo,
     LineDemo:LineDemo,
     ModalDemo:ModalDemo,
-    SectionTitleDemo:SectionTitleDemo,
+    ListDemo:ListDemo,
 });
 
 HomeStack.navigationOptions = {
