@@ -4,8 +4,6 @@ import {Touchable, TOUCHABLE_TYPES} from "../../touchable";
 import {Text, View, StyleSheet, Platform} from "react-native";
 
 class Button extends Component {
-    state = {};
-
     render() {
         let {containerStyle, textStyle, onPress, touchableProps, type, size, title, buttonStyle} = this.props;
         return (
