@@ -59,7 +59,7 @@ class SearchBar extends Component {
                     searchIcon && <Image source={searchIcon} style={[SearchBarStyle.searchIconStyle, searchIconStyle]}/>
                 }
                 <TextInput
-                    style={textInputStyle}
+                    style={[SearchBarStyle.searchInputStyle, textInputStyle]}
                     androidunderlineColorAndroid={'transparent'}
                     placeholder={placeholder}
                     placeholderTextColor = {placeholderTextColor}
@@ -70,7 +70,7 @@ class SearchBar extends Component {
                 {
                     clearIcon &&
                     <Touchable touchComponent={TOUCHABLE_TYPES.WITHOUT_FEEDBACK} onPress={this.clearIconClick}>
-                        <Image source={clearIcon} style={[SearchBarStyle.clearIconStyle, clearIconStyle]}/>
+                        <Image source={clearIcon} style={clearIconStyle}/>
                     </Touchable>
                 }
             </View>
@@ -125,7 +125,7 @@ SearchBar.propTypes = {
      */
     autoFocus:Proptypes.bool,
     /**
-     * 搜索内容
+     * 搜索文本变化时的回调
      */
     onValueChanged:Proptypes.any,
     /**
@@ -146,9 +146,6 @@ const SearchBarStyle = StyleSheet.create({
         marginLeft:4,
         marginRight:4,
         flex:1,
-    },
-    clearIconStyle:{
-        marginLeft:4,
     },
 });
 

@@ -81,7 +81,7 @@ CheckBox.propTypes = {
      */
     unCheckedImg:Proptypes.any,
     /**
-     * 指定左侧图片的style
+     * 指定状态图片的style
      */
     imageStyle:Proptypes.any,
     /**
