@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {ScrollView, Text, View} from "react-native";
+import {Image, ScrollView, Text, View} from "react-native";
 import {DemoList} from "../component/DemoList";
 import {List} from "../../components/list";
 
@@ -11,23 +11,23 @@ class ListDemo extends Component {
                     <List leftText={'左边文字'}/>
                 </DemoList>
                 <DemoList title={'状态2'}>
-                    <List leftIcon={'book'} leftText={'左边文字'}/>
+                    <List leftIcon={{}} leftText={'左边文字'}/>
                 </DemoList>
                 <DemoList title={'状态3'}>
-                    <List leftIcon={'book'} leftText={'左边文字'} rightIcon={'right'} onPress={() => {
+                    <List leftIcon={<Image source={require('../../assets/images/Line_icon.png')}/>} leftText={'左边文字'} rightIcon={{}} onPress={() => {
                         alert(1)
                     }}/>
                 </DemoList>
                 <DemoList title={'状态4'}>
-                    <List leftIcon={'book'} leftText={'左边文字'} rightIcon={'right'} rightText={'右边文字'} onPress={() => {
+                    <List leftIcon={{}} leftText={'左边文字'} rightIcon={{}} rightText={'右边文字'} onPress={() => {
                         alert(1)
                     }}/>
                 </DemoList>
                 <DemoList title={'使用自定义组件'}>
-                    <List leftComponent={() => <LeftComponent/>} rightComponent={() => <RightComponent/>}/>
+                    <List leftComponent={<LeftComponent/>} rightComponent={<RightComponent/>}/>
                 </DemoList>
                 <DemoList title={'禁用点击事件'}>
-                    <List leftText={'左边文字'} rightIcon={'right'} disable={true} onPress={() => {
+                    <List leftText={'左边文字'} rightIcon={{}} disable={true} onPress={() => {
                         alert(1)
                     }}/>
                 </DemoList>

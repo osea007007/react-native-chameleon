@@ -2,7 +2,7 @@ import React from 'react';
 import {Text, View, StyleSheet} from "react-native";
 import PropTypes from 'prop-types';
 import {Touchable, TOUCHABLE_TYPES} from "@xzchameleon/touchable";
-import {AntDesign as Icon} from '@expo/vector-icons';
+import {Icon} from '@xzchameleon/icon';
 import {RowLine} from "@xzchameleon/rowline";
 
 
@@ -16,7 +16,7 @@ import {RowLine} from "@xzchameleon/rowline";
  * 底部有一条灰色的线
  * paddingHorizontal:15
  */
-export function List({leftIcon, leftIconStyle, leftText, leftTextStyle, rightIcon, rightIconStyle, rightText, rightTextStyle, containerStyle, onPress, disable, leftComponent, rightComponent, showLine, lineProps}) {
+export function List({leftIcon, leftText, leftTextStyle, rightIcon, rightText, rightTextStyle, containerStyle, onPress, disable, leftComponent, rightComponent, showLine, lineProps}) {
     return (
         <Touchable touchComponent={TOUCHABLE_TYPES.WITHOUT_FEEDBACK} onPress={() => {
             (onPress && !disable) && onPress()
@@ -24,22 +24,22 @@ export function List({leftIcon, leftIconStyle, leftText, leftTextStyle, rightIco
             <View style={[ListStyle.container, containerStyle]}>
                 <View style={ListStyle.content}>
                     {
-                        leftComponent ? leftComponent() : <View style={ListStyle.leftView}>
+                        leftComponent || <View style={ListStyle.leftView}>
                             {
-                                leftIcon && (typeof leftIcon === 'string' ?
-                                    <Icon name={leftIcon} style={[ListStyle.leftIcon, leftIconStyle]}/> :
-                                    <LeftIcon style={[ListStyle.leftIcon, leftIconStyle]}/>)
+                                leftIcon && (!React.isValidElement(leftIcon) ?
+                                    <Icon style={{marginRight:8}} {...leftIcon}/> :
+                                    leftIcon)
                             }
                             <Text style={[ListStyle.leftText, leftTextStyle]}>{leftText}</Text>
                         </View>
                     }
                     {
-                        rightComponent ? rightComponent() : <View style={ListStyle.leftView}>
+                        rightComponent || <View style={ListStyle.leftView}>
                             <Text style={[ListStyle.rightText, rightTextStyle]}>{rightText}</Text>
                             {
-                                rightIcon && (typeof rightIcon === 'string' ?
-                                    <Icon name={rightIcon} style={[ListStyle.rightIcon, rightIconStyle]}/> :
-                                    <RightIcon style={[ListStyle.rightIcon, rightIconStyle]}/>)
+                                rightIcon && (!React.isValidElement(rightIcon) ?
+                                    <Icon name={'chevron-right'} size={16} style={{marginLeft:8}} {...rightIcon}/> :
+                                    rightIcon)
                             }
                         </View>
                     }
@@ -69,10 +69,6 @@ const ListStyle = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
     },
-    leftIcon: {
-        marginRight: 8,
-        fontSize: 16
-    },
     leftText: {
         fontSize: 16,
         color: '#262626'
@@ -80,11 +76,6 @@ const ListStyle = StyleSheet.create({
     rightView: {
         flexDirection: 'row',
         alignItems: 'center',
-    },
-    rightIcon: {
-        marginLeft: 8,
-        fontSize: 16,
-        color: '#999999'
     },
     rightText: {
         fontSize: 16,
@@ -98,13 +89,9 @@ List.defaultProps = {
 
 List.propTypes = {
     /**
-     * 左边图标(可使用图片或icon)
+     * 左边图标(使用icon参数 或 传入组件)
      */
-    LeftIcon: PropTypes.any,
-    /**
-     * 左边图标样式
-     */
-    leftIconStyle: PropTypes.object,
+    leftIcon: PropTypes.any,
     /**
      * 左边文字
      */
@@ -114,13 +101,9 @@ List.propTypes = {
      */
     leftTextStyle: PropTypes.object,
     /**
-     * 右边图标
+     * 右边图标 (使用icon参数 或 传入组件)
      */
-    RightIcon: PropTypes.any,
-    /**
-     * 右边图标样式
-     */
-    rightIconStyle: PropTypes.object,
+    rightIcon: PropTypes.any,
     /**
      * 右边文字
      */
@@ -144,11 +127,11 @@ List.propTypes = {
     /**
      * 左边自定义组件
      */
-    LeftComponent: PropTypes.func,
+    leftComponent: PropTypes.any,
     /**
      * 右边自定义组件
      */
-    RightComponent: PropTypes.func,
+    rightComponent: PropTypes.any,
     /**
      * 底边线
      */

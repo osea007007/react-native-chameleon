@@ -27,6 +27,7 @@
     "url": "https://github.com/osea007007/react-native-chameleon/issues"
   },
   "dependencies": {
+    "@xzchameleon/icon": "^0.0.10",
     "@xzchameleon/rowline": "^0.0.10",
     "@xzchameleon/touchable": "^0.0.10"
   }
