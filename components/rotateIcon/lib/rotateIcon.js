@@ -100,7 +100,6 @@ const RotateIconStyle = StyleSheet.create({
     container: {
         width: 42,
         height: 42,
-        backgroundColor: '#fff',
     },
     content: {
         flex: 1,
