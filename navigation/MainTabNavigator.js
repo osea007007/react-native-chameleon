@@ -10,6 +10,7 @@ import SwitchDemo from "../screens/switchDemo/switchDemo";
 import TouchableDemo from "../screens/touchableDemo/touchableDemo";
 import LineDemo from "../screens/lineDemo/lineDemo";
 import ModalDemo from "../screens/modalDemo/modalDemo";
+import ListDemo from "../screens/listDemo/listDemo";
 import CheckBoxDemo from "../screens/checkBoxDemo/checkBoxDemo";
 import SearchBarDemo from "../screens/searchBarDemo/searchBarDemo";
 import SelectDemo from "../screens/selectDemo/selectDemo";
@@ -22,6 +23,7 @@ const HomeStack = createStackNavigator({
     TouchableDemo:TouchableDemo,
     LineDemo:LineDemo,
     ModalDemo:ModalDemo,
+    ListDemo:ListDemo,
     CheckBoxDemo:CheckBoxDemo,
     SearchBarDemo:SearchBarDemo,
     SelectDemo:SelectDemo,
