@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 import {View, Text, StyleSheet, findNodeHandle, Animated, UIManager} from 'react-native';
 import Proptypes from 'prop-types';
-import {Touchable} from "../../touchable";
 import RotateIcon from "../../rotateIcon";
 
 /**
@@ -10,7 +9,7 @@ import RotateIcon from "../../rotateIcon";
  * ---
  *
  *
- * 内容展现收缩组件
+ * 内容展开收缩组件
  */
 
 class Expand extends Component {
@@ -18,72 +17,56 @@ class Expand extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            height: new Animated.Value(0),
+            height: new Animated.Value(),
             expand: false,
+            contentHeight:0,
         }
     }
 
-    calculateHeight(ref) {
-        const handle = findNodeHandle(ref);
-        return new Promise((resolve) => {
-            UIManager.measure(handle, (height) => {
-                resolve(height);
-            });
-        });
-    }
-
-
-    expandChanged = () => {
-        let { onExpandChanged } = this.props;
-        onExpandChanged && onExpandChanged(this.state.expand);
-    };
-
-    show = (ref) => {
-        let {time} = this.props;
-        this.calculateHeight(ref).then((height) => {
-            console.log(height);
-            Animated.timing(this.state.height, {
-                toValue: 100,
-                duration: time,
-            }).start(() => {
-                this.setState({
-                    expand:!this.state.expand,
-                })
-            });
-        });
+    show = () => {
+        this.setState({expand: true});
     };
 
     hide = () => {
+        this.setState({expand: false});
+    };
+    isShow = () => {
+        return this.state.expand;
+    };
+
+    componentDidUpdate() {
         let {time} = this.props;
-        Animated.timing(this.state.height, {
-            toValue: 0,
-            duration: time,
-        }).start(() => {
-            this.setState({
-                expand:!this.state.expand,
-            })
+        Animated.timing(
+            this.state.height,
+            {
+                toValue:this.state.expand ? this.state.contentHeight : 0,
+                duration:time,
+            }).start();
+    };
+
+    getHeight = (event) => {
+        if(this.state.contentHeight > 0) {
+            return;
+        }
+        this.setState({
+            contentHeight:event.nativeEvent.layout.height,
         });
+        this.state.height.setValue(this.state.expand ? this.state.contentHeight : 0);
     };
 
     render() {
-        let {headerContainerStyle, headerLeftText, headerLeftTextStyle, showHeader, headerTitle, headerTitleStyle, children, contentStyle} = this.props;
+        let {containerStyle, headerContainerStyle, headerLeftText, headerLeftTextStyle, showHeader, headerTitle, headerTitleStyle, children, contentStyle} = this.props;
         return (
-            <View>
-                <View>
-                    <Touchable>
-                        <View style={[ExpandStyle.header, headerContainerStyle]}>
-                            <Text style={[ExpandStyle.left, headerLeftTextStyle]}>{headerLeftText}</Text>
-                            {
-                                showHeader &&
-                                <Text style={[ExpandStyle.headerTitle, headerTitleStyle]}>{headerTitle}</Text>
-                            }
-                            <RotateIcon onValueChanged={this.expandChanged}/>
-                        </View>
-                    </Touchable>
-                </View>
-                <Animated.View style={[contentStyle, {
-                    height: this.state.height
-                }]}>
+            <View style={containerStyle}>
+                {
+                    showHeader &&
+                    <View style={[ExpandStyle.header, headerContainerStyle]}>
+                        <Text style={[ExpandStyle.left, headerLeftTextStyle]}>{headerLeftText}</Text>
+                        <Text style={[ExpandStyle.headerTitle, headerTitleStyle]}>{headerTitle}</Text>
+                        <RotateIcon open={this.state.expand}/>
+                    </View>
+                }
+                <Animated.View style={[contentStyle, {height: this.state.height}]} onLayout={this.getHeight}>
                     {children}
                 </Animated.View>
             </View>
@@ -92,7 +75,7 @@ class Expand extends Component {
 }
 
 Expand.defaultProps = {
-    showHeader: false,
+    showHeader: true,
     time: 300,
 };
 
@@ -101,6 +84,10 @@ Expand.propTypes = {
      * 动画时间
      */
     time: Proptypes.number,
+    /**
+     * 设置整个容器的样式
+     */
+    containerStyle: Proptypes.any,
     /**
      * 设置 header 容器的样式
      */
@@ -132,7 +119,7 @@ Expand.propTypes = {
     /**
      * 点击右侧箭头触发的回调
      */
-    onExpandChanged:Proptypes.any,
+    onExpandChanged: Proptypes.any,
 };
 
 

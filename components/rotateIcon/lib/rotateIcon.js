@@ -19,23 +19,31 @@ class RotateIcon extends Component {
         super(props);
         this.state = {
             rotate:new Animated.Value(0),
-            flag:false,
+            open:this.props.open,
+            preOpen:this.props.open,
         }
     }
+
+    static getDerivedStateFromProps({ open }, preState) {
+        if(open !== preState.preOpen ) {
+            return {
+                open,
+                preOpen:open,
+            }
+        }
+        return null;
+    }
+    componentDidUpdate() {
+        this.rotateIcon();
+    }
+
     rotateIcon = () => {
         let {animated, time} = this.props;
         if (animated) {
             Animated.timing(this.state.rotate, {
-                toValue:this.state.flag ? 0 : 1,
+                toValue:this.state.open ? 1 : 0,
                 duration:time,
-            }).start(() => {
-                this.setState({
-                    flag:!this.state.flag,
-                }, () => {
-                    let {onValueChanged} = this.props;
-                    onValueChanged && onValueChanged();
-                });
-            });
+            }).start();
         }
     };
 
@@ -43,7 +51,6 @@ class RotateIcon extends Component {
         let {containerStyle, contentComponent, iconProps} = this.props;
         return (
             <View style={[RotateIconStyle.container, containerStyle]}>
-                <Touchable touchComponent={TOUCHABLE_TYPES.WITHOUT_FEEDBACK} onPress={this.rotateIcon}>
                     <Animated.View style={[RotateIconStyle.content, {
                         transform:[
                             {
@@ -58,7 +65,6 @@ class RotateIcon extends Component {
                         <Icon type={'Entypo'} name={'chevron-thin-down'} color={'black'} {...iconProps}/>
                         }
                     </Animated.View>
-                </Touchable>
             </View>
         );
     }
@@ -70,6 +76,10 @@ RotateIcon.defaultProps = {
 };
 
 RotateIcon.propTypes = {
+    /**
+     * 控制组件状态,false:箭头向下
+     */
+    open:Proptypes.bool,
     /**
      * 设置旋转的内容组件
      */
