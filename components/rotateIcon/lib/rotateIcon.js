@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import {View, StyleSheet, Animated} from 'react-native';
 import Proptypes from 'prop-types';
-import {Touchable, TOUCHABLE_TYPES} from "@xzchameleon/touchable";
-import {Icon} from "../../icon";
+import {Icon} from "@xzchameleon/icon";
 
 /**
  * ---
@@ -39,12 +38,10 @@ class RotateIcon extends Component {
 
     rotateIcon = () => {
         let {animated, time} = this.props;
-        if (animated) {
-            Animated.timing(this.state.rotate, {
-                toValue:this.state.open ? 1 : 0,
-                duration:time,
-            }).start();
-        }
+        Animated.timing(this.state.rotate, {
+            toValue:this.state.open ? 1 : 0,
+            duration:animated ? time : 0,
+        }).start();
     };
 
     render() {
@@ -100,10 +97,6 @@ RotateIcon.propTypes = {
      * 设置是否有动画
      */
     animated: Proptypes.bool,
-    /**
-     * 动画结束后回调
-     */
-    onValueChanged:Proptypes.any
 };
 
 const RotateIconStyle = StyleSheet.create({

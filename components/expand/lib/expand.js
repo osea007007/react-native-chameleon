@@ -1,7 +1,8 @@
 import React, {Component} from "react";
-import {View, Text, StyleSheet, findNodeHandle, Animated, UIManager} from 'react-native';
+import {View, Text, StyleSheet, Animated} from 'react-native';
 import Proptypes from 'prop-types';
-import RotateIcon from "../../rotateIcon";
+import RotateIcon from "@xzchameleon/rotateicon";
+import {Touchable, TOUCHABLE_TYPES} from "@xzchameleon/touchable";
 
 /**
  * ---
@@ -19,7 +20,7 @@ class Expand extends Component {
         this.state = {
             height: new Animated.Value(),
             expand: false,
-            contentHeight:0,
+            contentHeight: 0,
         }
     }
 
@@ -39,19 +40,26 @@ class Expand extends Component {
         Animated.timing(
             this.state.height,
             {
-                toValue:this.state.expand ? this.state.contentHeight : 0,
-                duration:time,
+                toValue: this.state.expand ? this.state.contentHeight : 0,
+                duration: time,
             }).start();
     };
 
     getHeight = (event) => {
-        if(this.state.contentHeight > 0) {
+        if (this.state.contentHeight > 0) {
             return;
         }
         this.setState({
-            contentHeight:event.nativeEvent.layout.height,
+            contentHeight: event.nativeEvent.layout.height,
         });
         this.state.height.setValue(this.state.expand ? this.state.contentHeight : 0);
+    };
+    onExpandChanged = () => {
+      if(this.state.expand){
+          this.hide();
+      } else {
+          this.show();
+      }
     };
 
     render() {
@@ -60,11 +68,13 @@ class Expand extends Component {
             <View style={containerStyle}>
                 {
                     showHeader &&
-                    <View style={[ExpandStyle.header, headerContainerStyle]}>
-                        <Text style={[ExpandStyle.left, headerLeftTextStyle]}>{headerLeftText}</Text>
-                        <Text style={[ExpandStyle.headerTitle, headerTitleStyle]}>{headerTitle}</Text>
-                        <RotateIcon open={this.state.expand}/>
-                    </View>
+                    <Touchable touchComponent={TOUCHABLE_TYPES.FEEDBACK} onPress={this.onExpandChanged}>
+                        <View style={[ExpandStyle.header, headerContainerStyle]}>
+                            <Text style={[ExpandStyle.left, headerLeftTextStyle]}>{headerLeftText}</Text>
+                            <Text style={[ExpandStyle.headerTitle, headerTitleStyle]}>{headerTitle}</Text>
+                            <RotateIcon open={this.state.expand}/>
+                        </View>
+                    </Touchable>
                 }
                 <Animated.View style={[contentStyle, {height: this.state.height}]} onLayout={this.getHeight}>
                     {children}
@@ -116,10 +126,6 @@ Expand.propTypes = {
      * 收起内容的样式
      */
     contentStyle: Proptypes.any,
-    /**
-     * 点击右侧箭头触发的回调
-     */
-    onExpandChanged: Proptypes.any,
 };
 
 
