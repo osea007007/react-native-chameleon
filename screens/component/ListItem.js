@@ -4,12 +4,12 @@ import {Text, View} from "react-native";
 import {RowLine} from "../../components/rowLine";
 
 
-export function ListItem({ title, onPress }) {
+export function ListItem({ title, onPress, backgroundColor = 'white', color = '#000' }) {
     return (
         <Fragment>
             <Touchable onPress={onPress}>
-                <View style={{ minHeight:44, backgroundColor:'white', justifyContent:'center', paddingHorizontal:15 }}>
-                    <Text style={{ fontSize:16,lineHeight:24 }}>{ title }</Text>
+                <View style={{ minHeight:44, backgroundColor, justifyContent:'center', paddingHorizontal:15 }}>
+                    <Text style={{ fontSize:16,lineHeight:24, color}}>{ title }</Text>
                 </View>
             </Touchable>
             <RowLine/>

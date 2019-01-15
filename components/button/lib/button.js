@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {Touchable, TOUCHABLE_TYPES} from "../../touchable";
+import {Touchable, TOUCHABLE_TYPES} from "@xzchameleon/touchable";
 import {Text, View, StyleSheet, Platform} from "react-native";
 import {Icon} from '@xzchameleon/icon';
 
@@ -91,6 +91,10 @@ Button.propTypes = {
      * 设置按钮容器样式
      */
     containerStyle: PropTypes.object,
+    /**
+     * 设置button样式
+     */
+    buttonStyle:PropTypes.object,
     /**
      * 设置按钮文字样式
      */

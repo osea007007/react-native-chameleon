@@ -13,6 +13,7 @@ import ModalDemo from "../screens/modalDemo/modalDemo";
 import CheckBoxDemo from "../screens/checkBoxDemo/checkBoxDemo";
 import SearchBarDemo from "../screens/searchBarDemo/searchBarDemo";
 import SelectDemo from "../screens/selectDemo/selectDemo";
+import ButtonDemo from "../screens/buttonDemo/buttonDemo";
 
 const HomeStack = createStackNavigator({
     Home: HomeScreen,
@@ -23,6 +24,7 @@ const HomeStack = createStackNavigator({
     CheckBoxDemo:CheckBoxDemo,
     SearchBarDemo:SearchBarDemo,
     SelectDemo:SelectDemo,
+    ButtonDemo:ButtonDemo,
 });
 
 HomeStack.navigationOptions = {
