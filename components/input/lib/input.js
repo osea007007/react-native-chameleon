@@ -28,8 +28,7 @@ class JFInput extends Component {
     }
 }
 
-Input.propTypes = {
-    ...TextInput.propTypes,
+JFInput.propTypes = {
     /**
      * 输入框文本变化时的回调
      */
