@@ -14,6 +14,7 @@ import ListDemo from "../screens/listDemo/listDemo";
 import CheckBoxDemo from "../screens/checkBoxDemo/checkBoxDemo";
 import SearchBarDemo from "../screens/searchBarDemo/searchBarDemo";
 import SelectDemo from "../screens/selectDemo/selectDemo";
+import SwiperDemo from "../screens/swiperDemo/swiperDemo";
 
 const HomeStack = createStackNavigator({
     Home: HomeScreen,
@@ -25,6 +26,7 @@ const HomeStack = createStackNavigator({
     CheckBoxDemo:CheckBoxDemo,
     SearchBarDemo:SearchBarDemo,
     SelectDemo:SelectDemo,
+    SwiperDemo:SwiperDemo,
 });
 
 HomeStack.navigationOptions = {
