@@ -23,6 +23,10 @@ export default class HomeScreen extends React.Component {
               <ListItem title={'checkBox'} onPress={() => {navigation.navigate('CheckBoxDemo')}}/>
               <ListItem title={'searchBar'} onPress={() => {navigation.navigate('SearchBarDemo')}}/>
               <ListItem title={'select'} onPress={() => {navigation.navigate('SelectDemo')}}/>
+              <ListItem title={'button'} onPress={() => {navigation.navigate('ButtonDemo')}}/>
+              <ListItem title={'rotateIcon'} onPress={() => {navigation.navigate('RotateIconDemo')}}/>
+              <ListItem title={'expand'} onPress={() => {navigation.navigate('ExpandDemo')}}/>
+              <ListItem title={'input'} onPress={() => {navigation.navigate('InputDemo')}}/>
               <ListItem title={'swiper'} onPress={() => {navigation.navigate('SwiperDemo')}}/>
           </ScrollView>
       );

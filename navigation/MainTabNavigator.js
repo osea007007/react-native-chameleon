@@ -14,6 +14,10 @@ import ListDemo from "../screens/listDemo/listDemo";
 import CheckBoxDemo from "../screens/checkBoxDemo/checkBoxDemo";
 import SearchBarDemo from "../screens/searchBarDemo/searchBarDemo";
 import SelectDemo from "../screens/selectDemo/selectDemo";
+import ButtonDemo from "../screens/buttonDemo/buttonDemo";
+import RotateIconDemo from "../screens/rotateIconDemo/rotateIconDemo";
+import ExpandDemo from "../screens/expandDemo/expendDemo";
+import InputDemo from "../screens/inputDemo/inputDemo";
 import SwiperDemo from "../screens/swiperDemo/swiperDemo";
 
 const HomeStack = createStackNavigator({
@@ -26,6 +30,10 @@ const HomeStack = createStackNavigator({
     CheckBoxDemo:CheckBoxDemo,
     SearchBarDemo:SearchBarDemo,
     SelectDemo:SelectDemo,
+    RotateIconDemo:RotateIconDemo,
+    ExpandDemo:ExpandDemo,
+    InputDemo:InputDemo,
+    ButtonDemo:ButtonDemo,
     SwiperDemo:SwiperDemo,
 });
 
