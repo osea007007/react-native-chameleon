@@ -3,6 +3,7 @@ import {
     ScrollView,
     Alert, Picker
 } from 'react-native';
+import {ListItem} from "./component/ListItem";
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
