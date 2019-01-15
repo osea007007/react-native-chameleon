@@ -16,9 +16,10 @@ const Input = React.forwardRef((props, ref) => (
 
 class JFInput extends Component {
     render(){
-        let {onChange, ...props} = this.props;
+        let {onChange, inputRef, ...props} = this.props;
         return(
             <TextInput
+                ref={inputRef}
                 underlineColorAndroid={'transparent'}
                 onChangeText={onChange}
                 {...props}

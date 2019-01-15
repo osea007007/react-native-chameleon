@@ -13,6 +13,12 @@ class InputDemo extends Component {
             text3: '',
         }
     }
+    componentDidMount() {
+        this.input.blur();
+        setTimeout(() => {
+            this.input.focus();
+        }, 100);
+    }
 
     test1 = (text) => {
         this.setState({
@@ -33,12 +39,12 @@ class InputDemo extends Component {
     render() {
         return (
             <ScrollView>
-                <DemoList title={'input:设置默认提示文字'}>
+                <DemoList title={'input:设置默认提示文字,自动聚焦'}>
                     <View style={{padding: 2}}>
                         <Input
                             style={{width: '100%', height: 44, fontSize: 18}}
-                            placeholder={'请输入文字'}
                             ref={(input) => this.input = input}
+                            placeholder={'请输入文字'}
                             onChange={this.test1}
                             value={this.state.text1}
                         />
@@ -49,7 +55,6 @@ class InputDemo extends Component {
                         <Input
                             style={{width: '100%', height: 44, fontSize: 18, borderColor: '#FF9333', borderWidth: 1}}
                             placeholder={'请输入文字'}
-                            ref={(input) => this.input = input}
                             onChange={this.test2}
                             value={this.state.text2}
                         />
@@ -68,7 +73,6 @@ class InputDemo extends Component {
                                 color: 'red'
                             }}
                             placeholder={'请输入文字'}
-                            ref={(input) => this.input = input}
                             onChange={this.test3}
                             value={this.state.text3}
                         />
