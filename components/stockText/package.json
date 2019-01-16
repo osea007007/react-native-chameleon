@@ -1,14 +1,14 @@
 {
-  "name": "@xzchameleon/searchbar",
+  "name": "@xzchameleon/stocktext",
   "version": "0.0.10",
   "description": "> TODO: description",
   "keywords": [
-    "SearchBar"
+    "stocktext"
   ],
   "author": "jinsongpei <songpei.jin@thizgroup.com>",
   "homepage": "https://github.com/mike1023/react-native-chameleon#readme",
   "license": "MIT",
-  "main": "lib/searchBar.js",
+  "main": "lib/stockText.js",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -16,6 +16,9 @@
   "files": [
     "lib"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mike1023/react-native-chameleon.git"
@@ -25,9 +28,5 @@
   },
   "bugs": {
     "url": "https://github.com/mike1023/react-native-chameleon/issues"
-  },
-  "dependencies": {
-    "@xzchameleon/input": "^0.0.10",
-    "@xzchameleon/touchable": "^0.0.10"
   }
 }

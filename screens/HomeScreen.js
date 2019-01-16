@@ -26,6 +26,7 @@ export default class HomeScreen extends React.Component {
               <ListItem title={'rotateIcon'} onPress={() => {navigation.navigate('RotateIconDemo')}}/>
               <ListItem title={'expand'} onPress={() => {navigation.navigate('ExpandDemo')}}/>
               <ListItem title={'input'} onPress={() => {navigation.navigate('InputDemo')}}/>
+              <ListItem title={'stockText'} onPress={() => {navigation.navigate('StockTextDemo')}}/>
 
           </ScrollView>
       );
