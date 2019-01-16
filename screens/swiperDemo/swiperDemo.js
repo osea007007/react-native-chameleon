@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {ScrollView, Text, View} from "react-native";
 import {DemoList} from "../component/DemoList";
 import {Swiper} from "../../components/swiper";
-import {Pagination} from "react-native-snap-carousel";
 
 class SwiperDemo extends Component {
     constructor(props) {
@@ -28,7 +27,9 @@ class SwiperDemo extends Component {
                     />
                 </DemoList>
                 <DemoList title={'转发ref 点击第一个轮播轮播至下标2(蓝色)'}>
-                    <Text style={{fontSize:30}} onPress={()=>{this.swiper.snapToItem(2)}}>点我啊</Text>
+                    <Text style={{fontSize: 30}} onPress={() => {
+                        this.swiper.snapToItem(2)
+                    }}>点我啊</Text>
                 </DemoList>
                 <DemoList title={'offset\noffset（默认40，可修改）\nshowPagination(默认true，可修改)'}>
                     <Swiper type={'offset'}
@@ -63,7 +64,7 @@ class SwiperDemo extends Component {
 
 function CustomPagination({data, activeDotIndex}) {
     return (
-        <Pagination
+        <Swiper.Pagination
             dotsLength={data.length}
             activeDotIndex={activeDotIndex}
             containerStyle={{

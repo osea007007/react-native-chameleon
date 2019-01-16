@@ -33,8 +33,10 @@ export const Swiper = React.forwardRef((props, ref) => {
     )
 });
 
+Swiper.Pagination = Pagination;
 
 class SwiperContent extends Component {
+
     constructor(props) {
         super(props)
         this.state = {
@@ -51,8 +53,8 @@ class SwiperContent extends Component {
     };
 
     render() {
-        let {swiperRef, type, data, renderItem, pagination, showPagination,offset, ...otherProps} = this.props;
-        let config=getConfig(type,offset);
+        let {swiperRef, type, data, renderItem, pagination, showPagination, offset, ...otherProps} = this.props;
+        let config = getConfig(type, offset);
         return (
             <View style={{position: 'relative'}}>
                 <Carousel {...config}
@@ -75,10 +77,11 @@ class SwiperContent extends Component {
 }
 
 const width = Dimensions.get('window').width;
-function getConfig(type,offset=80) {
+
+function getConfig(type, offset = 80) {
     let config;
-    if(type===undefined){
-        config={
+    if (type === undefined) {
+        config = {
             loop: true,
             autoplay: true,
             sliderWidth: width,
@@ -87,15 +90,15 @@ function getConfig(type,offset=80) {
             inactiveSlideOpacity: 1,
             autoplayInterval: 5000,
         };
-    }else if(type==='offset'){
-        config={
+    } else if (type === 'offset') {
+        config = {
             removeClippedSubviews: false,
             sliderWidth: width,
-            itemWidth: width - offset/2,
+            itemWidth: width - offset / 2,
             inactiveSlideScale: 1,
             inactiveSlideOpacity: 1,
         }
-    }else if(type==='none'){
+    } else if (type === 'none') {
         return
     }
     return config;
@@ -171,3 +174,4 @@ Swiper.propTypes = {
     offset: PropTypes.number,
     ...Carousel.propTypes
 };
+
