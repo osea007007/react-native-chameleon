@@ -3,6 +3,7 @@ import {
     ScrollView,
     Alert, Picker
 } from 'react-native';
+import {ListItem} from "./component/ListItem";
 
 import {ListItem} from "./component/ListItem";
 

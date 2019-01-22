@@ -1,6 +1,6 @@
 {
   "name": "@xzchameleon/input",
-  "version": "0.0.10",
+  "version": "0.0.17",
   "description": "> TODO: description",
   "keywords": [
     "input"
@@ -28,5 +28,6 @@
   },
   "bugs": {
     "url": "https://github.com/mike1023/react-native-chameleon/issues"
-  }
+  },
+  "gitHead": "48a0cc719cc0910d9da95586be2e1cf65acddce4"
 }

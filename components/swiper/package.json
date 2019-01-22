@@ -1,6 +1,6 @@
 {
   "name": "@xzchameleon/swiper",
-  "version": "0.0.10",
+  "version": "0.0.17",
   "description": "> TODO: description",
   "author": "linlinting <linlin.ting@thizgroup.com>",
   "homepage": "https://github.com/osea007007/react-native-chameleon#readme",
@@ -14,7 +14,7 @@
     "lib"
   ],
   "publishConfig": {
-    "registry": "https://registry.npm.taobao.org/"
+    "access": "public"
   },
   "repository": {
     "type": "git",
@@ -28,5 +28,6 @@
   },
   "dependencies": {
     "react-native-snap-carousel": "^3.7.5"
-  }
+  },
+  "gitHead": "48a0cc719cc0910d9da95586be2e1cf65acddce4"
 }

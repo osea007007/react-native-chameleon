@@ -1,6 +1,6 @@
 {
-  "name": "@xzchameleon/checkBox",
-  "version": "0.0.10",
+  "name": "@xzchameleon/checkbox",
+  "version": "0.0.17",
   "description": "> TODO: description",
   "keywords": [
     "checkBox"
@@ -8,7 +8,7 @@
   "author": "jinsongpei <songpei.jin@thizgroup.com>",
   "homepage": "https://github.com/fjson/react-native-chameleon#readme",
   "license": "MIT",
-  "main": "lib/checkBox.js",
+  "main": "lib/checkox.js",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -16,6 +16,9 @@
   "files": [
     "lib"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fjson/react-native-chameleon.git"
@@ -27,6 +30,7 @@
     "url": "https://github.com/fjson/react-native-chameleon/issues"
   },
   "dependencies": {
-    "@xzchameleon/touchable": "^0.0.10"
-  }
+    "@xzchameleon/touchable": "^0.0.17"
+  },
+  "gitHead": "48a0cc719cc0910d9da95586be2e1cf65acddce4"
 }
