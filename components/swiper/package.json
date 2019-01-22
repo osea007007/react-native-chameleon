@@ -14,7 +14,7 @@
     "lib"
   ],
   "publishConfig": {
-    "registry": "https://registry.npm.taobao.org/"
+    "access": "public"
   },
   "repository": {
     "type": "git",
@@ -28,5 +28,6 @@
   },
   "dependencies": {
     "react-native-snap-carousel": "^3.7.5"
-  }
+  },
+  "gitHead": "23f756e5d6830e09ad14362d3c0c6f77612a7b8e"
 }

@@ -33,5 +33,6 @@
     "@xzchameleon/modal": "^0.0.11",
     "@xzchameleon/rowline": "^0.0.11",
     "@xzchameleon/touchable": "^0.0.11"
-  }
+  },
+  "gitHead": "23f756e5d6830e09ad14362d3c0c6f77612a7b8e"
 }

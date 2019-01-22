@@ -1,10 +1,543 @@
-0 silly argv { _: [ 'add' ],
-0 silly argv   scope: '@xzchameleon/select',
-0 silly argv   globs: [],
-0 silly argv   lernaVersion: '3.8.4',
-0 silly argv   '$0': 'lerna',
-0 silly argv   pkg: '@xzchameleon/rowLine' }
-1 notice cli v3.8.4
-2 verbose rootPath /Users/song/Desktop/react-native-chameleon
-3 error Error: 404 Not Found - GET https://registry.npmjs.org/@xzchameleon%2frowLine - Not found
-3 error     at res.buffer.catch.then.body (/Users/song/Desktop/react-native-chameleon/node_modules/npm-registry-fetch/check-response.js:104:15)
+0 silly argv { _: [ 'publish' ],
+0 silly argv   composed: 'publish',
+0 silly argv   lernaVersion: '3.8.0',
+0 silly argv   '$0': 'lerna' }
+1 notice cli v3.8.0
+2 verbose rootPath /Users/jason/Desktop/storybook/react-native-chameleon
+3 verbose session 11a5e8dd7b9348cc
+4 verbose user-agent lerna/3.8.0/node@v10.14.2+x64 (darwin)
+5 info Verifying npm credentials
+6 verbose Retrieving npm user profile
+7 http fetch GET 200 https://registry.npmjs.org/-/npm/v1/user 1360ms
+8 silly npm profile get received {"tfa":false,"name":"xzchameleon","email":"xzjhsy@gmail.com","email_verified":true,"created":"2018-12-25T09:47:56.691Z","updated":"2018-12-25T09:47:56.689Z","cidr_whitelist":null,"fullname":"邢金生"}
+9 silly npm whoami received {"username":"xzchameleon"}
+10 silly argv { _: [ 'publish' ], composed: 'publish', lernaVersion: '3.8.0' }
+11 verbose rootPath /Users/jason/Desktop/storybook/react-native-chameleon
+12 info current version 0.0.10
+13 silly isAnythingCommitted
+14 verbose isAnythingCommitted 1
+15 silly currentBranch
+16 verbose currentBranch dev
+17 silly remoteBranchExists
+18 silly isBehindUpstream
+19 silly isBehindUpstream dev is behind origin/dev by 0 commit(s) and ahead by 2
+20 silly hasTags
+21 verbose hasTags true
+22 silly git-describe.sync "v0.0.10-11-g6564439" => {"lastTagName":"v0.0.10","lastVersion":"v0.0.10","refCount":"11","sha":"6564439","isDirty":false}
+23 info Looking for changed packages since v0.0.10
+24 silly diffSinceIn v0.0.10 components/button
+25 silly diff components/button/README.md
+25 silly diff components/button/__tests__/button.test.js
+25 silly diff components/button/lib/button.js
+25 silly diff components/button/package.json
+26 silly diffSinceIn v0.0.10 components/checkBox
+27 silly diff components/checkBox/README.md
+27 silly diff components/checkBox/__tests__/checkbox.test.js
+27 silly diff components/checkBox/assets/image/checked_circle@2x.png
+27 silly diff components/checkBox/assets/image/checked_circle@3x.png
+27 silly diff components/checkBox/assets/image/choose@2x.png
+27 silly diff components/checkBox/assets/image/choose@3x.png
+27 silly diff components/checkBox/lib/checkBox.js
+27 silly diff components/checkBox/node_modules/@xzchameleon/touchable
+27 silly diff components/checkBox/package-lock.json
+27 silly diff components/checkBox/package.json
+28 silly diffSinceIn v0.0.10 components/columnLine
+29 silly diff
+30 silly diffSinceIn v0.0.10 components/expand
+31 silly diff components/expand/README.md
+31 silly diff components/expand/__tests__/expand.test.js
+31 silly diff components/expand/lib/expand.js
+31 silly diff components/expand/package.json
+32 silly diffSinceIn v0.0.10 components/icon
+33 silly diff components/icon/README.md
+33 silly diff components/icon/__tests__/icon.test.js
+33 silly diff components/icon/getIconType.js
+33 silly diff components/icon/lib/icon.js
+33 silly diff components/icon/package.json
+34 silly diffSinceIn v0.0.10 components/input
+35 silly diff components/input/README.md
+35 silly diff components/input/__tests__/input.test.js
+35 silly diff components/input/lib/input.js
+35 silly diff components/input/package.json
+36 silly diffSinceIn v0.0.10 components/list
+37 silly diff components/list/README.md
+37 silly diff components/list/__tests__/list.test.js
+37 silly diff components/list/lib/list.js
+37 silly diff components/list/node_modules/@xzchameleon/rowline
+37 silly diff components/list/node_modules/@xzchameleon/touchable
+37 silly diff components/list/package.json
+38 silly diffSinceIn v0.0.10 components/modal
+39 silly diff components/modal/lib/modal.js
+40 silly diffSinceIn v0.0.10 components/rotateIcon
+41 silly diff components/rotateIcon/README.md
+41 silly diff components/rotateIcon/__tests__/rotateIcon.test.js
+41 silly diff components/rotateIcon/lib/rotateIcon.js
+41 silly diff components/rotateIcon/package.json
+42 silly diffSinceIn v0.0.10 components/rowDashLine
+43 silly diff
+44 silly diffSinceIn v0.0.10 components/rowLine
+45 silly diff
+46 silly diffSinceIn v0.0.10 components/searchBar
+47 silly diff components/searchBar/README.md
+47 silly diff components/searchBar/__tests__/searchBar.test.js
+47 silly diff components/searchBar/assets/image/clear_search@2x.png
+47 silly diff components/searchBar/assets/image/clear_search@3x.png
+47 silly diff components/searchBar/assets/image/search@2x.png
+47 silly diff components/searchBar/assets/image/search@3x.png
+47 silly diff components/searchBar/lib/searchBar.js
+47 silly diff components/searchBar/package.json
+48 silly diffSinceIn v0.0.10 components/select
+49 silly diff components/select/README.md
+49 silly diff components/select/__tests__/select.test.js
+49 silly diff components/select/assets/image/trade_down@2x.png
+49 silly diff components/select/assets/image/trade_down@3x.png
+49 silly diff components/select/lib/select.js
+49 silly diff components/select/node_modules/@xzchameleon/modal
+49 silly diff components/select/node_modules/@xzchameleon/rowline
+49 silly diff components/select/node_modules/@xzchameleon/touchable
+49 silly diff components/select/package.json
+50 silly diffSinceIn v0.0.10 components/swiper
+51 silly diff components/swiper/README.md
+51 silly diff components/swiper/__tests__/swiper.test.js
+51 silly diff components/swiper/lib/swiper.js
+51 silly diff components/swiper/package-lock.json
+51 silly diff components/swiper/package.json
+52 silly diffSinceIn v0.0.10 components/switch
+53 silly diff components/switch/lib/switch.js
+54 silly diffSinceIn v0.0.10 components/touchable
+55 silly diff
+56 verbose updated @xzchameleon/button
+57 verbose updated @xzchameleon/checkBox
+58 verbose updated @xzchameleon/expand
+59 verbose updated @xzchameleon/icon
+60 verbose updated @xzchameleon/input
+61 verbose updated @xzchameleon/list
+62 verbose updated @xzchameleon/modal
+63 verbose updated @xzchameleon/rotateicon
+64 verbose updated @xzchameleon/searchbar
+65 verbose updated @xzchameleon/select
+66 verbose updated @xzchameleon/swiper
+67 verbose updated @xzchameleon/switch
+68 verbose git-describe undefined => "v0.0.10-11-g6564439"
+69 silly git-describe parsed => {"lastTagName":"v0.0.10","lastVersion":"v0.0.10","refCount":"11","sha":"6564439","isDirty":false}
+70 silly batched [ PackageGraphNode {
+70 silly batched     name: '@xzchameleon/columnline',
+70 silly batched     externalDependencies: Map {},
+70 silly batched     localDependencies: Map {},
+70 silly batched     localDependents: Map {} },
+70 silly batched   PackageGraphNode {
+70 silly batched     name: '@xzchameleon/icon',
+70 silly batched     externalDependencies: Map {},
+70 silly batched     localDependencies: Map {},
+70 silly batched     localDependents:
+70 silly batched      Map {
+70 silly batched        '@xzchameleon/button' => [PackageGraphNode],
+70 silly batched        '@xzchameleon/list' => [PackageGraphNode],
+70 silly batched        '@xzchameleon/rotateicon' => [PackageGraphNode] } },
+70 silly batched   PackageGraphNode {
+70 silly batched     name: '@xzchameleon/input',
+70 silly batched     externalDependencies: Map {},
+70 silly batched     localDependencies: Map {},
+70 silly batched     localDependents: Map {} },
+70 silly batched   PackageGraphNode {
+70 silly batched     name: '@xzchameleon/rowdashline',
+70 silly batched     externalDependencies: Map {},
+70 silly batched     localDependencies: Map {},
+70 silly batched     localDependents: Map {} },
+70 silly batched   PackageGraphNode {
+70 silly batched     name: '@xzchameleon/rowline',
+70 silly batched     externalDependencies: Map {},
+70 silly batched     localDependencies: Map {},
+70 silly batched     localDependents:
+70 silly batched      Map {
+70 silly batched        '@xzchameleon/list' => [PackageGraphNode],
+70 silly batched        '@xzchameleon/select' => [PackageGraphNode] } },
+70 silly batched   PackageGraphNode {
+70 silly batched     name: '@xzchameleon/swiper',
+70 silly batched     externalDependencies: Map { 'react-native-snap-carousel' => [Object] },
+70 silly batched     localDependencies: Map {},
+70 silly batched     localDependents: Map {} },
+70 silly batched   PackageGraphNode {
+70 silly batched     name: '@xzchameleon/switch',
+70 silly batched     externalDependencies:
+70 silly batched      Map { 'prop-types' => [Object], 'react-native-switch' => [Object] },
+70 silly batched     localDependencies: Map {},
+70 silly batched     localDependents: Map {} },
+70 silly batched   PackageGraphNode {
+70 silly batched     name: '@xzchameleon/touchable',
+70 silly batched     externalDependencies: Map {},
+70 silly batched     localDependencies: Map {},
+70 silly batched     localDependents:
+70 silly batched      Map {
+70 silly batched        '@xzchameleon/button' => [PackageGraphNode],
+70 silly batched        '@xzchameleon/checkBox' => [PackageGraphNode],
+70 silly batched        '@xzchameleon/list' => [PackageGraphNode],
+70 silly batched        '@xzchameleon/modal' => [PackageGraphNode],
+70 silly batched        '@xzchameleon/rotateicon' => [PackageGraphNode],
+70 silly batched        '@xzchameleon/searchbar' => [PackageGraphNode],
+70 silly batched        '@xzchameleon/select' => [PackageGraphNode] } } ]
+71 silly batched [ PackageGraphNode {
+71 silly batched     name: '@xzchameleon/button',
+71 silly batched     externalDependencies: Map {},
+71 silly batched     localDependencies: Map {},
+71 silly batched     localDependents: Map {} },
+71 silly batched   PackageGraphNode {
+71 silly batched     name: '@xzchameleon/checkBox',
+71 silly batched     externalDependencies: Map {},
+71 silly batched     localDependencies: Map {},
+71 silly batched     localDependents: Map {} },
+71 silly batched   PackageGraphNode {
+71 silly batched     name: '@xzchameleon/list',
+71 silly batched     externalDependencies: Map {},
+71 silly batched     localDependencies: Map {},
+71 silly batched     localDependents: Map {} },
+71 silly batched   PackageGraphNode {
+71 silly batched     name: '@xzchameleon/modal',
+71 silly batched     externalDependencies: Map {},
+71 silly batched     localDependencies: Map {},
+71 silly batched     localDependents: Map { '@xzchameleon/select' => [PackageGraphNode] } },
+71 silly batched   PackageGraphNode {
+71 silly batched     name: '@xzchameleon/rotateicon',
+71 silly batched     externalDependencies: Map {},
+71 silly batched     localDependencies: Map {},
+71 silly batched     localDependents: Map { '@xzchameleon/expand' => [PackageGraphNode] } },
+71 silly batched   PackageGraphNode {
+71 silly batched     name: '@xzchameleon/searchbar',
+71 silly batched     externalDependencies: Map {},
+71 silly batched     localDependencies: Map {},
+71 silly batched     localDependents: Map {} } ]
+72 silly batched [ PackageGraphNode {
+72 silly batched     name: '@xzchameleon/expand',
+72 silly batched     externalDependencies: Map {},
+72 silly batched     localDependencies: Map {},
+72 silly batched     localDependents: Map {} },
+72 silly batched   PackageGraphNode {
+72 silly batched     name: '@xzchameleon/select',
+72 silly batched     externalDependencies: Map {},
+72 silly batched     localDependencies: Map {},
+72 silly batched     localDependents: Map {} } ]
+73 silly run-lifecycle No script for "preversion" in "react-native-chameleon", continuing
+74 silly run-lifecycle No script for "preversion" in "@xzchameleon/columnline", continuing
+75 silly run-lifecycle No script for "preversion" in "@xzchameleon/icon", continuing
+76 silly run-lifecycle No script for "preversion" in "@xzchameleon/input", continuing
+77 silly run-lifecycle No script for "preversion" in "@xzchameleon/rowdashline", continuing
+78 silly run-lifecycle No script for "preversion" in "@xzchameleon/rowline", continuing
+79 silly run-lifecycle No script for "preversion" in "@xzchameleon/swiper", continuing
+80 silly run-lifecycle No script for "preversion" in "@xzchameleon/switch", continuing
+81 silly run-lifecycle No script for "preversion" in "@xzchameleon/touchable", continuing
+82 silly run-lifecycle No script for "version" in "@xzchameleon/icon", continuing
+83 silly run-lifecycle No script for "version" in "@xzchameleon/input", continuing
+84 silly run-lifecycle No script for "version" in "@xzchameleon/swiper", continuing
+85 silly run-lifecycle No script for "version" in "@xzchameleon/touchable", continuing
+86 silly run-lifecycle No script for "version" in "@xzchameleon/columnline", continuing
+87 silly run-lifecycle No script for "version" in "@xzchameleon/rowline", continuing
+88 silly run-lifecycle No script for "version" in "@xzchameleon/switch", continuing
+89 silly run-lifecycle No script for "version" in "@xzchameleon/rowdashline", continuing
+90 silly run-lifecycle No script for "preversion" in "@xzchameleon/button", continuing
+91 silly run-lifecycle No script for "preversion" in "@xzchameleon/checkBox", continuing
+92 silly run-lifecycle No script for "preversion" in "@xzchameleon/list", continuing
+93 silly run-lifecycle No script for "preversion" in "@xzchameleon/modal", continuing
+94 silly run-lifecycle No script for "preversion" in "@xzchameleon/rotateicon", continuing
+95 silly run-lifecycle No script for "preversion" in "@xzchameleon/searchbar", continuing
+96 silly run-lifecycle No script for "version" in "@xzchameleon/modal", continuing
+97 silly run-lifecycle No script for "version" in "@xzchameleon/list", continuing
+98 silly run-lifecycle No script for "version" in "@xzchameleon/searchbar", continuing
+99 silly run-lifecycle No script for "version" in "@xzchameleon/rotateicon", continuing
+100 silly run-lifecycle No script for "version" in "@xzchameleon/checkBox", continuing
+101 silly run-lifecycle No script for "version" in "@xzchameleon/button", continuing
+102 silly run-lifecycle No script for "preversion" in "@xzchameleon/expand", continuing
+103 silly run-lifecycle No script for "preversion" in "@xzchameleon/select", continuing
+104 silly run-lifecycle No script for "version" in "@xzchameleon/expand", continuing
+105 silly run-lifecycle No script for "version" in "@xzchameleon/select", continuing
+106 silly run-lifecycle No script for "version" in "react-native-chameleon", continuing
+107 silly gitAdd [ '/Users/jason/Desktop/storybook/react-native-chameleon/components/icon/package.json',
+107 silly gitAdd   '/Users/jason/Desktop/storybook/react-native-chameleon/components/input/package.json',
+107 silly gitAdd   '/Users/jason/Desktop/storybook/react-native-chameleon/components/swiper/package.json',
+107 silly gitAdd   '/Users/jason/Desktop/storybook/react-native-chameleon/components/touchable/package.json',
+107 silly gitAdd   '/Users/jason/Desktop/storybook/react-native-chameleon/components/columnLine/package.json',
+107 silly gitAdd   '/Users/jason/Desktop/storybook/react-native-chameleon/components/rowLine/package.json',
+107 silly gitAdd   '/Users/jason/Desktop/storybook/react-native-chameleon/components/switch/package.json',
+107 silly gitAdd   '/Users/jason/Desktop/storybook/react-native-chameleon/components/rowDashLine/package.json',
+107 silly gitAdd   '/Users/jason/Desktop/storybook/react-native-chameleon/components/modal/package.json',
+107 silly gitAdd   '/Users/jason/Desktop/storybook/react-native-chameleon/components/list/package.json',
+107 silly gitAdd   '/Users/jason/Desktop/storybook/react-native-chameleon/components/searchBar/package.json',
+107 silly gitAdd   '/Users/jason/Desktop/storybook/react-native-chameleon/components/rotateIcon/package.json',
+107 silly gitAdd   '/Users/jason/Desktop/storybook/react-native-chameleon/components/checkBox/package.json',
+107 silly gitAdd   '/Users/jason/Desktop/storybook/react-native-chameleon/components/button/package.json',
+107 silly gitAdd   '/Users/jason/Desktop/storybook/react-native-chameleon/components/expand/package.json',
+107 silly gitAdd   '/Users/jason/Desktop/storybook/react-native-chameleon/components/select/package.json',
+107 silly gitAdd   '/Users/jason/Desktop/storybook/react-native-chameleon/lerna.json' ]
+108 silly gitCommit v0.0.11
+109 verbose git [ 'commit', '-m', 'v0.0.11' ]
+110 silly gitTag v0.0.11
+111 verbose git [ 'tag', 'v0.0.11', '-m', 'v0.0.11' ]
+112 silly run-lifecycle No script for "postversion" in "@xzchameleon/button", continuing
+113 silly run-lifecycle No script for "postversion" in "@xzchameleon/checkBox", continuing
+114 silly run-lifecycle No script for "postversion" in "@xzchameleon/columnline", continuing
+115 silly run-lifecycle No script for "postversion" in "@xzchameleon/expand", continuing
+116 silly run-lifecycle No script for "postversion" in "@xzchameleon/icon", continuing
+117 silly run-lifecycle No script for "postversion" in "@xzchameleon/input", continuing
+118 silly run-lifecycle No script for "postversion" in "@xzchameleon/list", continuing
+119 silly run-lifecycle No script for "postversion" in "@xzchameleon/modal", continuing
+120 silly run-lifecycle No script for "postversion" in "@xzchameleon/rotateicon", continuing
+121 silly run-lifecycle No script for "postversion" in "@xzchameleon/rowdashline", continuing
+122 silly run-lifecycle No script for "postversion" in "@xzchameleon/rowline", continuing
+123 silly run-lifecycle No script for "postversion" in "@xzchameleon/searchbar", continuing
+124 silly run-lifecycle No script for "postversion" in "@xzchameleon/select", continuing
+125 silly run-lifecycle No script for "postversion" in "@xzchameleon/swiper", continuing
+126 silly run-lifecycle No script for "postversion" in "@xzchameleon/switch", continuing
+127 silly run-lifecycle No script for "postversion" in "@xzchameleon/touchable", continuing
+128 silly run-lifecycle No script for "postversion" in "react-native-chameleon", continuing
+129 info git Pushing tags...
+130 silly gitPush origin dev
+131 silly batched [ PackageGraphNode {
+131 silly batched     name: '@xzchameleon/columnline',
+131 silly batched     externalDependencies: Map {},
+131 silly batched     localDependencies: Map {},
+131 silly batched     localDependents: Map {} },
+131 silly batched   PackageGraphNode {
+131 silly batched     name: '@xzchameleon/icon',
+131 silly batched     externalDependencies: Map {},
+131 silly batched     localDependencies: Map {},
+131 silly batched     localDependents:
+131 silly batched      Map {
+131 silly batched        '@xzchameleon/button' => [PackageGraphNode],
+131 silly batched        '@xzchameleon/list' => [PackageGraphNode],
+131 silly batched        '@xzchameleon/rotateicon' => [PackageGraphNode] } },
+131 silly batched   PackageGraphNode {
+131 silly batched     name: '@xzchameleon/input',
+131 silly batched     externalDependencies: Map {},
+131 silly batched     localDependencies: Map {},
+131 silly batched     localDependents: Map {} },
+131 silly batched   PackageGraphNode {
+131 silly batched     name: '@xzchameleon/rowdashline',
+131 silly batched     externalDependencies: Map {},
+131 silly batched     localDependencies: Map {},
+131 silly batched     localDependents: Map {} },
+131 silly batched   PackageGraphNode {
+131 silly batched     name: '@xzchameleon/rowline',
+131 silly batched     externalDependencies: Map {},
+131 silly batched     localDependencies: Map {},
+131 silly batched     localDependents:
+131 silly batched      Map {
+131 silly batched        '@xzchameleon/list' => [PackageGraphNode],
+131 silly batched        '@xzchameleon/select' => [PackageGraphNode] } },
+131 silly batched   PackageGraphNode {
+131 silly batched     name: '@xzchameleon/swiper',
+131 silly batched     externalDependencies: Map { 'react-native-snap-carousel' => [Object] },
+131 silly batched     localDependencies: Map {},
+131 silly batched     localDependents: Map {} },
+131 silly batched   PackageGraphNode {
+131 silly batched     name: '@xzchameleon/switch',
+131 silly batched     externalDependencies:
+131 silly batched      Map { 'prop-types' => [Object], 'react-native-switch' => [Object] },
+131 silly batched     localDependencies: Map {},
+131 silly batched     localDependents: Map {} },
+131 silly batched   PackageGraphNode {
+131 silly batched     name: '@xzchameleon/touchable',
+131 silly batched     externalDependencies: Map {},
+131 silly batched     localDependencies: Map {},
+131 silly batched     localDependents:
+131 silly batched      Map {
+131 silly batched        '@xzchameleon/button' => [PackageGraphNode],
+131 silly batched        '@xzchameleon/checkBox' => [PackageGraphNode],
+131 silly batched        '@xzchameleon/list' => [PackageGraphNode],
+131 silly batched        '@xzchameleon/modal' => [PackageGraphNode],
+131 silly batched        '@xzchameleon/rotateicon' => [PackageGraphNode],
+131 silly batched        '@xzchameleon/searchbar' => [PackageGraphNode],
+131 silly batched        '@xzchameleon/select' => [PackageGraphNode] } } ]
+132 silly batched [ PackageGraphNode {
+132 silly batched     name: '@xzchameleon/button',
+132 silly batched     externalDependencies: Map {},
+132 silly batched     localDependencies: Map {},
+132 silly batched     localDependents: Map {} },
+132 silly batched   PackageGraphNode {
+132 silly batched     name: '@xzchameleon/checkBox',
+132 silly batched     externalDependencies: Map {},
+132 silly batched     localDependencies: Map {},
+132 silly batched     localDependents: Map {} },
+132 silly batched   PackageGraphNode {
+132 silly batched     name: '@xzchameleon/list',
+132 silly batched     externalDependencies: Map {},
+132 silly batched     localDependencies: Map {},
+132 silly batched     localDependents: Map {} },
+132 silly batched   PackageGraphNode {
+132 silly batched     name: '@xzchameleon/modal',
+132 silly batched     externalDependencies: Map {},
+132 silly batched     localDependencies: Map {},
+132 silly batched     localDependents: Map { '@xzchameleon/select' => [PackageGraphNode] } },
+132 silly batched   PackageGraphNode {
+132 silly batched     name: '@xzchameleon/rotateicon',
+132 silly batched     externalDependencies: Map {},
+132 silly batched     localDependencies: Map {},
+132 silly batched     localDependents: Map { '@xzchameleon/expand' => [PackageGraphNode] } },
+132 silly batched   PackageGraphNode {
+132 silly batched     name: '@xzchameleon/searchbar',
+132 silly batched     externalDependencies: Map {},
+132 silly batched     localDependencies: Map {},
+132 silly batched     localDependents: Map {} } ]
+133 silly batched [ PackageGraphNode {
+133 silly batched     name: '@xzchameleon/expand',
+133 silly batched     externalDependencies: Map {},
+133 silly batched     localDependencies: Map {},
+133 silly batched     localDependents: Map {} },
+133 silly batched   PackageGraphNode {
+133 silly batched     name: '@xzchameleon/select',
+133 silly batched     externalDependencies: Map {},
+133 silly batched     localDependencies: Map {},
+133 silly batched     localDependents: Map {} } ]
+134 info publish Publishing packages to npm...
+135 silly verifyNpmPackageAccess
+136 http fetch GET 200 https://registry.npmjs.org/-/org/xzchameleon/package?format=cli 1184ms
+137 warn ENOLICENSE Packages @xzchameleon/button, @xzchameleon/checkBox, @xzchameleon/columnline, @xzchameleon/expand, @xzchameleon/icon, @xzchameleon/input, @xzchameleon/list, @xzchameleon/modal, @xzchameleon/rotateicon, @xzchameleon/rowdashline, @xzchameleon/rowline, @xzchameleon/searchbar, @xzchameleon/select, @xzchameleon/swiper, @xzchameleon/switch, @xzchameleon/touchable are missing a license
+138 silly getCurrentSHA
+139 verbose getCurrentSHA 23f756e5d6830e09ad14362d3c0c6f77612a7b8e
+140 silly run-lifecycle No script for "prepare" in "react-native-chameleon", continuing
+141 silly run-lifecycle No script for "prepublishOnly" in "react-native-chameleon", continuing
+142 silly run-lifecycle No script for "prepack" in "react-native-chameleon", continuing
+143 verbose pack-directory components/columnLine
+144 verbose pack-directory components/icon
+145 verbose pack-directory components/input
+146 verbose pack-directory components/rowDashLine
+147 verbose pack-directory components/rowLine
+148 verbose pack-directory components/swiper
+149 verbose pack-directory components/switch
+150 verbose pack-directory components/touchable
+151 silly run-lifecycle No script for "prepublish" in "@xzchameleon/columnline", continuing
+152 silly run-lifecycle No script for "prepublish" in "@xzchameleon/icon", continuing
+153 silly run-lifecycle No script for "prepublish" in "@xzchameleon/input", continuing
+154 silly run-lifecycle No script for "prepublish" in "@xzchameleon/rowdashline", continuing
+155 silly run-lifecycle No script for "prepublish" in "@xzchameleon/rowline", continuing
+156 silly run-lifecycle No script for "prepublish" in "@xzchameleon/swiper", continuing
+157 silly run-lifecycle No script for "prepublish" in "@xzchameleon/switch", continuing
+158 silly run-lifecycle No script for "prepublish" in "@xzchameleon/touchable", continuing
+159 silly run-lifecycle No script for "prepare" in "@xzchameleon/columnline", continuing
+160 silly run-lifecycle No script for "prepare" in "@xzchameleon/icon", continuing
+161 silly run-lifecycle No script for "prepare" in "@xzchameleon/input", continuing
+162 silly run-lifecycle No script for "prepare" in "@xzchameleon/rowdashline", continuing
+163 silly run-lifecycle No script for "prepare" in "@xzchameleon/rowline", continuing
+164 silly run-lifecycle No script for "prepare" in "@xzchameleon/swiper", continuing
+165 silly run-lifecycle No script for "prepare" in "@xzchameleon/switch", continuing
+166 silly run-lifecycle No script for "prepare" in "@xzchameleon/touchable", continuing
+167 silly run-lifecycle No script for "prepublishOnly" in "@xzchameleon/columnline", continuing
+168 silly run-lifecycle No script for "prepublishOnly" in "@xzchameleon/icon", continuing
+169 silly run-lifecycle No script for "prepublishOnly" in "@xzchameleon/input", continuing
+170 silly run-lifecycle No script for "prepublishOnly" in "@xzchameleon/rowdashline", continuing
+171 silly run-lifecycle No script for "prepublishOnly" in "@xzchameleon/switch", continuing
+172 silly run-lifecycle No script for "prepublishOnly" in "@xzchameleon/rowline", continuing
+173 silly run-lifecycle No script for "prepublishOnly" in "@xzchameleon/touchable", continuing
+174 silly run-lifecycle No script for "prepublishOnly" in "@xzchameleon/swiper", continuing
+175 silly run-lifecycle No script for "prepack" in "@xzchameleon/icon", continuing
+176 silly run-lifecycle No script for "prepack" in "@xzchameleon/rowdashline", continuing
+177 silly run-lifecycle No script for "prepack" in "@xzchameleon/input", continuing
+178 silly run-lifecycle No script for "prepack" in "@xzchameleon/rowline", continuing
+179 silly run-lifecycle No script for "prepack" in "@xzchameleon/touchable", continuing
+180 silly run-lifecycle No script for "prepack" in "@xzchameleon/switch", continuing
+181 silly run-lifecycle No script for "prepack" in "@xzchameleon/columnline", continuing
+182 silly run-lifecycle No script for "prepack" in "@xzchameleon/swiper", continuing
+183 silly run-lifecycle No script for "postpack" in "@xzchameleon/icon", continuing
+184 silly run-lifecycle No script for "postpack" in "@xzchameleon/touchable", continuing
+185 silly run-lifecycle No script for "postpack" in "@xzchameleon/input", continuing
+186 silly run-lifecycle No script for "postpack" in "@xzchameleon/rowdashline", continuing
+187 silly run-lifecycle No script for "postpack" in "@xzchameleon/switch", continuing
+188 silly run-lifecycle No script for "postpack" in "@xzchameleon/rowline", continuing
+189 silly run-lifecycle No script for "postpack" in "@xzchameleon/columnline", continuing
+190 silly run-lifecycle No script for "postpack" in "@xzchameleon/swiper", continuing
+191 verbose pack-directory components/button
+192 verbose pack-directory components/checkBox
+193 verbose pack-directory components/list
+194 verbose pack-directory components/modal
+195 verbose pack-directory components/rotateIcon
+196 verbose pack-directory components/searchBar
+197 silly run-lifecycle No script for "prepublish" in "@xzchameleon/button", continuing
+198 silly run-lifecycle No script for "prepublish" in "@xzchameleon/checkBox", continuing
+199 silly run-lifecycle No script for "prepublish" in "@xzchameleon/list", continuing
+200 silly run-lifecycle No script for "prepublish" in "@xzchameleon/modal", continuing
+201 silly run-lifecycle No script for "prepublish" in "@xzchameleon/rotateicon", continuing
+202 silly run-lifecycle No script for "prepublish" in "@xzchameleon/searchbar", continuing
+203 silly run-lifecycle No script for "prepare" in "@xzchameleon/button", continuing
+204 silly run-lifecycle No script for "prepare" in "@xzchameleon/checkBox", continuing
+205 silly run-lifecycle No script for "prepare" in "@xzchameleon/list", continuing
+206 silly run-lifecycle No script for "prepare" in "@xzchameleon/modal", continuing
+207 silly run-lifecycle No script for "prepare" in "@xzchameleon/rotateicon", continuing
+208 silly run-lifecycle No script for "prepare" in "@xzchameleon/searchbar", continuing
+209 silly run-lifecycle No script for "prepublishOnly" in "@xzchameleon/modal", continuing
+210 silly run-lifecycle No script for "prepublishOnly" in "@xzchameleon/list", continuing
+211 silly run-lifecycle No script for "prepublishOnly" in "@xzchameleon/button", continuing
+212 silly run-lifecycle No script for "prepublishOnly" in "@xzchameleon/checkBox", continuing
+213 silly run-lifecycle No script for "prepublishOnly" in "@xzchameleon/rotateicon", continuing
+214 silly run-lifecycle No script for "prepublishOnly" in "@xzchameleon/searchbar", continuing
+215 silly run-lifecycle No script for "prepack" in "@xzchameleon/modal", continuing
+216 silly run-lifecycle No script for "prepack" in "@xzchameleon/list", continuing
+217 silly run-lifecycle No script for "prepack" in "@xzchameleon/button", continuing
+218 silly run-lifecycle No script for "prepack" in "@xzchameleon/checkBox", continuing
+219 silly run-lifecycle No script for "prepack" in "@xzchameleon/rotateicon", continuing
+220 silly run-lifecycle No script for "prepack" in "@xzchameleon/searchbar", continuing
+221 silly run-lifecycle No script for "postpack" in "@xzchameleon/modal", continuing
+222 silly run-lifecycle No script for "postpack" in "@xzchameleon/list", continuing
+223 silly run-lifecycle No script for "postpack" in "@xzchameleon/checkBox", continuing
+224 silly run-lifecycle No script for "postpack" in "@xzchameleon/button", continuing
+225 silly run-lifecycle No script for "postpack" in "@xzchameleon/rotateicon", continuing
+226 silly run-lifecycle No script for "postpack" in "@xzchameleon/searchbar", continuing
+227 verbose pack-directory components/expand
+228 verbose pack-directory components/select
+229 silly run-lifecycle No script for "prepublish" in "@xzchameleon/expand", continuing
+230 silly run-lifecycle No script for "prepublish" in "@xzchameleon/select", continuing
+231 silly run-lifecycle No script for "prepare" in "@xzchameleon/expand", continuing
+232 silly run-lifecycle No script for "prepare" in "@xzchameleon/select", continuing
+233 silly run-lifecycle No script for "prepublishOnly" in "@xzchameleon/expand", continuing
+234 silly run-lifecycle No script for "prepublishOnly" in "@xzchameleon/select", continuing
+235 silly run-lifecycle No script for "prepack" in "@xzchameleon/expand", continuing
+236 silly run-lifecycle No script for "prepack" in "@xzchameleon/select", continuing
+237 silly run-lifecycle No script for "postpack" in "@xzchameleon/select", continuing
+238 silly run-lifecycle No script for "postpack" in "@xzchameleon/expand", continuing
+239 silly run-lifecycle No script for "postpack" in "react-native-chameleon", continuing
+240 verbose publish @xzchameleon/columnline
+241 verbose publish @xzchameleon/icon
+242 verbose publish @xzchameleon/input
+243 verbose publish @xzchameleon/rowdashline
+244 silly run-lifecycle No script for "publish" in "@xzchameleon/input", continuing
+245 silly run-lifecycle No script for "postpublish" in "@xzchameleon/input", continuing
+246 success published @xzchameleon/input 0.0.11
+247 notice
+248 notice 📦  @xzchameleon/input@0.0.11
+249 notice === Tarball Contents ===
+250 notice 788B package.json
+250 notice 134B README.md
+250 notice 736B lib/input.js
+251 notice === Tarball Details ===
+252 notice name:          @xzchameleon/input
+252 notice version:       0.0.11
+252 notice filename:      xzchameleon-input-0.0.11.tgz
+252 notice package size:  1.0 kB
+252 notice unpacked size: 1.7 kB
+252 notice shasum:        af1e4f9c01ac43c862b6f0eea57bd5ec76fc08be
+252 notice integrity:     sha512-ZUaaUDoP68BUZ[...]+AovIUfDDu7nQ==
+252 notice total files:   3
+253 notice
+254 verbose publish @xzchameleon/rowline
+255 http fetch PUT 200 https://registry.npmjs.org/@xzchameleon%2finput 4440ms
+256 silly run-lifecycle No script for "publish" in "@xzchameleon/columnline", continuing
+257 silly run-lifecycle No script for "postpublish" in "@xzchameleon/columnline", continuing
+258 success published @xzchameleon/columnline 0.0.11
+259 notice
+260 notice 📦  @xzchameleon/columnline@0.0.11
+261 notice === Tarball Contents ===
+262 notice 769B package.json
+262 notice 171B README.md
+262 notice 988B lib/columnLine.js
+263 notice === Tarball Details ===
+264 notice name:          @xzchameleon/columnline
+264 notice version:       0.0.11
+264 notice filename:      xzchameleon-columnline-0.0.11.tgz
+264 notice package size:  1.1 kB
+264 notice unpacked size: 1.9 kB
+264 notice shasum:        81c34744d079fb098710270248970802ffd1ebee
+264 notice integrity:     sha512-8nbkwImSJDDl0[...]TarMaNjYtTgcg==
+264 notice total files:   3
+265 notice
+266 verbose publish @xzchameleon/swiper
+267 http fetch PUT 200 https://registry.npmjs.org/@xzchameleon%2fcolumnline 5246ms
+268 http fetch PUT 401 https://registry.npm.taobao.org/@xzchameleon%2fswiper 176ms
+269 error Error: 401 Unauthorized - PUT https://registry.npm.taobao.org/@xzchameleon%2fswiper - unauthorized
+269 error     at res.buffer.catch.then.body (/Users/jason/Desktop/storybook/react-native-chameleon/node_modules/npm-registry-fetch/check-response.js:104:15)
