@@ -1,6 +1,6 @@
 {
   "name": "@xzchameleon/modal",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "> TODO: description",
   "author": "jason.xing@thizgroup.com <jason.xing@thizgroup.com>",
   "homepage": "https://github.com/fjson/react-native-chameleon#readme",
@@ -27,7 +27,7 @@
     "url": "https://github.com/fjson/react-native-chameleon/issues"
   },
   "dependencies": {
-    "@xzchameleon/touchable": "^0.0.14"
+    "@xzchameleon/touchable": "^0.0.15"
   },
   "gitHead": "138aeb37ff4f1bfd87a206652a889dd850e3b272"
 }
