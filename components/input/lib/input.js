@@ -9,7 +9,19 @@ import Proptypes from 'prop-types';
  *
  *
  * 输入框组件
+ *
+ * ##### props参数：
+
+ prop | type | default | required | description
+ ---- | :----: | :-------: | :--------: | -----------
+ **onChange** | `*` |  | false | 输入框文本变化时的回调
+ *
  */
+
+
+
+
+
 const Input = React.forwardRef((props, ref) => (
     <JFInput inputRef={ref} {...props}/>
 ));
