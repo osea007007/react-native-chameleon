@@ -1,5 +1,5 @@
 {
-  "name": "button",
+  "name": "@xzchameleon/button",
   "version": "0.0.10",
   "description": "> TODO: description",
   "author": "jason.xing@thizgroup.com <jason.xing@thizgroup.com>",
@@ -24,6 +24,7 @@
     "url": "https://github.com/fjson/react-native-chameleon/issues"
   },
   "dependencies": {
-    "@xzchameleon/icon": "^0.0.10"
+    "@xzchameleon/icon": "^0.0.10",
+    "@xzchameleon/touchable": "^0.0.10"
   }
 }

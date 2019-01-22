@@ -1,9 +1,11 @@
 ---
 page: button
----
+
 
 * 支持通常使用的button
 * 支持原型的button 使用场景 header右侧的分享按钮 或 文字
+
+---
 
 ##### props参数：
 

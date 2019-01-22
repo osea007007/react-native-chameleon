@@ -6,7 +6,7 @@ import {RowLine} from "../../components/rowLine";
 export function DemoList({ title, children }) {
     return (
         <View>
-            <ListItem title={title}/>
+            <ListItem title={title} backgroundColor={'#001f72'} color={'white'}/>
             <View style={{ paddingVertical:5, backgroundColor:'#B1B1B1' }}>
                 {
                     children
