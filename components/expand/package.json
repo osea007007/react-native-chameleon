@@ -1,6 +1,6 @@
 {
   "name": "@xzchameleon/expand",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "> TODO: description",
   "keywords": [
     "expand"
@@ -30,7 +30,7 @@
     "url": "https://github.com/mike1023/react-native-chameleon/issues"
   },
   "dependencies": {
-    "@xzchameleon/rotateicon": "^0.0.11"
+    "@xzchameleon/rotateicon": "^0.0.12"
   },
   "gitHead": "23f756e5d6830e09ad14362d3c0c6f77612a7b8e"
 }
