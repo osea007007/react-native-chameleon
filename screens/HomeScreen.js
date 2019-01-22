@@ -4,9 +4,6 @@ import {
     Alert, Picker
 } from 'react-native';
 import {ListItem} from "./component/ListItem";
-
-import {ListItem} from "./component/ListItem";
-
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
     title:'组件列表'

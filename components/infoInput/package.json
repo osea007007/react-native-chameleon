@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "@xzchameleon/icon": "^0.0.10",
+    "@xzchameleon/input": "^0.0.17",
     "@xzchameleon/touchable": "^0.0.10"
   }
 }

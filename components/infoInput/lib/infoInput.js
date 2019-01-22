@@ -1,8 +1,9 @@
 import React, {Component} from "react";
 import PropTypes from 'prop-types';
-import {TextInput, View, StyleSheet} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 import {Icon} from '@xzchameleon/icon';
 import {Touchable, TOUCHABLE_TYPES} from '@xzchameleon/touchable';
+import Input from "../../input";
 
 /**
  * ---
@@ -21,7 +22,7 @@ import {Touchable, TOUCHABLE_TYPES} from '@xzchameleon/touchable';
  **leftContainerStyle** | `Object` |  | false | 左边组件容器样式
  **rightComponent** | `*` |  | false | 右边组件 接收Icon参数和自定义组件
  **rightContainerStyle** | `Object` |  | false | 右边组件容器样式
- **rightOnPress** | `Function` |  | false | 右边组件点击事件
+ **onRightPress** | `Function` |  | false | 右边组件点击事件
  */
 export const InfoInput = React.forwardRef((props, ref) => {
     return (
@@ -35,7 +36,7 @@ class InfoInputContent extends Component {
     }
 
     render() {
-        let {infoInputRef, containerStyle, leftComponent, leftContainerStyle, rightComponent, rightContainerStyle, rightOnPress, style, ...inputProps} = this.props
+        let {infoInputRef, containerStyle, leftComponent, leftContainerStyle, rightComponent, rightContainerStyle, onRightPress, style, ...inputProps} = this.props
         return (
             <View
                 style={[InfoInputStyle.container, leftComponent || {paddingLeft: 11}, rightComponent || {paddingRight: 11}, containerStyle]}>
@@ -50,14 +51,14 @@ class InfoInputContent extends Component {
                 }
 
                 <View style={[InfoInputStyle.centerContainer]}>
-                    <TextInput ref={infoInputRef} style={[InfoInputStyle.input, style]}
-                               underlineColorAndroid={'transparent'}
-                               placeholderTextColor={'rgba(255,255,255,.3)'} {...inputProps}/>
+                    <Input ref={infoInputRef} style={[InfoInputStyle.input, style]}
+                           underlineColorAndroid={'transparent'}
+                           placeholderTextColor={'rgba(255,255,255,.3)'} {...inputProps}/>
                 </View>
                 {
                     rightComponent && (<Touchable touchComponent={TOUCHABLE_TYPES.WITHOUT_FEEDBACK}
                                                   onPress={() => {
-                                                      rightOnPress && rightOnPress()
+                                                      onRightPress && onRightPress()
                                                   }}>
                         <View style={[InfoInputStyle.rightContainer, rightContainerStyle]}>
                             {
@@ -99,7 +100,7 @@ InfoInput.propTypes = {
     /**
      * 右边组件点击事件
      */
-    rightOnPress: PropTypes.func
+    onRightPress: PropTypes.func
 };
 const InfoInputStyle = StyleSheet.create({
     container: {

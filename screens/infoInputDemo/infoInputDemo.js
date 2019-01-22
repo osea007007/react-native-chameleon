@@ -37,7 +37,7 @@ class InfoInputDemo extends Component {
                                 color: '#ffffff',
                                 size: 18
                             }}
-                            rightOnPress={() => {
+                            onRightPress={() => {
                                 this.input1.clear();
                             }}
                             placeholder={'请输入用户名'}
@@ -61,7 +61,7 @@ class InfoInputDemo extends Component {
                                 size: 18
                             }}
                             secureTextEntry={!this.state.active}
-                            rightOnPress={() => {
+                            onRightPress={() => {
                                 this.input2.blur();
                                 this.setState({
                                     active: !this.state.active,
