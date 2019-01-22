@@ -1,6 +1,6 @@
 {
   "name": "@xzchameleon/select",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "> TODO: description",
   "keywords": [
     "Select"
@@ -30,9 +30,9 @@
     "url": "https://github.com/mike1023/react-native-chameleon/issues"
   },
   "dependencies": {
-    "@xzchameleon/modal": "^0.0.15",
-    "@xzchameleon/rowline": "^0.0.15",
-    "@xzchameleon/touchable": "^0.0.15"
+    "@xzchameleon/modal": "^0.0.16",
+    "@xzchameleon/rowline": "^0.0.16",
+    "@xzchameleon/touchable": "^0.0.16"
   },
   "gitHead": "c9441eb985d08955e2a9fa1b0cd67166a79defc2"
 }
