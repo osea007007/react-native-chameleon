@@ -1,6 +1,6 @@
 {
   "name": "@xzchameleon/searchbar",
-  "version": "0.0.10",
+  "version": "0.0.17",
   "description": "> TODO: description",
   "keywords": [
     "SearchBar"
@@ -16,6 +16,9 @@
   "files": [
     "lib"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mike1023/react-native-chameleon.git"
@@ -28,6 +31,7 @@
   },
   "dependencies": {
     "@xzchameleon/input": "^0.0.10",
-    "@xzchameleon/touchable": "^0.0.10"
-  }
+    "@xzchameleon/touchable": "^0.0.17"
+  },
+  "gitHead": "48a0cc719cc0910d9da95586be2e1cf65acddce4"
 }

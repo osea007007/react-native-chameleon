@@ -1,14 +1,11 @@
 {
-  "name": "@xzchameleon/checkbox",
+  "name": "@xzchameleon/swiper",
   "version": "0.0.17",
   "description": "> TODO: description",
-  "keywords": [
-    "checkBox"
-  ],
-  "author": "jinsongpei <songpei.jin@thizgroup.com>",
-  "homepage": "https://github.com/fjson/react-native-chameleon#readme",
-  "license": "MIT",
-  "main": "lib/checkox.js",
+  "author": "linlinting <linlin.ting@thizgroup.com>",
+  "homepage": "https://github.com/osea007007/react-native-chameleon#readme",
+  "license": "ISC",
+  "main": "lib/swiper.js",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -21,16 +18,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fjson/react-native-chameleon.git"
+    "url": "git+https://github.com/osea007007/react-native-chameleon.git"
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "bugs": {
-    "url": "https://github.com/fjson/react-native-chameleon/issues"
+    "url": "https://github.com/osea007007/react-native-chameleon/issues"
   },
   "dependencies": {
-    "@xzchameleon/touchable": "^0.0.17"
+    "react-native-snap-carousel": "^3.7.5"
   },
   "gitHead": "48a0cc719cc0910d9da95586be2e1cf65acddce4"
 }
