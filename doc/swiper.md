@@ -11,7 +11,7 @@ page: swiper
 *data** | `Array` |  | true | 轮播数据
 *itemWidth** | `Number` |  | false | 主体宽度
 *offset** | `Number` |  | false | 露边宽度
-*pagination** | `*` |  | false | react-native-snap-carousel pagination
+*pagination** | `Function` |  | false | 分页pagination(data, activeDotIndex) [参考react-native-snap-carousel pagination]
 *renderItem** | `Function` |  | true | 渲染函数
 *showPagination** | `Boolean` | `true` | false | 是否显示分页
 *sliderWidth** | `Number` |  | false | 容器宽度
