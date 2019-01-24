@@ -1,6 +1,6 @@
 {
   "name": "@xzchameleon/switch",
-  "version": "0.0.10",
+  "version": "0.0.18",
   "description": "> TODO: description",
   "keywords": [
     "switch"
@@ -33,5 +33,5 @@
   "bugs": {
     "url": "https://github.com/fjson/react-native-chameleon/issues"
   },
-  "gitHead": "b42d2f2cff45ee11fc04068fa9513aa6571026ce"
+  "gitHead": "48a0cc719cc0910d9da95586be2e1cf65acddce4"
 }

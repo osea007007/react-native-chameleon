@@ -16,6 +16,7 @@ const DEVICE_HEIGHT = Dimensions.get('window').height;
  *  * 修改react native modal 默认的slide动画
  *  * 默认模态框内容区域背景色为白色
  *  * 默认点击空白区域关闭模态框
+ *  * **注意** 【ios】react native 无法同时打开俩个modal， show hide 方法均有提供callback
  */
 export class Modal extends Component {
     translate = new Animated.Value(0);

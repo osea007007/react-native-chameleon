@@ -109,7 +109,7 @@ Switch.propTypes = {
         true:Proptypes.string
     }),
     /**
-     * switch 按钮在打开和关闭时圆圈的颜色
+     * 【android】switch 按钮在打开和关闭时圆圈的颜色
      */
     thumbColor:Proptypes.shape({
         /**
