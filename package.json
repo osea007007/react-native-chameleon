@@ -6,8 +6,8 @@
     "ios": "expo start --ios",
     "eject": "expo eject",
     "test": "jest",
-    "doc": "react-docgen ./components/*/lib | ./doc.sh && cherry dev",
-    "doc:build": "react-docgen ./components/*/lib | ./doc.sh && cherry build"
+    "doc": "react-docgen ./components/*/lib/*.js | ./doc.sh && cherry dev",
+    "doc:build": "react-docgen ./components/*/lib/*.js | ./doc.sh && cherry build"
   },
   "jest": {
     "preset": "jest-expo"
