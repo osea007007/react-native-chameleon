@@ -43,9 +43,9 @@ class ProgressDemo extends PureComponent {
             <ScrollView>
                 <DemoList title={`progress提供isShow() loading() loadEnd()方法来获取【当前显示状态，开始加载，结束加载】`}>
                 <Touchable touchComponent={TOUCHABLE_TYPES.OPACITY} onPress={() => {
-                    this.progress1.getRef().isShow() ? this.progress1.getRef().loadEnd() : this.progress1.getRef().loading();
-                    this.progress2.getRef().isShow() ? this.progress2.getRef().loadEnd() : this.progress2.getRef().loading();
-                    this.progress3.getRef().isShow() ? this.progress3.getRef().loadEnd() : this.progress3.getRef().loading();
+                    this.progress1.getRef().isShow() ? this.progress1.getRef().loadStop() : this.progress1.getRef().loading();
+                    this.progress2.getRef().isShow() ? this.progress2.getRef().loadStop() : this.progress2.getRef().loading();
+                    this.progress3.getRef().isShow() ? this.progress3.getRef().loadStop() : this.progress3.getRef().loading();
                 }}>
                     <View style={{
                         height: 50,
@@ -58,16 +58,15 @@ class ProgressDemo extends PureComponent {
                     </View>
                 </Touchable>
                 </DemoList>
-                <DemoList title={`默认线条进度条,默认宽度150，高度6，传入进度值 \nproType={'line'} \nprogress={this.state.progress}`}>
-                    <Progress ref={(component) => this.progress1 = component}  proType={'line'} progress={this.state.progress}/>
+                <DemoList title={`默认线条进度条,默认宽度150，高度6，传入进度值 \nprogress={this.state.progress}`}>
+                    <Progress ref={(component) => this.progress1 = component}   progress={this.state.progress}/>
                 </DemoList>
                 <DemoList title={`默认圆形进度条，默认宽高200，传入进度值\nproType={'circle'} \nprogress={this.state.progress}`}>
                     <Progress ref={(component) => this.progress2 = component} proType={'circle'} progress={this.state.progress}/>
                 </DemoList>
                 <DemoList title={`默认半圆圆形进度条，默认宽高200，传入进度值\nproType={'halfCircle'} \nprogress={this.state.progress}`}>
-                    <Progress ref={(component) => this.progress3 = component} proType={'halfCircle'} progress={this.state.progress}/>
+                    <Progress style={{backgroundColor:'yellow'}}  width={200} height={150} ref={(component) => this.progress3 = component} proType={'halfCircle'} progress={this.state.progress}/>
                 </DemoList>
-
                 <DemoList
                     title={`线条进度条，修改宽高,外边框颜色变化，两端去除圆角\nwidth={200} \nheight={10} \nborderColor={'red'}\nborderRadius={0}`}>
                     <Progress proType={'line'} progress={this.state.progress}

@@ -20,6 +20,7 @@ export default class HomeScreen extends React.Component {
               <ListItem title={'modal'} onPress={() => {navigation.navigate('ModalDemo')}}/>
               <ListItem title={'dropDown'} onPress={() => {navigation.navigate('DropDownDemo')}}/>
               <ListItem title={'progress'} onPress={() => {navigation.navigate('ProgressDemo')}}/>
+              <ListItem title={'record'} onPress={() => {navigation.navigate('RecordDemo')}}/>
           </ScrollView>
       );
   }

@@ -12,6 +12,7 @@ import LineDemo from "../screens/lineDemo/lineDemo";
 import ModalDemo from "../screens/modalDemo/modalDemo";
 import DropDownDemo from "../screens/dropdownDemo/dropdownDemo";
 import ProgressDemo from "../screens/progressDemo/progressDemo";
+import RecordDemo from "../screens/recordDemo/recordDemo";
 
 const HomeStack = createStackNavigator({
     Home: HomeScreen,
@@ -21,6 +22,7 @@ const HomeStack = createStackNavigator({
     ModalDemo:ModalDemo,
     DropDownDemo:DropDownDemo,
     ProgressDemo:ProgressDemo,
+    RecordDemo:RecordDemo,
 });
 
 HomeStack.navigationOptions = {
