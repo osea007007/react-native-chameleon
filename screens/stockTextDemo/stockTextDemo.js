@@ -11,8 +11,14 @@ class StockTextDemo extends Component{
                 <DemoList title={'value 为负'}>
                     <StockText value={'-10'}/>
                 </DemoList>
+                <DemoList title={'value 为负'}>
+                    <StockText value={'-123'}/>
+                </DemoList>
+                <DemoList title={'非法字符 $$'}>
+                    <StockText value={'$$'}/>
+                </DemoList>
                 <DemoList title={'value 为正'}>
-                    <StockText value={'10'}/>
+                    <StockText value={10}/>
                 </DemoList>
                 <DemoList title={'value 为0'}>
                     <StockText value={'0'}/>
