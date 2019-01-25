@@ -18,6 +18,7 @@ import ButtonDemo from "../screens/buttonDemo/buttonDemo";
 import RotateIconDemo from "../screens/rotateIconDemo/rotateIconDemo";
 import ExpandDemo from "../screens/expandDemo/expendDemo";
 import InputDemo from "../screens/inputDemo/inputDemo";
+import StockTextDemo from "../screens/stockTextDemo/stockTextDemo";
 import SwiperDemo from "../screens/swiperDemo/swiperDemo";
 
 const HomeStack = createStackNavigator({
@@ -35,6 +36,7 @@ const HomeStack = createStackNavigator({
     InputDemo:InputDemo,
     ButtonDemo:ButtonDemo,
     SwiperDemo:SwiperDemo,
+    StockTextDemo:StockTextDemo,
 });
 
 HomeStack.navigationOptions = {
