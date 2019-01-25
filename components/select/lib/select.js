@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import {View, Text, StyleSheet, Image, Picker, Platform, Dimensions} from 'react-native';
 import Proptypes from 'prop-types';
 import {Touchable, TOUCHABLE_TYPES} from "@xzchameleon/touchable";
-import {Modal} from "../../modal";
+import {Modal} from "@xzchameleon/modal";
 import {RowLine} from "@xzchameleon/rowline";
 import {Icon} from "@xzchameleon/icon";
 
