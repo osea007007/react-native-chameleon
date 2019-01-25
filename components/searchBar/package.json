@@ -1,6 +1,6 @@
 {
   "name": "@xzchameleon/searchbar",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "description": "> TODO: description",
   "keywords": [
     "SearchBar"
@@ -30,7 +30,7 @@
     "url": "https://github.com/mike1023/react-native-chameleon/issues"
   },
   "dependencies": {
-    "@xzchameleon/touchable": "^0.0.19"
+    "@xzchameleon/touchable": "^0.0.20"
   },
   "gitHead": "48a0cc719cc0910d9da95586be2e1cf65acddce4"
 }
