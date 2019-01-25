@@ -31,7 +31,7 @@ export class CheckBox extends Component {
     }
 
     handleClick = (state) => {
-        this.setState({checked:!state}, () => {
+        this.setState({checked:this.props.checkBySelf?!state:this.props.checked}, () => {
             let { onValueChanged, text } = this.props;
             onValueChanged && onValueChanged(this.state.checked, text);
         });
@@ -65,6 +65,7 @@ const CheckBoxStyle = StyleSheet.create({
 CheckBox.defaultProps = {
     checkedImg:require('../assets/image/checked_circle.png'),
     unCheckedImg:require('../assets/image/choose.png'),
+    checkBySelf:true,
 };
 
 CheckBox.propTypes = {
@@ -72,6 +73,10 @@ CheckBox.propTypes = {
      * 指定选中状态
      */
     checked:Proptypes.bool,
+    /**
+     * 指定选中状态
+     */
+    checkBySelf:Proptypes.bool,
     /**
      * 指定选中状态的图片
      */

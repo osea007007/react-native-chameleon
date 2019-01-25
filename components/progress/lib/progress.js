@@ -1,5 +1,5 @@
 import React, {PureComponent} from "react";
-import {Text, ART, Animated, Easing, View, StyleSheet} from "react-native";
+import {ART, Animated, Easing, View, StyleSheet} from "react-native";
 import propTypes from 'prop-types';
 import Svg, {Circle} from 'react-native-svg';
 import Arc from "./component/Arc";
