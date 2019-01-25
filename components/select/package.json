@@ -30,6 +30,7 @@
     "url": "https://github.com/mike1023/react-native-chameleon/issues"
   },
   "dependencies": {
+    "@xzchameleon/icon": "^0.0.18",
     "@xzchameleon/modal": "^0.0.18",
     "@xzchameleon/rowline": "^0.0.18",
     "@xzchameleon/touchable": "^0.0.18"
