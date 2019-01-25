@@ -28,7 +28,7 @@ class SearchBarDemo extends Component {
             <ScrollView>
                 <DemoList title={'设置 containerStyle'}>
                     <SearchBar searchContent={this.state.searchText}
-                               searchIcon={require('../../components/searchBar/assets/image/search.png')}
+                               searchIcon={require('../../components/searchBar/lib/assets/image/search.png')}
                                containerStyle={{backgroundColor: '#9BBBFF'}}
                                placeholder={'enter search content'} onValueChanged={this.searchChanged}/>
                     <Text>{this.state.searchText}</Text>
@@ -36,7 +36,7 @@ class SearchBarDemo extends Component {
 
                 <DemoList title={'外部传入搜索文本 search content'}>
                     <SearchBar searchContent={this.state.searchText}
-                               searchIcon={require('../../components/searchBar/assets/image/search.png')}
+                               searchIcon={require('../../components/searchBar/lib/assets/image/search.png')}
                                containerStyle={{backgroundColor: '#9BBBFF'}}
                                placeholder={'enter search content'}
                                onValueChanged={this.searchChanged}/>
@@ -44,7 +44,7 @@ class SearchBarDemo extends Component {
                 </DemoList>
 
                 <DemoList title={'有左侧搜索icon'}>
-                    <SearchBar searchIcon={require('../../components/searchBar/assets/image/search.png')}
+                    <SearchBar searchIcon={require('../../components/searchBar/lib/assets/image/search.png')}
                                placeholder={'enter search content'}
                                onValueChanged={this.searchChanged}/>
                     <Text>{this.state.searchText}</Text>
@@ -57,15 +57,15 @@ class SearchBarDemo extends Component {
                 </DemoList>
 
                 <DemoList title={'无清除icon'}>
-                    <SearchBar searchIcon={require('../../components/searchBar/assets/image/search.png')}
+                    <SearchBar searchIcon={require('../../components/searchBar/lib/assets/image/search.png')}
                                placeholder={'enter search content'}
                                onValueChanged={this.searchChanged}/>
                     <Text>{this.state.searchText}</Text>
                 </DemoList>
 
                 <DemoList title={'有清除icon'}>
-                    <SearchBar searchIcon={require('../../components/searchBar/assets/image/search.png')}
-                               clearIcon={require('../../components/searchBar/assets/image/clear_search.png')}
+                    <SearchBar searchIcon={require('../../components/searchBar/lib/assets/image/search.png')}
+                               clearIcon={require('../../components/searchBar/lib/assets/image/clear_search.png')}
                                placeholder={'enter search content'}
                                onValueChanged={this.searchChanged}
                                clearHandler={() => this.setState({searchText: ''})}
