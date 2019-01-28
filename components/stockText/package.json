@@ -1,6 +1,6 @@
 {
   "name": "@xzchameleon/stocktext",
-  "version": "0.0.20",
+  "version": "0.0.23",
   "description": "> TODO: description",
   "keywords": [
     "stocktext"
@@ -28,5 +28,6 @@
   },
   "bugs": {
     "url": "https://github.com/mike1023/react-native-chameleon/issues"
-  }
+  },
+  "gitHead": "b833159ac78816db9c07630a546cf3bbbaef5992"
 }
