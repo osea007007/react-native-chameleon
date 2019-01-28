@@ -13,58 +13,73 @@ import Proptypes from 'prop-types';
 
 class StockText extends Component {
 
-    isLargerZero = (value) => {
+    displayColor = (value) => {
+        if(value === undefined || isNaN(value)) {
+            return '#383838';
+        }
         let temp = Number(value);
-
-        return temp >= 0;
+        if(temp >= 0) {
+            return this.props.increaseColor;
+        } else {
+            return this.props.decreaseColor;
+        }
     };
 
-    display = (value) => {
-        if(isNaN(value)) {      //非法字符
-            return '--';
+    displayContent = (value) => {
+        let {tailCharacter='', placeholder=''} = this.props;
+        if(value === undefined) {
+            return placeholder;
+        }
+        if(isNaN(value)) {
+            return value;
+        }
+        let temp = Number(value);
+        if(temp >= 0) {
+            return '+' + temp + tailCharacter;
         } else {
-            let temp = Number(value);
-            if(temp >= 0) {
-                return '+' + temp;
-            } else {
-                return temp;
-            }
+            return temp + tailCharacter;
         }
     };
 
     render(){
-        let {value, fontSize, tailCharacter=''} = this.props;
+        let {value, textStyle} = this.props;
         return(
-            <Text style={[StockTextStyle.text, {color: value ? (this.isLargerZero(value) ? 'red' : 'green') : 'black', fontSize:fontSize}]}>{ value ? this.display(value)+tailCharacter : ' ' }</Text>
+            <Text style={[{...textStyle}, {color: this.displayColor(value)}]}>{this.displayContent(value)}</Text>
         );
     }
 }
 
 StockText.defaultProps = {
-    fontSize:14,
+    increaseColor:'red',
+    decreaseColor:'green',
 };
 
 StockText.propTypes = {
-    /**
-     * 容器样式
-     */
-    containerStyle:Proptypes.any,
     /**
      * 当前数值,传入字符串类型
      */
     value:Proptypes.any,
     /**
-     * 字体大小
+     * 大于等于0时颜色
      */
-    fontSize:Proptypes.number,
+    increaseColor:Proptypes.string,
+    /**
+     * 小于0时颜色
+     */
+    decreaseColor:Proptypes.string,
+    /**
+     * 未赋值时的占位字符
+     */
+    placeholder:Proptypes.string,
+    /**
+     * 末尾自定义符号
+     */
+    tailCharacter:Proptypes.string,
 };
 
 const StockTextStyle = StyleSheet.create({
     container:{
         padding:2,
-    },
-    text:{
-        fontSize:14,
     },
 });
 
