@@ -1,5 +1,5 @@
-import {Fragment, PureComponent} from "react";
-import {StyleSheet, View} from "react-native";
+import {PureComponent} from "react";
+import {StyleSheet, View, Image, Text} from "react-native";
 import propTypes from "prop-types";
 import {CheckBox} from "../../checkBox/lib/checkBox";
 import React from "react";
@@ -14,61 +14,63 @@ export class NormalCheckItem extends PureComponent {
 
     change1 = () => {
         this.setState({
-            checkedId:0,
+            checkedId: 0,
         });
     };
 
     change2 = (checked) => {
         this.setState({
-            checkedId:1,
+            checkedId: 1,
         });
     };
 
     render() {
-        const {leftText,rightText}=this.props;
+        const {leftText, rightText} = this.props;
         return (
             <View style={NormalCheckItemStyle.container}>
                 <View style={NormalCheckItemStyle.contain}>
-                <CheckBox
-                    checked={this.state.checkedId===0}
-                    checkBySelf={false}
-                    checkedImg={require('../../checkBox/assets/image/checked_circle.png')}
-                    unCheckedImg={require('../../checkBox/assets/image/choose.png')}
-                    text={leftText}
-                    onValueChanged={this.change1}/>
+                    <CheckBox
+                        checked={this.state.checkedId === 0}
+                        checkBySelf={false}
+                        checkedImg={require('../../checkBox/assets/image/checked_circle.png')}
+                        unCheckedImg={require('../../checkBox/assets/image/choose.png')}
+                        text={leftText}
+                        onValueChanged={this.change1}/>
                 </View>
                 <View style={NormalCheckItemStyle.contain}>
-                <CheckBox
-                    checked={this.state.checkedId===1}
-                    checkBySelf={false}
-                    checkedImg={require('../../checkBox/assets/image/checked_circle.png')}
-                    unCheckedImg={require('../../checkBox/assets/image/choose.png')}
-                    text={rightText}
-                    onValueChanged={this.change2}/>
+                    <CheckBox
+                        checked={this.state.checkedId === 1}
+                        checkBySelf={false}
+                        checkedImg={require('../../checkBox/assets/image/checked_circle.png')}
+                        unCheckedImg={require('../../checkBox/assets/image/choose.png')}
+                        text={rightText}
+                        onValueChanged={this.change2}/>
                 </View>
             </View>
         );
     }
 }
+
 const NormalCheckItemStyle = StyleSheet.create({
-    container:{
+    container: {
         flexDirection: 'row',
     },
     contain: {
-        flex:1,
+        flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
     }
 })
 
-NormalCheckItem.defaultProps={
-    checkedId:0,
-    leftText:'是',
-    rightText:'否'
+NormalCheckItem.defaultProps = {
+    checkedId: 0,
+    leftText: '是',
+    rightText: '否'
 }
-NormalCheckItem.propTypes ={
+NormalCheckItem.propTypes = {
     /**
      * 当前选中的状态的ID  0 选中第一个 1 选中第二个 默认选中第一个
      */
     checkedId: propTypes.number,
 }
+

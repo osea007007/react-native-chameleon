@@ -1,7 +1,6 @@
 import React, {PureComponent} from "react";
 import {ART, Animated, Easing, View, StyleSheet} from "react-native";
 import propTypes from 'prop-types';
-import Svg, {Circle} from 'react-native-svg';
 import Arc from "./component/Arc";
 
 /**
@@ -25,7 +24,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
 });
-const AnimatedCircle = Animated.createAnimatedComponent(Circle);
 const AnimatedArc = Animated.createAnimatedComponent(Arc);
 const INDETERMINATE_WIDTH_FACTOR = 0.3;
 const BAR_WIDTH_ZERO_POSITION =
@@ -34,7 +32,6 @@ const BAR_WIDTH_ZERO_POSITION =
 export class Progress extends PureComponent {
     constructor(props) {
         super(props);
-        // const progress = Math.min(Math.max(props.progress, 0), 1);
         let {height, width, thickness, offsetRotate} = this.props;
         let R = (Math.min(width, height) - thickness * 2) / 2;
         let perimeter = Math.PI * 2 * R;
@@ -43,7 +40,7 @@ export class Progress extends PureComponent {
         this.state = {
             show: false,
             width: 0,
-            progress: new Animated.Value(0),
+            progress: this.props.animated ? new Animated.Value(0) : this.props.progress,
             animationValue: new Animated.Value(BAR_WIDTH_ZERO_POSITION),
             R, // 半径
             offset, // 外层圆弧没有背景色的一段
@@ -62,76 +59,83 @@ export class Progress extends PureComponent {
             ]
         });
     }
-
-
     componentDidMount() {
-        this.loading();
+        this.loadStart();
     }
-
 
     isShow = () => {
         return this.state.show;
     };
     loadStop = () => {
-        Animated.timing(
-            this.state.progress
-        ).stop();
-        this.setState({show: false})
+        const {loadStop} = this.props;
+        if (this.props.animated) {
+            Animated.timing(
+                this.state.progress
+            ).stop();
+            this.setState({show: false})
+        } else {
+            this.setState({show: false});
+        }
+        loadStop && loadStop();
     };
 
-    loading() {
-
-        let {proType} = this.props;
-
-
-        if (proType === 'halfCircle') {
-            this.state.progress.setValue(0);
-            this.state.opacity.setValue(0);
-            this.setState({show: true}, () => {
-                Animated.parallel([
-                    Animated.timing(
-                        this.state.progress,
-                        {
-                            toValue: this.props.progress,
-                            easing: Easing.linear,
-                            duration: 800
-                        }
-                    ),
-                    Animated.timing(
-                        this.state.opacity,
-                        {
-                            toValue: 1,
-                            easing: Easing.linear,
-                            duration: 800
-                        }
-                    ),
-                ]).start();
-            });
+    loadStart() {
+        let {proType, animated, loadStart} = this.props;
+        if (animated) {
+            if (proType === 'halfCircle') {
+                this.state.progress.setValue(0);
+                this.state.opacity.setValue(0);
+                this.setState({show: true}, () => {
+                    Animated.parallel([
+                        Animated.timing(
+                            this.state.progress,
+                            {
+                                toValue: this.props.progress,
+                                easing: Easing.linear,
+                                duration: 800
+                            }
+                        ),
+                        Animated.timing(
+                            this.state.opacity,
+                            {
+                                toValue: 1,
+                                easing: Easing.linear,
+                                duration: 800
+                            }
+                        ),
+                    ]).start();
+                });
+            } else {
+                this.setState({show: true}, () => {
+                    Animated.timing(this.state.progress, {
+                        duration: this.props.duration,
+                        easing: Easing.linear,
+                        toValue: this.props.progress / this.props.totalValue,
+                        useNativeDriver: this.props.useNativeDriver,
+                    }).start();
+                });
+            }
         } else {
-            this.setState({show: true}, () => {
-                Animated.timing(this.state.progress, {
-                    duration: this.props.duration,
-                    easing: Easing.linear,
-                    toValue: this.props.progress / this.props.totalValue,
-                    useNativeDriver: this.props.useNativeDriver,
-                }).start();
-            });
+            this.setState({show: true});
         }
+        loadStart && loadStart();
     }
 
     componentDidUpdate() {
-        this.oldScore = this.newScore;
-        this.newScore = this.props.progress / this.props.totalValue;
-        Animated.timing(this.state.progress, {
-            duration: this.props.duration * (this.newScore - this.oldScore),
-            easing: Easing.inOut(Easing.ease),
-            toValue: this.props.progress / this.props.totalValue,
-            useNativeDriver: this.props.useNativeDriver,
-        }).start(() => {
-            if (this.props.progress === this.props.totalValue) {
-                this.props.onEnd();
-            }
-        });
+        if (this.props.animated) {
+            this.oldScore = this.newScore;
+            this.newScore = this.props.progress / this.props.totalValue;
+            Animated.timing(this.state.progress, {
+                duration: this.props.duration * (this.newScore - this.oldScore),
+                easing: Easing.inOut(Easing.ease),
+                toValue: this.props.progress / this.props.totalValue,
+                useNativeDriver: this.props.useNativeDriver,
+            }).start(() => {
+                if (this.props.progress === this.props.totalValue) {
+                    this.props.onEnd();
+                }
+            });
+        }
     }
 
 
@@ -149,7 +153,7 @@ export class Progress extends PureComponent {
             borderColor,
             borderRadius,
             borderWidth,
-            style,
+            progress,
             unfilledColor,
             proType,
             ...restProps
@@ -166,8 +170,7 @@ export class Progress extends PureComponent {
         };
         const progressStyle = {
             backgroundColor: color,
-            height,
-
+            height: height,
             transform: [
                 {
                     translateX: this.state.animationValue.interpolate({
@@ -193,18 +196,19 @@ export class Progress extends PureComponent {
 
         let pWidth = Math.min(height, width);
         const radius = pWidth / 2;
-        const angle = Animated.multiply(this.state.progress, new Animated.Value(CIRCLE));
+        const angle = this.props.animated ? Animated.multiply(this.state.progress, new Animated.Value(CIRCLE)) : progress * CIRCLE;
         const mAngle = Animated.multiply(this.state.progress, new Animated.Value(Math.PI * 2 - Math.PI * offsetRotate / 180));
-        const halfAngle = Animated.add(new Animated.Value(Math.PI + Math.PI * offsetRotate / 360), mAngle);
+        const halfAngle = this.props.animated ? Animated.add(new Animated.Value(Math.PI + Math.PI * offsetRotate / 360), mAngle)
+            : (Math.PI + Math.PI * offsetRotate / 360) + progress * (Math.PI * 2 - Math.PI * offsetRotate / 180);
 
 
         return (
-            <View>
+            <View style={{width: width, height: height}} {...restProps}>
                 {
                     proType === 'line' && this.state.show &&
                     <View>
                         <View
-                            style={[containerStyle, style]}
+                            style={[containerStyle]}
                         >
                             <Animated.View style={progressStyle}/>
                         </View>
@@ -213,7 +217,7 @@ export class Progress extends PureComponent {
                 }
                 {
                     proType === 'circle' && this.state.show &&
-                    <View style={[styles.container, style, {width: width, height: height}]}>
+                    <View style={[styles.container, {width: width, height: height}]}>
                         <ART.Surface
                             width={pWidth}
                             height={pWidth}
@@ -302,6 +306,7 @@ export class Progress extends PureComponent {
 }
 
 Progress.defaultProps = {
+    animated: true,
     proType: 'line',//进度条标签
     width: 100,//容器宽
     height: 100,//容器高
@@ -314,7 +319,6 @@ Progress.defaultProps = {
     titleText: '组合评分',
     onEnd: () => {
     },//加载完成动画结束回调
-    style: {width: 150, height: 6},
     progress: 0,//当前加载进度值
     strokeCap: 'round',//填充圆环的首尾样式
     totalValue: 1,//总进度数值，默认为1
@@ -327,6 +331,10 @@ Progress.defaultProps = {
 
 Progress
     .propTypes = {
+    /**
+     * 是否进行动画
+     */
+    animated: propTypes.bool,
     /**
      * 进度条样式选择
      */
@@ -404,4 +412,12 @@ Progress
      * 描边宽度，就是指圆环的宽度
      */
     useNativeDriver: propTypes.bool,
+    /**
+     * 加载开启回调
+     */
+    loadStart: propTypes.func,
+    /**
+     * 加载结束回调
+     */
+    loadStop: propTypes.func,
 };
