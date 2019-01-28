@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import {View, Image, StyleSheet, TextInput} from 'react-native';
+import {View, Image, StyleSheet} from 'react-native';
 import Proptypes from 'prop-types';
 import {Touchable, TOUCHABLE_TYPES} from "@xzchameleon/touchable";
+import Input from "@xzchameleon/input";
 
 
 /**
@@ -58,7 +59,7 @@ class SearchBar extends Component {
                 {
                     searchIcon && <Image source={searchIcon} style={[SearchBarStyle.searchIconStyle, searchIconStyle]}/>
                 }
-                <TextInput
+                <Input
                     style={[SearchBarStyle.searchInputStyle, textInputStyle]}
                     androidunderlineColorAndroid={'transparent'}
                     placeholder={placeholder}

@@ -46,6 +46,8 @@ class Expand extends Component {
     };
 
     getHeight = (event) => {
+        //该方法会在高度变化时多次调用,在第一次计算出子元素的高度后,当元素收缩时(高度逐渐变为0),会继续调用,为防止最后计算出的高度为0,此处做判断,当已经
+        //计算出高度后,直接返回
         if (this.state.contentHeight > 0) {
             return;
         }
@@ -55,11 +57,11 @@ class Expand extends Component {
         this.state.height.setValue(this.state.expand ? this.state.contentHeight : 0);
     };
     onExpandChanged = () => {
-      if(this.state.expand){
-          this.hide();
-      } else {
-          this.show();
-      }
+        if (this.state.expand) {
+            this.hide();
+        } else {
+            this.show();
+        }
     };
 
     render() {
@@ -76,8 +78,10 @@ class Expand extends Component {
                         </View>
                     </Touchable>
                 }
-                <Animated.View style={[contentStyle, {height: this.state.height}]} onLayout={this.getHeight}>
-                    {children}
+                <Animated.View style={{height: this.state.height, overflow: 'hidden'}} onLayout={this.getHeight}>
+                    <View style={contentStyle}>
+                        {children}
+                    </View>
                 </Animated.View>
             </View>
         )
