@@ -1,11 +1,11 @@
 {
-  "name": "@xzchameleon/list",
-  "version": "0.0.22",
+  "name": "@xzchameleon/infoinput",
+  "version": "0.0.10",
   "description": "> TODO: description",
   "author": "linlinting <linlin.ting@thizgroup.com>",
   "homepage": "https://github.com/osea007007/react-native-chameleon#readme",
   "license": "ISC",
-  "main": "lib/list.js",
+  "main": "lib/infoInput.js",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -27,9 +27,8 @@
     "url": "https://github.com/osea007007/react-native-chameleon/issues"
   },
   "dependencies": {
-    "@xzchameleon/icon": "^0.0.22",
-    "@xzchameleon/rowline": "^0.0.22",
-    "@xzchameleon/touchable": "^0.0.22"
-  },
-  "gitHead": "b833159ac78816db9c07630a546cf3bbbaef5992"
+    "@xzchameleon/icon": "^0.0.10",
+    "@xzchameleon/input": "^0.0.17",
+    "@xzchameleon/touchable": "^0.0.10"
+  }
 }

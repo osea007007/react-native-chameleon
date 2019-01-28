@@ -38,7 +38,7 @@ export function List({leftIcon, leftText, leftTextStyle, rightIcon, rightText, r
                             <Text style={[ListStyle.rightText, rightTextStyle]}>{rightText}</Text>
                             {
                                 rightIcon && (!React.isValidElement(rightIcon) ?
-                                    <Icon name={'chevron-right'} size={16} style={{marginLeft:8}} {...rightIcon}/> :
+                                    <Icon type={'AntDesign'} name={'right'} size={16} style={{marginLeft:8}} {...rightIcon}/> :
                                     rightIcon)
                             }
                         </View>

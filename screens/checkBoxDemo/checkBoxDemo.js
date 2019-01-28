@@ -36,8 +36,8 @@ class CheckboxDemo extends Component {
                 <DemoList title={'受控的 CheckBox:可通过外界改变状态'}>
                     <CheckBox
                         checked={this.state.checked}
-                        checkedImg={require('../../components/checkBox/assets/image/checked_circle.png')}
-                        unCheckedImg={require('../../components/checkBox/assets/image/choose.png')}
+                        checkedImg={require('../../components/checkBox/lib/assets/image/checked_circle.png')}
+                        unCheckedImg={require('../../components/checkBox/lib/assets/image/choose.png')}
                         text={'Apple'}
                         onValueChanged={this.change1}/>
                     <View style={{height: 30}}/>
@@ -47,8 +47,8 @@ class CheckboxDemo extends Component {
 
                 <DemoList title={'不受控的 CheckBox:不可通过外界改变状态'}>
                     <CheckBox
-                        checkedImg={require('../../components/checkBox/assets/image/checked_circle.png')}
-                        unCheckedImg={require('../../components/checkBox/assets/image/choose.png')}
+                        checkedImg={require('../../components/checkBox/lib/assets/image/checked_circle.png')}
+                        unCheckedImg={require('../../components/checkBox/lib/assets/image/choose.png')}
                         text={'Apple'}
                         onValueChanged={this.change2}/>
                     <Text>{this.state.outControlChecked ? 'true' : 'false'}</Text>
@@ -57,8 +57,8 @@ class CheckboxDemo extends Component {
                 <DemoList title={'imageStyle:指定左侧图片的style'}>
                     <CheckBox
                         imageStyle={{width:40, height:40}}
-                        checkedImg={require('../../components/checkBox/assets/image/checked_circle.png')}
-                        unCheckedImg={require('../../components/checkBox/assets/image/choose.png')}
+                        checkedImg={require('../../components/checkBox/lib/assets/image/checked_circle.png')}
+                        unCheckedImg={require('../../components/checkBox/lib/assets/image/choose.png')}
                         text={'Apple'}
                         onValueChanged={() => {}}/>
                 </DemoList>
@@ -66,8 +66,8 @@ class CheckboxDemo extends Component {
                 <DemoList title={'containerStyle:指定组件容器的style'}>
                         <CheckBox
                             containerStyle={{padding:10}}
-                            checkedImg={require('../../components/checkBox/assets/image/checked_circle.png')}
-                            unCheckedImg={require('../../components/checkBox/assets/image/choose.png')}
+                            checkedImg={require('../../components/checkBox/lib/assets/image/checked_circle.png')}
+                            unCheckedImg={require('../../components/checkBox/lib/assets/image/choose.png')}
                             text={'Apple'}
                             onValueChanged={() => {}}/>
                 </DemoList>
@@ -76,14 +76,14 @@ class CheckboxDemo extends Component {
                     <View style={{flexDirection:'row'}}>
                         <CheckBox
                             containerStyle={{padding:10}}
-                            checkedImg={require('../../components/checkBox/assets/image/checked_circle.png')}
-                            unCheckedImg={require('../../components/checkBox/assets/image/choose.png')}
+                            checkedImg={require('../../components/checkBox/lib/assets/image/checked_circle.png')}
+                            unCheckedImg={require('../../components/checkBox/lib/assets/image/choose.png')}
                             text={'Apple'}
                             onValueChanged={() => {}}/>
                         <CheckBox
                             containerStyle={{padding:10}}
-                            checkedImg={require('../../components/checkBox/assets/image/checked_circle.png')}
-                            unCheckedImg={require('../../components/checkBox/assets/image/choose.png')}
+                            checkedImg={require('../../components/checkBox/lib/assets/image/checked_circle.png')}
+                            unCheckedImg={require('../../components/checkBox/lib/assets/image/choose.png')}
                             text={'Android'}
                             onValueChanged={() => {}}/>
                     </View>
@@ -92,8 +92,8 @@ class CheckboxDemo extends Component {
                 <DemoList title={`textStyle:指定文本样式 \n textStyle={{fontSize:15, color:'red'}}`}>
                     <CheckBox
                         containerStyle={{padding:10}}
-                        checkedImg={require('../../components/checkBox/assets/image/checked_circle.png')}
-                        unCheckedImg={require('../../components/checkBox/assets/image/choose.png')}
+                        checkedImg={require('../../components/checkBox/lib/assets/image/checked_circle.png')}
+                        unCheckedImg={require('../../components/checkBox/lib/assets/image/choose.png')}
                         text={'Apple'}
                         textStyle={{fontSize:15, color:'red'}}
                         onValueChanged={() => {}}/>
@@ -102,8 +102,8 @@ class CheckboxDemo extends Component {
                 <DemoList title={'onValueChanged:点击事件'}>
                     <CheckBox
                         containerStyle={{padding:10}}
-                        checkedImg={require('../../components/checkBox/assets/image/checked_circle.png')}
-                        unCheckedImg={require('../../components/checkBox/assets/image/choose.png')}
+                        checkedImg={require('../../components/checkBox/lib/assets/image/checked_circle.png')}
+                        unCheckedImg={require('../../components/checkBox/lib/assets/image/choose.png')}
                         text={'Apple'}
                         textStyle={{fontSize:15, color:'red'}}
                         onValueChanged={this.change1}/>
