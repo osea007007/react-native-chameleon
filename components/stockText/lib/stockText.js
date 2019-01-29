@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {Text} from 'react-native';
 import Proptypes from 'prop-types';
 
 /**
@@ -42,9 +42,9 @@ class StockText extends Component {
     };
 
     render(){
-        let {value, textStyle} = this.props;
+        let {value, style} = this.props;
         return(
-            <Text style={[{...textStyle}, {color: this.displayColor(value)}]}>{this.displayContent(value)}</Text>
+            <Text style={[{...style}, {color: this.displayColor(value)}]}>{this.displayContent(value)}</Text>
         );
     }
 }
@@ -75,12 +75,10 @@ StockText.propTypes = {
      * 末尾自定义符号
      */
     tailCharacter:Proptypes.string,
+    /**
+     * 自定义文字样式,不可指定颜色(color)
+     */
+    style:Proptypes.any,
 };
-
-const StockTextStyle = StyleSheet.create({
-    container:{
-        padding:2,
-    },
-});
 
 export default StockText;

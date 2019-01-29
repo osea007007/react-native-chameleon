@@ -66,6 +66,7 @@ class CheckboxDemo extends Component {
             checked10: !this.state.checked10,
         });
     };
+
     render() {
         return (
             <ScrollView>
@@ -73,78 +74,78 @@ class CheckboxDemo extends Component {
                     <CheckBox
                         checked={this.state.checked1}
                         text={'Apple'}
-                        onValueChanged={this.change1}/>
+                        onChange={this.change1}/>
                 </DemoList>
                 <DemoList title={'未选中,不可点击'}>
                     <CheckBox
                         checked={this.state.checked2}
                         disable={true}
                         text={'Apple'}
-                        onValueChanged={this.change1}/>
+                        onChange={this.change1}/>
                 </DemoList>
 
                 <DemoList title={'选中,可点击'}>
-                <CheckBox
-                    checked={this.state.checked3}
-                    text={'Apple'}
-                    onValueChanged={this.change3}/>
+                    <CheckBox
+                        checked={this.state.checked3}
+                        text={'Apple'}
+                        onChange={this.change3}/>
                 </DemoList>
                 <DemoList title={'选中,不可点击'}>
                     <CheckBox
                         checked={this.state.checked4}
                         disable={true}
                         text={'Apple'}
-                        onValueChanged={this.change4}/>
+                        onChange={this.change4}/>
                 </DemoList>
 
                 <DemoList title={'imageStyle:指定左侧图片的style'}>
                     <CheckBox
                         checked={this.state.checked5}
-                        imageStyle={{width:40, height:40}}
+                        imageStyle={{width: 40, height: 40}}
                         text={'Apple'}
-                        onValueChanged={this.change5}/>
+                        onChange={this.change5}/>
                 </DemoList>
 
                 <DemoList title={'containerStyle:指定组件容器的style'}>
-                        <CheckBox
-                            checked={this.state.checked6}
-                            containerStyle={{padding:10}}
-                            text={'Apple'}
-                            onValueChanged={this.change6}/>
+                    <CheckBox
+                        checked={this.state.checked6}
+                        containerStyle={{padding: 10}}
+                        text={'Apple'}
+                        onChange={this.change6}/>
                 </DemoList>
 
                 <DemoList title={`指定 text \n text={'Apple'}`}>
-                    <View style={{flexDirection:'row'}}>
+                    <View style={{flexDirection: 'row'}}>
                         <CheckBox
                             checked={this.state.checked7}
-                            containerStyle={{padding:10}}
+                            containerStyle={{padding: 10}}
                             text={'Apple'}
-                            onValueChanged={this.change7}/>
+                            onChange={this.change7}/>
                         <CheckBox
                             checked={this.state.checked8}
-                            containerStyle={{padding:10}}
+                            containerStyle={{padding: 10}}
                             text={'Android'}
-                            onValueChanged={this.change8}/>
+                            onChange={this.change8}/>
                     </View>
                 </DemoList>
 
                 <DemoList title={`textStyle:指定文本样式 \n textStyle={{fontSize:15, color:'red'}}`}>
                     <CheckBox
                         checked={this.state.checked9}
-                        containerStyle={{padding:10}}
+                        containerStyle={{padding: 10}}
                         text={'Apple'}
-                        textStyle={{fontSize:15, color:'red'}}
-                        onValueChanged={this.change9}/>
+                        textStyle={{fontSize: 15, color: 'red'}}
+                        onChange={this.change9}/>
                 </DemoList>
 
                 <DemoList title={'onValueChanged:点击事件'}>
                     <CheckBox
                         checked={this.state.checked10}
-                        containerStyle={{padding:10}}
+                        containerStyle={{padding: 10}}
                         text={'Apple'}
-                        textStyle={{fontSize:15, color:'red'}}
-                        onValueChanged={this.change10}/>
-                    <Text>{this.state.checked10 ? '选中' :'未选中'}</Text>
+                        textStyle={{fontSize: 15, color: 'red'}}
+                        onChange={this.change10}/>
+                    <Text>{this.state.checked10 ? '选中' : '未选中'}</Text>
                 </DemoList>
 
             </ScrollView>
