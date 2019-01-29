@@ -1,0 +1,86 @@
+import React, {Component} from 'react';
+import {View, Text, StyleSheet} from 'react-native';
+import Proptypes from 'prop-types';
+
+/**
+ * ---
+ * page: stockText
+ * ---
+ *
+ *
+ * 用于显示收益率的文本,收益为正显示红色,收益为负显示绿色
+ */
+
+class StockText extends Component {
+
+    displayColor = (value) => {
+        if(value === undefined || isNaN(value)) {
+            return '#383838';
+        }
+        let temp = Number(value);
+        if(temp >= 0) {
+            return this.props.increaseColor;
+        } else {
+            return this.props.decreaseColor;
+        }
+    };
+
+    displayContent = (value) => {
+        let {tailCharacter='', placeholder=''} = this.props;
+        if(value === undefined) {
+            return placeholder;
+        }
+        if(isNaN(value)) {
+            return value;
+        }
+        let temp = Number(value);
+        if(temp >= 0) {
+            return '+' + temp + tailCharacter;
+        } else {
+            return temp + tailCharacter;
+        }
+    };
+
+    render(){
+        let {value, textStyle} = this.props;
+        return(
+            <Text style={[{...textStyle}, {color: this.displayColor(value)}]}>{this.displayContent(value)}</Text>
+        );
+    }
+}
+
+StockText.defaultProps = {
+    increaseColor:'red',
+    decreaseColor:'green',
+};
+
+StockText.propTypes = {
+    /**
+     * 当前数值,传入字符串类型
+     */
+    value:Proptypes.any,
+    /**
+     * 大于等于0时颜色
+     */
+    increaseColor:Proptypes.string,
+    /**
+     * 小于0时颜色
+     */
+    decreaseColor:Proptypes.string,
+    /**
+     * 未赋值时的占位字符
+     */
+    placeholder:Proptypes.string,
+    /**
+     * 末尾自定义符号
+     */
+    tailCharacter:Proptypes.string,
+};
+
+const StockTextStyle = StyleSheet.create({
+    container:{
+        padding:2,
+    },
+});
+
+export default StockText;

@@ -1,9 +1,10 @@
 import React, {Component} from "react";
-import {View, Text, StyleSheet, Image, Picker, Platform, Dimensions} from 'react-native';
+import {View, Text, StyleSheet, Picker, Platform} from 'react-native';
 import Proptypes from 'prop-types';
 import {Touchable, TOUCHABLE_TYPES} from "@xzchameleon/touchable";
-import {Modal} from "../../modal";
-import {RowLine} from "../../rowLine";
+import {Modal} from "@xzchameleon/modal";
+import {RowLine} from "@xzchameleon/rowline";
+import {Icon} from "@xzchameleon/icon";
 
 /**
  * ---
@@ -65,7 +66,7 @@ class Select extends Component {
                 <Touchable touchComponent={TOUCHABLE_TYPES.OPACITY} onPress={() => enabled ? this.modal.show() : null}>
                     <View style={[SelectStyle.container, style]}>
                         <Text style={[SelectStyle.text, textStyle]}>{this.state.selectedValue}</Text>
-                        <Image style={[SelectStyle.img, imgStyle]} source={require('../assets/image/trade_down.png')}/>
+                        <Icon style={[SelectStyle.img, imgStyle]} type={'AntDesign'} name={'caretdown'} size={12} color={'#383838'}/>
                         <Modal ref={(modal) => this.modal = modal} containerStyle={{justifyContent: 'flex-end'}} animationType={'slide'}>
                             <View style={SelectStyle.pickerContainer}>
                                 <View style={SelectStyle.header}>
@@ -156,7 +157,7 @@ const SelectStyle = StyleSheet.create({
         color: '#383838',
     },
     img: {
-        marginRight: 8,
+        marginRight: 15,
     },
     header: {
         height: 42,

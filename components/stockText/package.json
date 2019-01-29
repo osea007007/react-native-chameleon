@@ -1,14 +1,14 @@
 {
-  "name": "@xzchameleon/rotateicon",
+  "name": "@xzchameleon/stocktext",
   "version": "0.0.23",
   "description": "> TODO: description",
   "keywords": [
-    "rotateIcon"
+    "stocktext"
   ],
   "author": "jinsongpei <songpei.jin@thizgroup.com>",
   "homepage": "https://github.com/mike1023/react-native-chameleon#readme",
   "license": "MIT",
-  "main": "lib/rotateIcon.js",
+  "main": "lib/stockText.js",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -28,10 +28,6 @@
   },
   "bugs": {
     "url": "https://github.com/mike1023/react-native-chameleon/issues"
-  },
-  "dependencies": {
-    "@xzchameleon/icon": "^0.0.23",
-    "@xzchameleon/touchable": "^0.0.23"
   },
   "gitHead": "b833159ac78816db9c07630a546cf3bbbaef5992"
 }
