@@ -58,7 +58,7 @@ StockText.propTypes = {
     /**
      * 当前数值,
      */
-    value:Proptypes.oneOfType(),
+    value:Proptypes.string,
     /**
      * 大于等于0时颜色
      */

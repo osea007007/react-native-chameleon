@@ -24,7 +24,7 @@ class StockTextDemo extends Component{
                     <StockText value={'$$'}/>
                 </DemoList>
                 <DemoList title={'value 为正'}>
-                    <StockText value={10}/>
+                    <StockText value={'10'}/>
                 </DemoList>
                 <DemoList title={'value 为0'}>
                     <StockText value={'0'}/>
