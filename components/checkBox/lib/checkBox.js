@@ -11,12 +11,12 @@ import {Touchable, TOUCHABLE_TYPES} from "@xzchameleon/touchable";
  *
  * 单选组件
  */
-export class CheckBox extends Component {
+class CheckBox extends Component {
 
     handleClick = () => {
-        let {disable, onValueChanged} = this.props;
+        let {disable, onChange} = this.props;
         if (!disable) {
-            onValueChanged && onValueChanged();
+            onChange && onChange();
         }
     };
 
@@ -85,10 +85,11 @@ CheckBox.propTypes = {
     /**
      * 点击后触发的回调
      */
-    onValueChanged: Proptypes.any,
+    onChange: Proptypes.any,
     /**
      * 是否禁用点击
      */
     disable: Proptypes.bool,
 };
 
+export default CheckBox;
