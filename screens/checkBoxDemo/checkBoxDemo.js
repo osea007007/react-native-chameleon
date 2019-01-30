@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {ScrollView, Text, View} from "react-native";
 import {DemoList} from "../component/DemoList";
-import {CheckBox} from "../../components/checkBox/lib/checkBox";
+import CheckBox from "../../components/checkBox/lib/checkBox";
 
 
 class CheckboxDemo extends Component {

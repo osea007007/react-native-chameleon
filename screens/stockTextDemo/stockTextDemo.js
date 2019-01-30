@@ -12,7 +12,7 @@ class StockTextDemo extends Component{
                     <StockText/>
                 </DemoList>
                 <DemoList title={'value 为负'}>
-                    <StockText value={'-10'}/>
+                    <StockText value={'-yu10'}/>
                 </DemoList>
                 <DemoList title={'value 为负'}>
                     <StockText value={'-123'}/>

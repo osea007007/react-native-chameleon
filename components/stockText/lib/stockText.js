@@ -27,7 +27,7 @@ class StockText extends Component {
 
     displayContent = (value) => {
         let {tailCharacter='', placeholder=''} = this.props;
-        if(value === undefined) {
+        if(value === undefined || value === '') {
             return placeholder;
         }
         if(isNaN(value)) {
@@ -35,9 +35,9 @@ class StockText extends Component {
         }
         let temp = Number(value);
         if(temp >= 0) {
-            return '+' + temp + tailCharacter;
+            return '+' + value + tailCharacter;
         } else {
-            return temp + tailCharacter;
+            return value + tailCharacter;
         }
     };
 
@@ -56,9 +56,9 @@ StockText.defaultProps = {
 
 StockText.propTypes = {
     /**
-     * 当前数值,传入字符串类型
+     * 当前数值,
      */
-    value:Proptypes.any,
+    value:Proptypes.oneOfType(),
     /**
      * 大于等于0时颜色
      */

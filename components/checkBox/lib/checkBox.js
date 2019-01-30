@@ -11,7 +11,7 @@ import {Touchable, TOUCHABLE_TYPES} from "@xzchameleon/touchable";
  *
  * 单选组件
  */
-export class CheckBox extends Component {
+class CheckBox extends Component {
 
     handleClick = () => {
         let {disable, onChange} = this.props;
@@ -92,3 +92,4 @@ CheckBox.propTypes = {
     disable: Proptypes.bool,
 };
 
+export default CheckBox;
