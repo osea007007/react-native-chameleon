@@ -1,8 +1,8 @@
-import React, {Component, PureComponent} from 'react';
+import React, {PureComponent} from 'react';
 import {Modal} from "@xzchameleon/modal";
-import {Dimensions, Animated, findNodeHandle, UIManager, View} from "react-native";
+import {Dimensions, Animated, findNodeHandle, UIManager} from "react-native";
 import propTypes from 'prop-types';
-import {Touchable, TOUCHABLE_TYPES} from "../../touchable";
+import {Touchable, TOUCHABLE_TYPES} from "../../../components/touchable";
 
 /**
  * ---

@@ -3,18 +3,6 @@ import {ART, Animated, Easing, View, StyleSheet} from "react-native";
 import propTypes from 'prop-types';
 import Arc from "./component/Arc";
 
-/**
- * ---
- * page: progress
- * ---
- *
- *  * 支持3中样式的进度条
- *  * 支持自定义背景色（默认 #dddddd ）
- *  * 提供function 用来关闭动画和隐藏进度条
- *  * line（线条形） circle（圆形） halfCircle（半圆形）
- *  *
- */
-
 const CIRCLE = Math.PI * 2;
 const styles = StyleSheet.create({
     container: {
@@ -29,36 +17,29 @@ const INDETERMINATE_WIDTH_FACTOR = 0.3;
 const BAR_WIDTH_ZERO_POSITION =
     INDETERMINATE_WIDTH_FACTOR / (1 + INDETERMINATE_WIDTH_FACTOR);
 
+/**
+ * ---
+ * page: progress
+ * ---
+ *
+ *  * 支持3中样式的进度条
+ *  * 支持自定义背景色（默认 #dddddd ）
+ *  * 提供function 用来关闭动画和隐藏进度条
+ *  * line（线条形） circle（圆形） halfCircle（半圆形）
+ */
 export class Progress extends PureComponent {
     constructor(props) {
         super(props);
         let {height, width, thickness, offsetRotate} = this.props;
         let R = (Math.min(width, height) - thickness * 2) / 2;
-        let perimeter = Math.PI * 2 * R;
-        let position = R + thickness;
-        let offset = (offsetRotate / 180) * (Math.PI * R);
         this.state = {
             show: false,
             width: 0,
             progress: this.props.animated ? new Animated.Value(0) : this.props.progress,
             animationValue: new Animated.Value(BAR_WIDTH_ZERO_POSITION),
-            R, // 半径
-            offset, // 外层圆弧没有背景色的一段
-            position, // 圆弧圆心位置
-            perimeter, // 周长
-            opacity: new Animated.Value(0),
         };
-        this.circleProgress = this.state.progress.interpolate({
-            inputRange: [
-                0,
-                this.props.totalValue ? this.props.totalValue : 1,
-            ],
-            outputRange: [
-                perimeter,
-                offset
-            ]
-        });
     }
+
     componentDidMount() {
         this.loadStart();
     }
@@ -80,41 +61,16 @@ export class Progress extends PureComponent {
     };
 
     loadStart() {
-        let {proType, animated, loadStart} = this.props;
+        let { animated, loadStart} = this.props;
         if (animated) {
-            if (proType === 'halfCircle') {
-                this.state.progress.setValue(0);
-                this.state.opacity.setValue(0);
-                this.setState({show: true}, () => {
-                    Animated.parallel([
-                        Animated.timing(
-                            this.state.progress,
-                            {
-                                toValue: this.props.progress,
-                                easing: Easing.linear,
-                                duration: 800
-                            }
-                        ),
-                        Animated.timing(
-                            this.state.opacity,
-                            {
-                                toValue: 1,
-                                easing: Easing.linear,
-                                duration: 800
-                            }
-                        ),
-                    ]).start();
-                });
-            } else {
                 this.setState({show: true}, () => {
                     Animated.timing(this.state.progress, {
                         duration: this.props.duration,
-                        easing: Easing.linear,
+                        easing: Easing.inOut(Easing.ease),
                         toValue: this.props.progress / this.props.totalValue,
-                        useNativeDriver: this.props.useNativeDriver,
+                        useNativeDriver: this.props.type==='line'?this.props.useNativeDriver:false,
                     }).start();
                 });
-            }
         } else {
             this.setState({show: true});
         }
@@ -129,7 +85,7 @@ export class Progress extends PureComponent {
                 duration: this.props.duration * (this.newScore - this.oldScore),
                 easing: Easing.inOut(Easing.ease),
                 toValue: this.props.progress / this.props.totalValue,
-                useNativeDriver: this.props.useNativeDriver,
+                useNativeDriver: this.props.type==='line'?this.props.useNativeDriver:false,
             }).start(() => {
                 if (this.props.progress === this.props.totalValue) {
                     this.props.onEnd();
@@ -143,11 +99,11 @@ export class Progress extends PureComponent {
         const {
             width,
             height,
+            childStyle,
             offsetRotate,
             color,
             children,
             direction,
-            fill,
             strokeCap,
             thickness,
             borderColor,
@@ -155,7 +111,7 @@ export class Progress extends PureComponent {
             borderWidth,
             progress,
             unfilledColor,
-            proType,
+            type,
             ...restProps
         } = this.props;
 
@@ -205,7 +161,7 @@ export class Progress extends PureComponent {
         return (
             <View style={{width: width, height: height}} {...restProps}>
                 {
-                    proType === 'line' && this.state.show &&
+                    type === 'line' && this.state.show &&
                     <View>
                         <View
                             style={[containerStyle]}
@@ -216,7 +172,7 @@ export class Progress extends PureComponent {
                     </View>
                 }
                 {
-                    proType === 'circle' && this.state.show &&
+                    type === 'circle' && this.state.show &&
                     <View style={[styles.container, {width: width, height: height}]}>
                         <ART.Surface
                             width={pWidth}
@@ -233,7 +189,6 @@ export class Progress extends PureComponent {
                             />
                             {
                                 this.props.progress > 0 && <AnimatedArc
-                                    fill={fill}
                                     radius={radius}
                                     startAngle={0}
                                     endAngle={angle}
@@ -245,13 +200,13 @@ export class Progress extends PureComponent {
                             }
                         </ART.Surface>
                         <View
-                            style={{
+                            style={[{
                                 width: '100%',
                                 height: '100%',
                                 position: 'absolute',
                                 alignItems: 'center',
                                 justifyContent: 'center',
-                            }}
+                            },childStyle]}
                         >
                             {children}
                         </View>
@@ -259,7 +214,7 @@ export class Progress extends PureComponent {
                     </View>
                 }
                 {
-                    proType === 'halfCircle' && this.state.show &&
+                    type === 'halfCircle' && this.state.show &&
                     <View style={{height, width}}>
                         <ART.Surface
                             width={pWidth}
@@ -277,7 +232,6 @@ export class Progress extends PureComponent {
                             />
                             {
                                 this.props.progress > 0 && <AnimatedArc
-                                    fill={fill}
                                     radius={radius}
                                     startAngle={Math.PI + Math.PI * offsetRotate / 360}
                                     endAngle={halfAngle}
@@ -289,13 +243,13 @@ export class Progress extends PureComponent {
                             }
                         </ART.Surface>
                         <View
-                            style={{
+                            style={[{
                                 width: '100%',
                                 height: '100%',
                                 position: 'absolute',
                                 alignItems: 'center',
                                 justifyContent: 'center',
-                            }}
+                            },childStyle]}
                         >
                             {children}
                         </View>
@@ -307,62 +261,58 @@ export class Progress extends PureComponent {
 
 Progress.defaultProps = {
     animated: true,
-    proType: 'line',//进度条标签
+    type: 'line',//进度条标签
     width: 100,//容器宽
     height: 100,//容器高
     color: '#364682',//加载中的进度条颜色
     unfilledColor: '#dddddd',//剩余进度的颜色
     duration: 3000,//调整动画速度
     direction: 'clockwise',//圆进度加载的方向clockwise或counter-clockwise
-    formatText: progress => `${Math.round(progress * 100)}%`,//百分数换算方法
     offsetRotate: 120,//半圆消失的角度
-    titleText: '组合评分',
-    onEnd: () => {
-    },//加载完成动画结束回调
+    onEnd: () => {},//加载完成动画结束回调
     progress: 0,//当前加载进度值
-    strokeCap: 'round',//填充圆环的首尾样式
+    strokeCap: 'butt',//填充圆环的首尾样式
     totalValue: 1,//总进度数值，默认为1
     thickness: 3,//描边宽度，就是指圆环的宽度
-    useNativeDriver: false,
+    useNativeDriver: true,
     borderRadius: 4,//两端圆角值，默认4
     borderWidth: 0,//外边线的宽度，设置0外边线消失
     borderColor: '#dddddd',//进度条外边框的颜色
 };
 
-Progress
-    .propTypes = {
+Progress.propTypes = {
     /**
      * 是否进行动画
      */
     animated: propTypes.bool,
     /**
+     * child 样式设置
+     */
+    childStyle: propTypes.any,
+    /**
      * 进度条样式选择
      */
-    proType: propTypes.oneOf(['line', 'circle', 'halfCircle']),
+    type: propTypes.oneOf(['line', 'circle', 'halfCircle']),
     /**
-     * 进度条外边框的颜色
+     * type='line'时 外边框的颜色
      */
     borderColor: propTypes.string,
     /**
-     * 两端圆角值，默认4
+     * type='line'时 两端圆角值，默认4
      */
     borderRadius: propTypes.number,
     /**
-     * 外边线的宽度，设置0外边线消失
+     * type='line'时 外边线的宽度，设置0外边线消失
      */
     borderWidth: propTypes.number,
     /**
-     * 容器宽度
+     * 容器宽度，type='line'时为进度条长度，否则取Math.min(容器宽，容器高)为圆直径
      */
     width: propTypes.number,
     /**
-     * 容器高度
+     * 容器高度，type='line'时为进度条高度，否则取Math.min(容器宽，容器高)为圆直径
      */
     height: propTypes.number,
-    /**
-     * 容器样式
-     */
-    style: propTypes.any,//容器样式
     /**
      * 加载中的进度条颜色
      */
@@ -371,6 +321,9 @@ Progress
      * 剩余进度的颜色
      */
     unfilledColor: propTypes.string,
+    /**
+     * 内部子组件
+     */
     children: propTypes.node,
     /**
      * 调整动画速度
@@ -380,14 +333,6 @@ Progress
      * 圆的方向clockwise或counter-clockwise
      */
     direction: propTypes.oneOf(['clockwise', 'counter-clockwise']),//
-    /**
-     * 填充内圈的颜色
-     */
-    fill: propTypes.string,
-    /**
-     * 百分数换算方法
-     */
-    formatText: propTypes.func,
     /**
      * 当前加载完成的进度数值
      */
@@ -409,7 +354,7 @@ Progress
      */
     offsetRotate: propTypes.number,
     /**
-     * 描边宽度，就是指圆环的宽度
+     * 是否使用本机驱动程序来制作动画
      */
     useNativeDriver: propTypes.bool,
     /**
@@ -420,4 +365,8 @@ Progress
      * 加载结束回调
      */
     loadStop: propTypes.func,
+    /**
+     * 加载完成回调
+     */
+    onEnd: propTypes.func,
 };
