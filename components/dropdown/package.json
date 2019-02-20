@@ -14,7 +14,7 @@
     "lib"
   ],
   "publishConfig": {
-    "registry": "http://registry.npmjs.org"
+    "access": "public"
   },
   "repository": {
     "type": "git",
@@ -28,5 +28,6 @@
   },
   "dependencies": {
     "@xzchameleon/modal": "^0.0.10"
-  }
+  },
+  "gitHead": "7d88e37cd59320953ee4e0d926e0cf79cb9b83e9"
 }
