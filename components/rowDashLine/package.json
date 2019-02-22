@@ -1,6 +1,6 @@
 {
   "name": "@xzchameleon/rowdashline",
-  "version": "0.0.25",
+  "version": "0.0.27",
   "description": "> TODO: description",
   "author": "jason.xing@thizgroup.com <jason.xing@thizgroup.com>",
   "homepage": "https://github.com/fjson/react-native-chameleon#readme",
@@ -26,5 +26,5 @@
   "bugs": {
     "url": "https://github.com/fjson/react-native-chameleon/issues"
   },
-  "gitHead": "b833159ac78816db9c07630a546cf3bbbaef5992"
+  "gitHead": "7d88e37cd59320953ee4e0d926e0cf79cb9b83e9"
 }

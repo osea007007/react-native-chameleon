@@ -1,6 +1,6 @@
 {
   "name": "@xzchameleon/progress",
-  "version": "0.0.10",
+  "version": "0.0.27",
   "description": "> TODO: description",
   "author": "mr.zhang <stark.zhang@thizgroup.com>",
   "homepage": "https://github.com/15821959553/react-native-chameleon#readme",
@@ -14,7 +14,7 @@
     "lib"
   ],
   "publishConfig": {
-    "registry": "http://registry.npmjs.org"
+    "access": "public"
   },
   "repository": {
     "type": "git",

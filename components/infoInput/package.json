@@ -1,6 +1,6 @@
 {
   "name": "@xzchameleon/infoinput",
-  "version": "0.0.25",
+  "version": "0.0.27",
   "description": "> TODO: description",
   "author": "linlinting <linlin.ting@thizgroup.com>",
   "homepage": "https://github.com/osea007007/react-native-chameleon#readme",
@@ -30,5 +30,6 @@
     "@xzchameleon/icon": "^0.0.10",
     "@xzchameleon/input": "^0.0.17",
     "@xzchameleon/touchable": "^0.0.10"
-  }
+  },
+  "gitHead": "7d88e37cd59320953ee4e0d926e0cf79cb9b83e9"
 }
