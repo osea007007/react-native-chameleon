@@ -25,11 +25,5 @@
   },
   "bugs": {
     "url": "https://github.com/15821959553/react-native-chameleon/issues"
-  },
-  "dependencies": {
-    "@xzchameleon/progressbar": "^0.0.10",
-    "@xzchameleon/progresscircle": "^0.0.10",
-    "@xzchameleon/progresshalfcircle": "^0.0.10"
-  },
-  "gitHead": "7d88e37cd59320953ee4e0d926e0cf79cb9b83e9"
+  }
 }
