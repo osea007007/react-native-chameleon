@@ -79,6 +79,11 @@ class ProgressDemo extends PureComponent {
                     <Progress ref={(component) => this.progress1 = component} animated={this.state.animated}
                               progress={this.state.progress}/>
                 </DemoList>
+                <DemoList containStyle={{alignItems: 'center'}}
+                          title={`默认线条进度条,无动画，传入进度值\nanimated={false} \nprogress={0.5}`}>
+                    <Progress ref={(component) => this.progress1 = component} animated={false}
+                              progress={0.5}/>
+                </DemoList>
                 <DemoList containStyle={{alignItems: 'center'}} title={`默认圆形进度条，\ntype={'circle'} `}>
                     <Progress ref={(component) => this.progress2 = component} animated={this.state.animated}
                               type={'circle'} progress={this.state.progress}/>
@@ -120,10 +125,20 @@ class ProgressDemo extends PureComponent {
                               thickness={10}
                     />
                 </DemoList>
+                <DemoList
+                    containStyle={{alignItems: 'center'}}
+                    title={`显示固定进度 \n animated={false} \n progress={0.2}`}>
+                    <Progress type={'circle'} progress={0.2}
+                              backgroundColor={'green'}
+                              width={150} height={150} color={'red'} unfilledColor={'yellow'}
+                              thickness={10} animated={false}
+                    />
+                </DemoList>
+
                 <DemoList containStyle={{alignItems: 'center'}}
                           title={`圆形进度条，修改填充圆环的首尾样式,显示内部文字, \nfill={'greed'} \nstrokeCap={'round'}\nshowsText={true}`}>
                     <Progress type={'circle'} progress={this.state.progress}
-                               color={'red'} unfilledColor={'yellow'}
+                              color={'red'} unfilledColor={'yellow'}
                               showsText={true} strokeCap={'round'} thickness={10}
                     />
                 </DemoList>

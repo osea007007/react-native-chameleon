@@ -61,16 +61,16 @@ export class Progress extends PureComponent {
     };
 
     loadStart() {
-        let { animated, loadStart} = this.props;
+        let {animated, loadStart} = this.props;
         if (animated) {
-                this.setState({show: true}, () => {
-                    Animated.timing(this.state.progress, {
-                        duration: this.props.duration,
-                        easing: Easing.inOut(Easing.ease),
-                        toValue: this.props.progress / this.props.totalValue,
-                        useNativeDriver: this.props.type==='line'?this.props.useNativeDriver:false,
-                    }).start();
-                });
+            this.setState({show: true}, () => {
+                Animated.timing(this.state.progress, {
+                    duration: this.props.duration,
+                    easing: Easing.inOut(Easing.ease),
+                    toValue: this.props.progress / this.props.totalValue,
+                    useNativeDriver: this.props.type === 'line' ? this.props.useNativeDriver : false,
+                }).start();
+            });
         } else {
             this.setState({show: true});
         }
@@ -85,7 +85,7 @@ export class Progress extends PureComponent {
                 duration: this.props.duration * (this.newScore - this.oldScore),
                 easing: Easing.inOut(Easing.ease),
                 toValue: this.props.progress / this.props.totalValue,
-                useNativeDriver: this.props.type==='line'?this.props.useNativeDriver:false,
+                useNativeDriver: this.props.type === 'line' ? this.props.useNativeDriver : false,
             }).start(() => {
                 if (this.props.progress === this.props.totalValue) {
                     this.props.onEnd();
@@ -135,14 +135,20 @@ export class Progress extends PureComponent {
                     }),
                 },
                 {
-                    translateX: this.state.progress.interpolate({
+                    translateX: this.state.progress.interpolate ? this.state.progress.interpolate({
+                        inputRange: [0, 1],
+                        outputRange: [innerWidth / -2, 0],
+                    }) : new Animated.Value(this.props.progress).interpolate({
                         inputRange: [0, 1],
                         outputRange: [innerWidth / -2, 0],
                     }),
                 },
                 {
                     // Interpolation a temp workaround for https://github.com/facebook/react-native/issues/6278
-                    scaleX: this.state.progress.interpolate({
+                    scaleX: this.state.progress.interpolate ? this.state.progress.interpolate({
+                        inputRange: [0, 1],
+                        outputRange: [0.0001, 1],
+                    }) : new Animated.Value(this.props.progress).interpolate({
                         inputRange: [0, 1],
                         outputRange: [0.0001, 1],
                     }),
@@ -206,7 +212,7 @@ export class Progress extends PureComponent {
                                 position: 'absolute',
                                 alignItems: 'center',
                                 justifyContent: 'center',
-                            },childStyle]}
+                            }, childStyle]}
                         >
                             {children}
                         </View>
@@ -249,7 +255,7 @@ export class Progress extends PureComponent {
                                 position: 'absolute',
                                 alignItems: 'center',
                                 justifyContent: 'center',
-                            },childStyle]}
+                            }, childStyle]}
                         >
                             {children}
                         </View>
@@ -269,7 +275,8 @@ Progress.defaultProps = {
     duration: 3000,//调整动画速度
     direction: 'clockwise',//圆进度加载的方向clockwise或counter-clockwise
     offsetRotate: 120,//半圆消失的角度
-    onEnd: () => {},//加载完成动画结束回调
+    onEnd: () => {
+    },//加载完成动画结束回调
     progress: 0,//当前加载进度值
     strokeCap: 'butt',//填充圆环的首尾样式
     totalValue: 1,//总进度数值，默认为1
