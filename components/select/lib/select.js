@@ -42,7 +42,7 @@ class Select extends Component {
         this.setState({
             selectedValue: dataSource[this.state.index],
         }, () => {
-            onValueChanged && onValueChanged(this.state.value, this.state.index);
+            onValueChanged && onValueChanged(this.state.selectedValue, this.state.index);
             this.modal.hide();
         });
     };
