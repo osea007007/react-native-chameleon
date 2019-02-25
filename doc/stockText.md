@@ -11,7 +11,7 @@ prop | type | default | required | description
 ---- | :----: | :-------: | :--------: | -----------
 **containerStyle** | `*` |  | false | 容器样式
 **fontSize** | `Number` | `14` | false | 字体大小
-**value** | `String` |  | false | 当前数值,传入字符串类型
+**value** | `*` |  | false | 当前数值,传入字符串类型
 
 
 

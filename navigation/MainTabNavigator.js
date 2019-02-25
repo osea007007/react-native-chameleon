@@ -21,6 +21,8 @@ import InputDemo from "../screens/inputDemo/inputDemo";
 import StockTextDemo from "../screens/stockTextDemo/stockTextDemo";
 import SwiperDemo from "../screens/swiperDemo/swiperDemo";
 import InfoInputDemo from "../screens/infoInputDemo/infoInputDemo";
+import DropDownDemo from "../screens/dropdownDemo/dropdownDemo";
+import ProgressDemo from "../screens/progressDemo/progressDemo";
 
 const HomeStack = createStackNavigator({
     Home: HomeScreen,
@@ -40,6 +42,8 @@ const HomeStack = createStackNavigator({
     InfoInputDemo:InfoInputDemo,
     StockTextDemo:StockTextDemo,
 
+    DropDownDemo:DropDownDemo,
+    ProgressDemo:ProgressDemo,
 });
 
 HomeStack.navigationOptions = {
