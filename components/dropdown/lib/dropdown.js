@@ -2,7 +2,7 @@ import React, {PureComponent} from 'react';
 import {Modal} from "@xzchameleon/modal";
 import {Dimensions, Animated, findNodeHandle, UIManager} from "react-native";
 import propTypes from 'prop-types';
-import {Touchable, TOUCHABLE_TYPES} from "../../../components/touchable";
+import {Touchable, TOUCHABLE_TYPES} from "@xzchameleon/touchable";
 
 /**
  * ---
