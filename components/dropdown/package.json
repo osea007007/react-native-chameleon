@@ -27,7 +27,8 @@
     "url": "https://github.com/15821959553/react-native-chameleon/issues"
   },
   "dependencies": {
-    "@xzchameleon/modal": "^0.0.30"
+    "@xzchameleon/modal": "^0.0.30",
+    "@xzchameleon/touchable": "^0.0.30"
   },
   "gitHead": "7d88e37cd59320953ee4e0d926e0cf79cb9b83e9"
 }
