@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {View, StyleSheet} from 'react-native';
 import {Icon} from '@xzchameleon/icon';
 import {Touchable, TOUCHABLE_TYPES} from '@xzchameleon/touchable';
-import Input from "../../input";
+import Input from "@xzchameleon/input";
 
 /**
  * ---
