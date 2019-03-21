@@ -58,6 +58,15 @@ class Select extends Component {
             onValueChanged && onValueChanged(this.state.value, this.state.index);
         });
     };
+    //点击取消的回调
+    cancelPicker = () => {
+        this.modal.hide(() => {
+            this.setState({
+                selectedValue: this.props.selectedValue,
+                index: 0,
+            });
+        });
+    };
 
     render() {
         let {dataSource, style, textStyle, imgStyle, headerLeftText, headerCenterText, headerRightText, leftTextStyle, centerTextStyle, rightTextStyle, enabled, mode, itemStyle, prompt} = this.props;
@@ -67,13 +76,13 @@ class Select extends Component {
                     <View style={[SelectStyle.container, style]}>
                         <Text style={[SelectStyle.text, textStyle]}>{this.state.selectedValue}</Text>
                         <Icon style={[SelectStyle.img, imgStyle]} type={'AntDesign'} name={'caretdown'} size={12} color={'#383838'}/>
-                        <Modal ref={(modal) => this.modal = modal} containerStyle={{justifyContent: 'flex-end'}} animationType={'slide'}>
+                        <Modal ref={(modal) => this.modal = modal} containerStyle={{justifyContent: 'flex-end'}} animationType={'slide'} enableBlankPressCloseModal={false}>
                             <View style={SelectStyle.pickerContainer}>
                                 <View style={SelectStyle.header}>
                                     <View style={SelectStyle.headerText}>
                                         <View style={SelectStyle.left}>
                                             <Touchable touchComponent={TOUCHABLE_TYPES.WITHOUT_FEEDBACK}
-                                                       onPress={() => this.modal.hide()}>
+                                                       onPress={this.cancelPicker}>
                                                 <View>
                                                     <Text style={[SelectStyle.leftText, leftTextStyle]}>{headerLeftText}</Text>
                                                 </View>
@@ -99,6 +108,10 @@ class Select extends Component {
                                     onValueChange={(value, index) => this.setState({
                                         selectedValue: value,
                                         index: index
+                                    }, () => {
+                                        //每次选择内容发生变化时调用
+                                        let {pickerValueChanged} = this.props;
+                                        pickerValueChanged && pickerValueChanged(this.state.selectedValue, this.state.index);
                                     })}
                                     itemStyle={itemStyle}
                                 >
@@ -206,6 +219,10 @@ Select.defaultProps = {
 };
 
 Select.propTypes = {
+    /**
+     * 每次选择的内容发生变化时回调
+     */
+    pickerValueChanged:Proptypes.any,
     /**
      * 选择完成后的回调
      */

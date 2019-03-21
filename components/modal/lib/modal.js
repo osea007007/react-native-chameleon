@@ -66,11 +66,11 @@ export class Modal extends Component {
     };
 
     handleBack = () => {
-        this.props.enableBlankPressCloseModal && this.hide();
+        this.props.androidEnableBackCloseModal && this.hide();
     };
 
     render() {
-        let {children, backgroundColor, androidEnableBackCloseModal, containerStyle, animationType, wrapperStyle, ...ModalProps} = this.props;
+        let {children, backgroundColor, enableBlankPressCloseModal, containerStyle, animationType, wrapperStyle, cancelCallBack, ...ModalProps} = this.props;
         return (
             <RNModal
                 onDismiss={() => this.hideCallBack && this.hideCallBack() }
@@ -80,7 +80,7 @@ export class Modal extends Component {
                 animationType={animationType === 'slide' ? 'fade' : animationType}
                 {...ModalProps}
             >
-                <Touchable touchComponent={TOUCHABLE_TYPES.WITHOUT_FEEDBACK} onPress={() => androidEnableBackCloseModal && this.hide()}>
+                <Touchable touchComponent={TOUCHABLE_TYPES.WITHOUT_FEEDBACK} onPress={() => enableBlankPressCloseModal && this.hide(cancelCallBack)}>
                     {/*设置背景色*/}
                     <View style={[ModalStyle.container, {backgroundColor}]}>
                         {/*可用于自定义内容位置，当为slide时，提供动画功能*/}
