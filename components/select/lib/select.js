@@ -161,8 +161,9 @@ const SelectStyle = StyleSheet.create({
     },
     pickerAndroid:{
         width:150,
-        height:50,
-        backgroundColor:'red',
+        // height:42,
+        flex:1,
+        justifyContent:'center',
     },
     text: {
         marginLeft: 8,
