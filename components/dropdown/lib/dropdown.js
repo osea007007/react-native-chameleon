@@ -3,6 +3,10 @@ import {Modal} from "@xzchameleon/modal";
 import {Dimensions, Animated, findNodeHandle, UIManager} from "react-native";
 import propTypes from 'prop-types';
 import {Touchable, TOUCHABLE_TYPES} from "@xzchameleon/touchable";
+import {Platform, NativeModules} from 'react-native';
+
+const {StatusBarManager} = NativeModules;
+const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 0 : StatusBarManager.HEIGHT;
 
 /**
  * ---
@@ -46,7 +50,7 @@ export class DropDown extends PureComponent {
         return new Promise((resolve) => {
             let handle = findNodeHandle(ele);
             UIManager.measure(handle, (x, y, width, height, pageX, pageY) => {
-                resolve(pageY + height)
+                resolve(pageY + height - STATUSBAR_HEIGHT)
             });
         });
     };
@@ -60,9 +64,9 @@ export class DropDown extends PureComponent {
                 <Touchable touchComponent={TOUCHABLE_TYPES.WITHOUT_FEEDBACK} onPress={() => this.hide()}>
                     <Animated.View
                         style={{overflow: 'hidden', height: this.height, marginTop: top + extraTop, zIndex: 100}}>
-                            {
-                                children
-                            }
+                        {
+                            children
+                        }
                     </Animated.View>
                 </Touchable>
             </Modal>
