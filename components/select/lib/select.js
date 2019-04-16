@@ -128,8 +128,9 @@ class Select extends Component {
                     </View>
                 </Touchable>
                 :
-                <View style={[SelectStyle.pickerAndroid, style]}>
+                <View>
                     <Picker
+                        style={[SelectStyle.pickerAndroid, textStyle]}
                         selectedValue={this.state.selectedValue}
                         onValueChange={this.valueChangedForAndroid}
                         enabled={enabled}
