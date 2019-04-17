@@ -53,7 +53,7 @@ class Select extends Component {
         let {onValueChanged} = this.props;
         this.setState({
             selectedValue: value,
-            index: index
+            index: index - 1
         }, () => {
             onValueChanged && onValueChanged(this.state.value, this.state.index);
         });
