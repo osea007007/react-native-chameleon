@@ -69,7 +69,7 @@ class Select extends Component {
     };
 
     render() {
-        let {dataSource, style, textStyle, imgStyle, headerLeftText, headerCenterText, headerRightText, leftTextStyle, centerTextStyle, rightTextStyle, enabled, mode, itemStyle, prompt} = this.props;
+        let {dataSource, style, androidStyle, textStyle, imgStyle, headerLeftText, headerCenterText, headerRightText, leftTextStyle, centerTextStyle, rightTextStyle, enabled, mode, itemStyle, prompt} = this.props;
         return (
             IS_IOS ?
                 <Touchable touchComponent={TOUCHABLE_TYPES.OPACITY} onPress={() => enabled ? this.modal.show() : null}>
@@ -128,9 +128,9 @@ class Select extends Component {
                     </View>
                 </Touchable>
                 :
-                <View>
+                <View style={androidStyle}>
                     <Picker
-                        style={[SelectStyle.pickerAndroid, textStyle]}
+                        style={textStyle}
                         selectedValue={this.state.selectedValue}
                         onValueChange={this.valueChangedForAndroid}
                         enabled={enabled}
@@ -161,7 +161,7 @@ const SelectStyle = StyleSheet.create({
         backgroundColor: '#ffffff',
     },
     pickerAndroid:{
-        width:150,
+        width:'100%',
         // height:42,
         flex:1,
         justifyContent:'center',
