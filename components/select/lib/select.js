@@ -69,7 +69,7 @@ class Select extends Component {
     };
 
     render() {
-        let {dataSource, style, androidStyle, textStyle, imgStyle, headerLeftText, headerCenterText, headerRightText, leftTextStyle, centerTextStyle, rightTextStyle, enabled, mode, itemStyle, prompt} = this.props;
+        let {dataSource, style, textStyle, imgStyle, headerLeftText, headerCenterText, headerRightText, leftTextStyle, centerTextStyle, rightTextStyle, enabled, mode, itemStyle, prompt} = this.props;
         return (
             IS_IOS ?
                 <Touchable touchComponent={TOUCHABLE_TYPES.OPACITY} onPress={() => enabled ? this.modal.show() : null}>
@@ -128,24 +128,22 @@ class Select extends Component {
                     </View>
                 </Touchable>
                 :
-                <View style={androidStyle}>
-                    <Picker
-                        style={textStyle}
-                        selectedValue={this.state.selectedValue}
-                        onValueChange={this.valueChangedForAndroid}
-                        enabled={enabled}
-                        mode={mode}
-                        prompt={prompt}
-                    >
-                        {
-                            ['请选择',...dataSource].map((value, index) => {
-                                return (
-                                    <Picker.Item label={value} value={value} key={index + ''}/>
-                                )
-                            })
-                        }
-                    </Picker>
-                </View>
+                <Picker
+                    style={[SelectStyle.pickerAndroid, textStyle]}
+                    selectedValue={this.state.selectedValue}
+                    onValueChange={this.valueChangedForAndroid}
+                    enabled={enabled}
+                    mode={mode}
+                    prompt={prompt}
+                >
+                    {
+                        ['请选择',...dataSource].map((value, index) => {
+                            return (
+                                <Picker.Item label={value} value={value} key={index + ''}/>
+                            )
+                        })
+                    }
+                </Picker>
         );
     }
 }
