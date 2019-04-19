@@ -128,24 +128,22 @@ class Select extends Component {
                     </View>
                 </Touchable>
                 :
-                <View>
-                    <Picker
-                        style={[SelectStyle.pickerAndroid, textStyle]}
-                        selectedValue={this.state.selectedValue}
-                        onValueChange={this.valueChangedForAndroid}
-                        enabled={enabled}
-                        mode={mode}
-                        prompt={prompt}
-                    >
-                        {
-                            ['请选择',...dataSource].map((value, index) => {
-                                return (
-                                    <Picker.Item label={value} value={value} key={index + ''}/>
-                                )
-                            })
-                        }
-                    </Picker>
-                </View>
+                <Picker
+                    style={[SelectStyle.pickerAndroid, textStyle]}
+                    selectedValue={this.state.selectedValue}
+                    onValueChange={this.valueChangedForAndroid}
+                    enabled={enabled}
+                    mode={mode}
+                    prompt={prompt}
+                >
+                    {
+                        ['请选择',...dataSource].map((value, index) => {
+                            return (
+                                <Picker.Item label={value} value={value} key={index + ''}/>
+                            )
+                        })
+                    }
+                </Picker>
         );
     }
 }
@@ -161,7 +159,7 @@ const SelectStyle = StyleSheet.create({
         backgroundColor: '#ffffff',
     },
     pickerAndroid:{
-        width:150,
+        width:'100%',
         // height:42,
         flex:1,
         justifyContent:'center',
