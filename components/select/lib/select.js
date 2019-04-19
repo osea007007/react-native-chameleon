@@ -36,6 +36,7 @@ class Select extends Component {
         }
         return null;
     }
+
     valueChanged = () => {
         let {onValueChanged, dataSource} = this.props;
         //如果未滑动 picker,点击确定默认设置第一项为选中项
