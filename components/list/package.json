@@ -1,6 +1,6 @@
 {
   "name": "@xzchameleon/list",
-  "version": "0.0.38",
+  "version": "0.0.39",
   "description": "> TODO: description",
   "author": "linlinting <linlin.ting@thizgroup.com>",
   "homepage": "https://github.com/osea007007/react-native-chameleon#readme",
@@ -27,9 +27,9 @@
     "url": "https://github.com/osea007007/react-native-chameleon/issues"
   },
   "dependencies": {
-    "@xzchameleon/icon": "^0.0.38",
-    "@xzchameleon/rowline": "^0.0.38",
-    "@xzchameleon/touchable": "^0.0.38"
+    "@xzchameleon/icon": "^0.0.39",
+    "@xzchameleon/rowline": "^0.0.39",
+    "@xzchameleon/touchable": "^0.0.39"
   },
   "gitHead": "24a26b9b23986c28a2f85882225f63cbf923a5e9"
 }
