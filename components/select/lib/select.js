@@ -56,7 +56,7 @@ class Select extends Component {
             selectedValue: value,
             index: index - 1
         }, () => {
-            onValueChanged && onValueChanged(this.state.value, this.state.index);
+            onValueChanged && onValueChanged(this.state.selectedValue, this.state.index);
         });
     };
     //点击取消的回调
