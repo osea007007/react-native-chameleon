@@ -1,6 +1,6 @@
 {
   "name": "@xzchameleon/dropdown",
-  "version": "0.0.39",
+  "version": "0.0.40",
   "description": "> TODO: description",
   "author": "mr.zhang <stark.zhang@thizgroup.com>",
   "homepage": "https://github.com/15821959553/react-native-chameleon#readme",
@@ -27,8 +27,8 @@
     "url": "https://github.com/15821959553/react-native-chameleon/issues"
   },
   "dependencies": {
-    "@xzchameleon/modal": "^0.0.39",
-    "@xzchameleon/touchable": "^0.0.39"
+    "@xzchameleon/modal": "^0.0.40",
+    "@xzchameleon/touchable": "^0.0.40"
   },
   "gitHead": "24a26b9b23986c28a2f85882225f63cbf923a5e9"
 }
