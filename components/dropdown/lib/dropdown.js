@@ -46,11 +46,17 @@ export class DropDown extends PureComponent {
         return this.modal.isShow();
     };
 
+    /**
+     * Android如果设置了沉浸式计算marginTop值时需减去状态栏高度，反之则不需要
+     * 默认不使用沉浸式
+     */
+
     getPosition = (ele) => {
         return new Promise((resolve) => {
             let handle = findNodeHandle(ele);
+            let {translucent} = this.props;
             UIManager.measure(handle, (x, y, width, height, pageX, pageY) => {
-                resolve(pageY + height - STATUSBAR_HEIGHT)
+                translucent?resolve(pageY + height - STATUSBAR_HEIGHT):resolve(pageY + height)
             });
         });
     };
@@ -94,6 +100,7 @@ DropDown.defaultProps = {
     openTime: 1000,
     closeTime: 500,
     extraTop: 0,
+    translucent:false,
 };
 
 DropDown.propTypes = {
@@ -109,4 +116,8 @@ DropDown.propTypes = {
      * 距离顶部额外的高度设置
      */
     extraTop: propTypes.number,
+    /**
+     * Android页面是否设置的沉浸式状态栏，默认不使用沉浸式
+     */
+    translucent: propTypes.bool,
 };
