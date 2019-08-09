@@ -59,12 +59,7 @@ class Select extends Component {
     };
     //点击取消的回调
     cancelPicker = () => {
-        this.modal.hide(() => {
-            this.setState({
-                selectedValue: this.props.selectedValue,
-                index: 0,
-            });
-        });
+        this.modal.hide();
     };
 
     render() {
