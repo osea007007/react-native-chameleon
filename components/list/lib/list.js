@@ -18,7 +18,7 @@ import {RowLine} from "@xzchameleon/rowline";
  */
 export function List({leftIcon, leftText, leftTextStyle, rightIcon, rightText, rightTextStyle, containerStyle, onPress, disable, leftComponent, rightComponent, showLine, lineProps}) {
     return (
-        <Touchable touchComponent={TOUCHABLE_TYPES.WITHOUT_FEEDBACK} onPress={() => {
+        <Touchable touchComponent={onPress?TOUCHABLE_TYPES.HIGHLIGHT:TOUCHABLE_TYPES.WITHOUT_FEEDBACK} onPress={() => {
             (onPress && !disable) && onPress()
         }}>
             <View style={[ListStyle.container, containerStyle]}>

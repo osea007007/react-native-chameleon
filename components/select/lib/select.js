@@ -22,16 +22,14 @@ class Select extends Component {
         super(props);
         this.state = {
             selectedValue: this.props.selectedValue,
-            preSelectedValue: this.props.selectedValue,
             index: 0,
         };
     }
 
     static getDerivedStateFromProps({selectedValue}, preState) {
-        if (selectedValue !== preState.preSelectedValue) {
+        if (selectedValue !== preState.selectedValue) {
             return {
                 selectedValue,
-                preChecked: selectedValue,
             }
         }
         return null;
