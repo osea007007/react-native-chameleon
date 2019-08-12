@@ -9,7 +9,7 @@ class SelectDemo extends Component {
         return (
             <ScrollView>
                 <DemoList title={`无默认值, iOS默认显示 请选择`}>
-                    <Select style={{height:44}} dataSource={['dog', 'cat', 'lion', 'tiger']} headerCenterText={'请选择'} headerLeftText={'取消'} headerRightText={'确定'}/>
+                    <Select style={{height:44}} dataSource={['dog', 'cat', 'lion', 'tiger']}  headerCenterText={'请选择'} headerLeftText={'取消'} headerRightText={'确定'} onValueChanged={(value, index) => { console.log(value, index) }} pickerValueChanged={(value, index) => { console.log(value, index) }}/>
                 </DemoList>
 
                 <DemoList title={`有默认值 cat`}>

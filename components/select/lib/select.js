@@ -17,19 +17,20 @@ import {Icon} from "@xzchameleon/icon";
 const IS_IOS = Platform.OS === 'ios';
 
 class Select extends Component {
-
     constructor(props) {
         super(props);
         this.state = {
             selectedValue: this.props.selectedValue,
             index: 0,
+            preValue: ''
         };
     }
 
-    static getDerivedStateFromProps({selectedValue}, preState) {
-        if (selectedValue !== preState.selectedValue) {
+    static getDerivedStateFromProps({selectedValue}, state) {
+        if (selectedValue !== state.preValue) {
             return {
                 selectedValue,
+                preValue:selectedValue
             }
         }
         return null;
@@ -77,7 +78,7 @@ class Select extends Component {
                                         <View style={SelectStyle.left}>
                                             <Touchable touchComponent={TOUCHABLE_TYPES.WITHOUT_FEEDBACK}
                                                        onPress={this.cancelPicker}>
-                                                <View>
+                                                <View style={{ paddingHorizontal:5, paddingVertical:5 }}>
                                                     <Text style={[SelectStyle.leftText, leftTextStyle]}>{headerLeftText}</Text>
                                                 </View>
                                             </Touchable>
@@ -88,7 +89,7 @@ class Select extends Component {
                                         <View style={SelectStyle.right}>
                                             <Touchable touchComponent={TOUCHABLE_TYPES.WITHOUT_FEEDBACK}
                                                        onPress={this.valueChanged}>
-                                                <View>
+                                                <View style={{ paddingHorizontal:5, paddingVertical:5 }}>
                                                     <Text style={[SelectStyle.rightText, rightTextStyle]}>{headerRightText}</Text>
                                                 </View>
                                             </Touchable>
