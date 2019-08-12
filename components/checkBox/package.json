@@ -1,6 +1,6 @@
 {
   "name": "@xzchameleon/checkbox",
-  "version": "0.0.41",
+  "version": "0.0.42",
   "description": "> TODO: description",
   "keywords": [
     "checkBox"
@@ -30,7 +30,7 @@
     "url": "https://github.com/fjson/react-native-chameleon/issues"
   },
   "dependencies": {
-    "@xzchameleon/touchable": "^0.0.41"
+    "@xzchameleon/touchable": "^0.0.42"
   },
   "gitHead": "24a26b9b23986c28a2f85882225f63cbf923a5e9"
 }
