@@ -37,7 +37,7 @@ export function List({ leftIcon, leftText, leftTextStyle, rightIcon, rightText, 
                         !hideRightComponent
                         &&
                         (
-                            rightComponent || (
+                            rightComponent || (React.isValidElement(rightIcon) && rightIcon) || (
                                 <View style={ListStyle.leftView}>
                                     { rightText && <Text style={[ListStyle.rightText, rightTextStyle]}>{rightText}</Text> }
                                     {

@@ -24,7 +24,7 @@ class ListDemo extends Component {
                     }}/>
                 </DemoList>
                 <DemoList title={'使用自定义组件'}>
-                    <List leftComponent={<LeftComponent/>} rightComponent={<RightComponent/>}/>
+                    <List leftComponent={<LeftComponent/>} rightIcon={<RightComponent/>}/>
                 </DemoList>
                 <DemoList title={'禁用点击事件'}>
                     <List leftText={'左边文字'} rightIcon={{}} disable={true} onPress={() => {
