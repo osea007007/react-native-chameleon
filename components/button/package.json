@@ -1,6 +1,6 @@
 {
   "name": "@xzchameleon/button",
-  "version": "0.0.42",
+  "version": "0.0.43",
   "description": "> TODO: description",
   "author": "jason.xing@thizgroup.com <jason.xing@thizgroup.com>",
   "homepage": "https://github.com/fjson/react-native-chameleon#readme",
@@ -27,8 +27,8 @@
     "url": "https://github.com/fjson/react-native-chameleon/issues"
   },
   "dependencies": {
-    "@xzchameleon/icon": "^0.0.42",
-    "@xzchameleon/touchable": "^0.0.42"
+    "@xzchameleon/icon": "^0.0.43",
+    "@xzchameleon/touchable": "^0.0.43"
   },
   "gitHead": "24a26b9b23986c28a2f85882225f63cbf923a5e9"
 }
