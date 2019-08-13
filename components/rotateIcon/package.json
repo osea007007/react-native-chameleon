@@ -1,6 +1,6 @@
 {
   "name": "@xzchameleon/rotateicon",
-  "version": "0.0.43",
+  "version": "0.0.44",
   "description": "> TODO: description",
   "keywords": [
     "rotateIcon"
@@ -30,8 +30,8 @@
     "url": "https://github.com/mike1023/react-native-chameleon/issues"
   },
   "dependencies": {
-    "@xzchameleon/icon": "^0.0.43",
-    "@xzchameleon/touchable": "^0.0.43"
+    "@xzchameleon/icon": "^0.0.44",
+    "@xzchameleon/touchable": "^0.0.44"
   },
   "gitHead": "24a26b9b23986c28a2f85882225f63cbf923a5e9"
 }
