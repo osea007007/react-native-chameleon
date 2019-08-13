@@ -14,11 +14,12 @@ import Proptypes from 'prop-types';
 class StockText extends Component {
 
     displayColor = (value) => {
-        if(value === undefined || isNaN(value)) {
+        if(value === undefined) {
             return '#383838';
         }
-        let temp = Number(value);
-        if(temp >= 0) {
+        // let temp = Number(value);
+        let temp = value.indexOf('-');
+        if(temp === -1) {
             return this.props.increaseColor;
         } else {
             return this.props.decreaseColor;
@@ -30,11 +31,12 @@ class StockText extends Component {
         if(value === undefined || value === '') {
             return placeholder;
         }
-        if(isNaN(value)) {
-            return value;
-        }
-        let temp = Number(value);
-        if(temp >= 0) {
+        // if(isNaN(value)) {
+        //     return value;
+        // }
+        // let temp = Number(value);
+        let temp = value.indexOf('-');
+        if(temp === -1) {
             return '+' + value + tailCharacter;
         } else {
             return value + tailCharacter;
