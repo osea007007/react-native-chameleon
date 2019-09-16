@@ -47,7 +47,8 @@ class Select extends Component {
         });
     };
     valueChangedForAndroid = (value, index) => {
-        if (value === '请选择') {
+        let { selectText } = this.props;
+        if (value === selectText) {
             return;
         }
         let {onValueChanged} = this.props;
@@ -64,7 +65,7 @@ class Select extends Component {
     };
 
     render() {
-        let {dataSource, style, textStyle, imgStyle, headerLeftText, headerCenterText, headerRightText, leftTextStyle, centerTextStyle, rightTextStyle, enabled, mode, itemStyle, prompt} = this.props;
+        let {dataSource, style, textStyle, imgStyle, headerLeftText, headerCenterText, headerRightText, leftTextStyle, centerTextStyle, rightTextStyle, enabled, mode, itemStyle, prompt, selectText} = this.props;
         return (
             IS_IOS ?
                 <Touchable touchComponent={TOUCHABLE_TYPES.OPACITY} onPress={() => enabled ? this.modal.show() : null}>
@@ -132,7 +133,7 @@ class Select extends Component {
                     prompt={prompt}
                 >
                     {
-                        ['请选择',...dataSource].map((value, index) => {
+                        [selectText,...dataSource].map((value, index) => {
                             return (
                                 <Picker.Item label={value} value={value} key={index + ''}/>
                             )
@@ -209,6 +210,7 @@ const SelectStyle = StyleSheet.create({
 
 Select.defaultProps = {
     selectedValue: '请选择',
+    selectText: '请选择',
     enabled:true,
     mode:'dialog',
 };
@@ -280,6 +282,10 @@ Select.propTypes = {
      * 【Android】设置选择器的提示字符串。在Android的对话框模式中用作对话框的标题
      */
     prompt:Proptypes.string,
+    /**
+     * 【Android】数据源首项数据，默认"请选择"，主要为了多语言显示
+     */
+    selectText:Proptypes.string,
 };
 
 export default Select;

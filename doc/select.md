@@ -18,6 +18,7 @@ prop | type | default | required | description
 **prompt** | `String` |  | false | 【Android】设置选择器的提示字符串。在Android的对话框模式中用作对话框的标题
 **rightTextStyle** | `*` |  | false | 【iOS】设置头部右侧文本样式
 **selectedValue** | `String` | `'请选择'` | false | 默认选项
+**selectText** | `String` | `'请选择'` | false |数据源 android 显示的首项数据
 **style** | `*` |  | false | 点击容器的样式
 **textStyle** | `*` |  | false | 【iOS】左侧选择文本的样式
 
