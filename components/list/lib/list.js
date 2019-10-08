@@ -38,7 +38,7 @@ export function List({ leftIcon, leftText, leftTextStyle, rightIcon, rightText, 
                         &&
                         (
                             rightComponent || (React.isValidElement(rightIcon) && rightIcon) || (
-                                <View style={ListStyle.leftView}>
+                                <View style={ListStyle.rightView}>
                                     { rightText && <Text style={[ListStyle.rightText, rightTextStyle]}>{rightText}</Text> }
                                     {
                                         onPress !== undefined && ((!React.isValidElement(rightIcon) ?
@@ -73,6 +73,7 @@ const ListStyle = StyleSheet.create({
         paddingVertical: 8
     },
     leftView: {
+        flex: 1,
         flexDirection: 'row',
         alignItems: 'center',
     },
