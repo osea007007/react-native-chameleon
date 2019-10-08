@@ -96,6 +96,7 @@ List.defaultProps = {
     hideRightComponent: false
 };
 
+
 List.propTypes = {
     /**
      * 左边图标(使用icon参数 或 传入组件)
