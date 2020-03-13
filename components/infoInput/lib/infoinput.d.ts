@@ -1,4 +1,4 @@
-import { TextStyle } from "react-native";
+import { TextStyle,InputProps,Input } from "react-native";
 import { FC } from "react";
 
 interface InfoInputProps{
@@ -8,6 +8,9 @@ interface InfoInputProps{
     rightComponent?: React.ReactNode,
     rightContainerStyle?: TextStyle,
     onRightPress?():void,
+    ref?: Ref<Input>,
 }
-declare const InfoInput: FC<InfoInputProps>;
+type InfoInputType = InfoInputProps & InputProps;
+
+declare const InfoInput: FC<InfoInputType>;
 export default InfoInput;
