@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { ViewStyle, ImageSourcePropType, ImageStyle } from 'react-native';
 
-interface SearchBarProps {
+export interface SearchBarProps {
     searchContent: string;
     containerStyle: ViewStyle;
     searchIcon: ImageSourcePropType;
